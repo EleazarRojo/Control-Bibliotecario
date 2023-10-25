@@ -1,7 +1,7 @@
 ﻿
 namespace Control_Bibliotecario
 {
-    partial class Form1
+    partial class PrincipalForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
