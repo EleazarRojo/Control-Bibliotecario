@@ -45,6 +45,7 @@ namespace Control_Bibliotecario
             this.bTitulo_Tbx = new System.Windows.Forms.TextBox();
             this.bAutor_Tbx = new System.Windows.Forms.TextBox();
             this.bTema_Tbx = new System.Windows.Forms.TextBox();
+            this.buscar_Btn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.busqueda_DataGridView)).BeginInit();
             this.SuspendLayout();
@@ -180,11 +181,21 @@ namespace Control_Bibliotecario
             this.bTema_Tbx.Size = new System.Drawing.Size(545, 20);
             this.bTema_Tbx.TabIndex = 12;
             // 
+            // buscar_Btn
+            // 
+            this.buscar_Btn.Location = new System.Drawing.Point(584, 543);
+            this.buscar_Btn.Name = "buscar_Btn";
+            this.buscar_Btn.Size = new System.Drawing.Size(75, 23);
+            this.buscar_Btn.TabIndex = 13;
+            this.buscar_Btn.Text = "Buscar";
+            this.buscar_Btn.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 616);
+            this.Controls.Add(this.buscar_Btn);
             this.Controls.Add(this.bTema_Tbx);
             this.Controls.Add(this.bAutor_Tbx);
             this.Controls.Add(this.bTitulo_Tbx);
@@ -227,6 +238,7 @@ namespace Control_Bibliotecario
         private System.Windows.Forms.TextBox bTitulo_Tbx;
         private System.Windows.Forms.TextBox bAutor_Tbx;
         private System.Windows.Forms.TextBox bTema_Tbx;
+        private System.Windows.Forms.Button buscar_Btn;
     }
 }
 
