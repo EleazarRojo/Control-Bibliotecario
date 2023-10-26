@@ -31,8 +31,8 @@ namespace Control_Bibliotecario
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ingresoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.busqueda_DataGridView = new System.Windows.Forms.DataGridView();
             this.titulo_Lbl = new System.Windows.Forms.Label();
             this.descripcion_Lbl = new System.Windows.Forms.Label();
@@ -48,49 +48,55 @@ namespace Control_Bibliotecario
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ingresoToolStripMenuItem,
             this.registrarseToolStripMenuItem,
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1200, 35);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // ingresoToolStripMenuItem
             // 
             this.ingresoToolStripMenuItem.Name = "ingresoToolStripMenuItem";
-            this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(92, 29);
             this.ingresoToolStripMenuItem.Text = "&Ingresar";
-            // 
-            // ayudaToolStripMenuItem
-            // 
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ayudaToolStripMenuItem.Text = "&Ayuda";
             // 
             // registrarseToolStripMenuItem
             // 
             this.registrarseToolStripMenuItem.Name = "registrarseToolStripMenuItem";
-            this.registrarseToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.registrarseToolStripMenuItem.Size = new System.Drawing.Size(114, 29);
             this.registrarseToolStripMenuItem.Text = "&Registrarse";
+            this.registrarseToolStripMenuItem.Click += new System.EventHandler(this.registrarseToolStripMenuItem_Click);
+            // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(79, 29);
+            this.ayudaToolStripMenuItem.Text = "&Ayuda";
             // 
             // busqueda_DataGridView
             // 
             this.busqueda_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.busqueda_DataGridView.Location = new System.Drawing.Point(73, 155);
+            this.busqueda_DataGridView.Location = new System.Drawing.Point(110, 238);
+            this.busqueda_DataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.busqueda_DataGridView.Name = "busqueda_DataGridView";
-            this.busqueda_DataGridView.Size = new System.Drawing.Size(654, 317);
+            this.busqueda_DataGridView.RowHeadersWidth = 62;
+            this.busqueda_DataGridView.Size = new System.Drawing.Size(981, 488);
             this.busqueda_DataGridView.TabIndex = 1;
             // 
             // titulo_Lbl
             // 
             this.titulo_Lbl.AutoSize = true;
             this.titulo_Lbl.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titulo_Lbl.Location = new System.Drawing.Point(275, 55);
+            this.titulo_Lbl.Location = new System.Drawing.Point(412, 85);
+            this.titulo_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titulo_Lbl.Name = "titulo_Lbl";
-            this.titulo_Lbl.Size = new System.Drawing.Size(248, 31);
+            this.titulo_Lbl.Size = new System.Drawing.Size(370, 47);
             this.titulo_Lbl.TabIndex = 2;
             this.titulo_Lbl.Text = "Busqueda de Libros";
             // 
@@ -98,42 +104,47 @@ namespace Control_Bibliotecario
             // 
             this.descripcion_Lbl.AutoSize = true;
             this.descripcion_Lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descripcion_Lbl.Location = new System.Drawing.Point(277, 105);
+            this.descripcion_Lbl.Location = new System.Drawing.Point(416, 162);
+            this.descripcion_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.descripcion_Lbl.Name = "descripcion_Lbl";
-            this.descripcion_Lbl.Size = new System.Drawing.Size(108, 19);
+            this.descripcion_Lbl.Size = new System.Drawing.Size(167, 27);
             this.descripcion_Lbl.TabIndex = 3;
             this.descripcion_Lbl.Text = "Texto de prueba";
             // 
             // imagen_Lbl
             // 
             this.imagen_Lbl.AutoSize = true;
-            this.imagen_Lbl.Location = new System.Drawing.Point(121, 88);
+            this.imagen_Lbl.Location = new System.Drawing.Point(182, 135);
+            this.imagen_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.imagen_Lbl.Name = "imagen_Lbl";
-            this.imagen_Lbl.Size = new System.Drawing.Size(80, 13);
+            this.imagen_Lbl.Size = new System.Drawing.Size(122, 20);
             this.imagen_Lbl.TabIndex = 4;
             this.imagen_Lbl.Text = "Insertar Imagen";
             // 
             // tipoBusqueda_Lbl
             // 
             this.tipoBusqueda_Lbl.AutoSize = true;
-            this.tipoBusqueda_Lbl.Location = new System.Drawing.Point(70, 502);
+            this.tipoBusqueda_Lbl.Location = new System.Drawing.Point(105, 772);
+            this.tipoBusqueda_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tipoBusqueda_Lbl.Name = "tipoBusqueda_Lbl";
-            this.tipoBusqueda_Lbl.Size = new System.Drawing.Size(97, 13);
+            this.tipoBusqueda_Lbl.Size = new System.Drawing.Size(142, 20);
             this.tipoBusqueda_Lbl.TabIndex = 5;
             this.tipoBusqueda_Lbl.Text = "Tipo de Busqueda:";
             // 
             // busqueda_Tbx
             // 
-            this.busqueda_Tbx.Location = new System.Drawing.Point(73, 535);
+            this.busqueda_Tbx.Location = new System.Drawing.Point(110, 823);
+            this.busqueda_Tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.busqueda_Tbx.Name = "busqueda_Tbx";
-            this.busqueda_Tbx.Size = new System.Drawing.Size(208, 20);
+            this.busqueda_Tbx.Size = new System.Drawing.Size(310, 26);
             this.busqueda_Tbx.TabIndex = 9;
             // 
             // buscar_Btn
             // 
-            this.buscar_Btn.Location = new System.Drawing.Point(312, 532);
+            this.buscar_Btn.Location = new System.Drawing.Point(468, 818);
+            this.buscar_Btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buscar_Btn.Name = "buscar_Btn";
-            this.buscar_Btn.Size = new System.Drawing.Size(75, 23);
+            this.buscar_Btn.Size = new System.Drawing.Size(112, 35);
             this.buscar_Btn.TabIndex = 13;
             this.buscar_Btn.Text = "Buscar";
             this.buscar_Btn.UseVisualStyleBackColor = true;
@@ -145,27 +156,28 @@ namespace Control_Bibliotecario
             "Titulo",
             "Autor",
             "Tema"});
-            this.comboBox1.Location = new System.Drawing.Point(173, 499);
+            this.comboBox1.Location = new System.Drawing.Point(260, 768);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(108, 21);
+            this.comboBox1.Size = new System.Drawing.Size(160, 28);
             this.comboBox1.TabIndex = 14;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // detalles_Btn
             // 
             this.detalles_Btn.Enabled = false;
-            this.detalles_Btn.Location = new System.Drawing.Point(410, 532);
+            this.detalles_Btn.Location = new System.Drawing.Point(615, 818);
+            this.detalles_Btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.detalles_Btn.Name = "detalles_Btn";
-            this.detalles_Btn.Size = new System.Drawing.Size(75, 23);
+            this.detalles_Btn.Size = new System.Drawing.Size(112, 35);
             this.detalles_Btn.TabIndex = 15;
             this.detalles_Btn.Text = "Detalles";
             this.detalles_Btn.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // PrincipalForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 616);
+            this.ClientSize = new System.Drawing.Size(1200, 948);
             this.Controls.Add(this.detalles_Btn);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buscar_Btn);
@@ -177,7 +189,8 @@ namespace Control_Bibliotecario
             this.Controls.Add(this.busqueda_DataGridView);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "PrincipalForm";
             this.Text = "Busqueda";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

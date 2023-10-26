@@ -59,50 +59,55 @@ namespace Control_Bibliotecario
             // nombre_Lbl
             // 
             this.nombre_Lbl.AutoSize = true;
+            this.nombre_Lbl.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombre_Lbl.Location = new System.Drawing.Point(60, 92);
             this.nombre_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nombre_Lbl.Name = "nombre_Lbl";
-            this.nombre_Lbl.Size = new System.Drawing.Size(110, 30);
+            this.nombre_Lbl.Size = new System.Drawing.Size(128, 33);
             this.nombre_Lbl.TabIndex = 1;
             this.nombre_Lbl.Text = "Nombre: ";
             // 
             // apellidoPaterno_Lbl
             // 
             this.apellidoPaterno_Lbl.AutoSize = true;
+            this.apellidoPaterno_Lbl.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.apellidoPaterno_Lbl.Location = new System.Drawing.Point(60, 156);
             this.apellidoPaterno_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.apellidoPaterno_Lbl.Name = "apellidoPaterno_Lbl";
-            this.apellidoPaterno_Lbl.Size = new System.Drawing.Size(194, 30);
+            this.apellidoPaterno_Lbl.Size = new System.Drawing.Size(228, 33);
             this.apellidoPaterno_Lbl.TabIndex = 2;
             this.apellidoPaterno_Lbl.Text = "Apellido Paterno:";
             // 
             // apellidoMaterno_Lbl
             // 
             this.apellidoMaterno_Lbl.AutoSize = true;
+            this.apellidoMaterno_Lbl.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.apellidoMaterno_Lbl.Location = new System.Drawing.Point(60, 226);
             this.apellidoMaterno_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.apellidoMaterno_Lbl.Name = "apellidoMaterno_Lbl";
-            this.apellidoMaterno_Lbl.Size = new System.Drawing.Size(204, 30);
+            this.apellidoMaterno_Lbl.Size = new System.Drawing.Size(245, 33);
             this.apellidoMaterno_Lbl.TabIndex = 3;
             this.apellidoMaterno_Lbl.Text = "Apellido Materno: ";
             // 
             // fechaDeNacimiento_lbl
             // 
             this.fechaDeNacimiento_lbl.AutoSize = true;
+            this.fechaDeNacimiento_lbl.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechaDeNacimiento_lbl.Location = new System.Drawing.Point(726, 64);
             this.fechaDeNacimiento_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fechaDeNacimiento_lbl.Name = "fechaDeNacimiento_lbl";
-            this.fechaDeNacimiento_lbl.Size = new System.Drawing.Size(167, 20);
+            this.fechaDeNacimiento_lbl.Size = new System.Drawing.Size(282, 33);
             this.fechaDeNacimiento_lbl.TabIndex = 4;
             this.fechaDeNacimiento_lbl.Text = "Fecha de Nacimiento: ";
             // 
             // genero_Lbl
             // 
             this.genero_Lbl.AutoSize = true;
+            this.genero_Lbl.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.genero_Lbl.Location = new System.Drawing.Point(60, 282);
             this.genero_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.genero_Lbl.Name = "genero_Lbl";
-            this.genero_Lbl.Size = new System.Drawing.Size(107, 30);
+            this.genero_Lbl.Size = new System.Drawing.Size(119, 33);
             this.genero_Lbl.TabIndex = 5;
             this.genero_Lbl.Text = "Genero: ";
             this.genero_Lbl.Click += new System.EventHandler(this.genero_Lbl_Click);
@@ -116,28 +121,28 @@ namespace Control_Bibliotecario
             // genero_Cbx
             // 
             this.genero_Cbx.FormattingEnabled = true;
-            this.genero_Cbx.Location = new System.Drawing.Point(196, 279);
+            this.genero_Cbx.Location = new System.Drawing.Point(223, 280);
             this.genero_Cbx.Name = "genero_Cbx";
             this.genero_Cbx.Size = new System.Drawing.Size(164, 28);
             this.genero_Cbx.TabIndex = 7;
             // 
             // apellidoPaterno_Tbx
             // 
-            this.apellidoPaterno_Tbx.Location = new System.Drawing.Point(196, 153);
+            this.apellidoPaterno_Tbx.Location = new System.Drawing.Point(223, 156);
             this.apellidoPaterno_Tbx.Name = "apellidoPaterno_Tbx";
             this.apellidoPaterno_Tbx.Size = new System.Drawing.Size(164, 26);
             this.apellidoPaterno_Tbx.TabIndex = 8;
             // 
             // ApellidoMaterno_Tbx
             // 
-            this.ApellidoMaterno_Tbx.Location = new System.Drawing.Point(196, 223);
+            this.ApellidoMaterno_Tbx.Location = new System.Drawing.Point(223, 224);
             this.ApellidoMaterno_Tbx.Name = "ApellidoMaterno_Tbx";
             this.ApellidoMaterno_Tbx.Size = new System.Drawing.Size(164, 26);
             this.ApellidoMaterno_Tbx.TabIndex = 9;
             // 
             // nombre_Tbx
             // 
-            this.nombre_Tbx.Location = new System.Drawing.Point(196, 96);
+            this.nombre_Tbx.Location = new System.Drawing.Point(223, 99);
             this.nombre_Tbx.Name = "nombre_Tbx";
             this.nombre_Tbx.Size = new System.Drawing.Size(164, 26);
             this.nombre_Tbx.TabIndex = 10;
@@ -145,15 +150,16 @@ namespace Control_Bibliotecario
             // direccion_Lbl
             // 
             this.direccion_Lbl.AutoSize = true;
+            this.direccion_Lbl.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.direccion_Lbl.Location = new System.Drawing.Point(60, 339);
             this.direccion_Lbl.Name = "direccion_Lbl";
-            this.direccion_Lbl.Size = new System.Drawing.Size(125, 30);
+            this.direccion_Lbl.Size = new System.Drawing.Size(150, 33);
             this.direccion_Lbl.TabIndex = 11;
             this.direccion_Lbl.Text = "Dirección: ";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(196, 333);
+            this.textBox1.Location = new System.Drawing.Point(223, 333);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(164, 26);
             this.textBox1.TabIndex = 12;

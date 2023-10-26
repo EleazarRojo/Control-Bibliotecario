@@ -10,9 +10,11 @@ namespace Control_Bibliotecario
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void registrarseToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            RegistroForm formaRegistro = new RegistroForm();
 
+            formaRegistro.Show();
         }
 
         /*
