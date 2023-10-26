@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrador.cs" />
+    <Compile Include="IngresarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresarForm.Designer.cs">
+      <DependentUpon>IngresarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrincipalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
       <DependentUpon>RegistroForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
+    <EmbeddedResource Include="IngresarForm.resx">
+      <DependentUpon>IngresarForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrincipalForm.resx">
       <DependentUpon>PrincipalForm.cs</DependentUpon>
     </EmbeddedResource>
