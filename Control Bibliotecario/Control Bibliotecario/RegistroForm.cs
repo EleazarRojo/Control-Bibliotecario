@@ -16,5 +16,10 @@ namespace Control_Bibliotecario
         {
             InitializeComponent();
         }
+
+        private void genero_Lbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
