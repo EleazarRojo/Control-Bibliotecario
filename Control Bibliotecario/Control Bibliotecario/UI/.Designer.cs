@@ -65,6 +65,7 @@ namespace Control_Bibliotecario
             this.ingresoToolStripMenuItem.Name = "ingresoToolStripMenuItem";
             this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(92, 29);
             this.ingresoToolStripMenuItem.Text = "&Ingresar";
+            this.ingresoToolStripMenuItem.Click += new System.EventHandler(this.ingresoToolStripMenuItem_Click);
             // 
             // registrarseToolStripMenuItem
             // 

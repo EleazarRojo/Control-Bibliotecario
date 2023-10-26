@@ -46,7 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BibliotecaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BibliotecaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\Administrador.cs" />
+    <Compile Include="Modelos\Bibliotecario.cs" />
     <Compile Include="UI\IngresarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,17 @@
     <EmbeddedResource Include="UI\RegistroForm.resx">
       <DependentUpon>RegistroForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BibliotecaDataSet.xsc">
+      <DependentUpon>BibliotecaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BibliotecaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BibliotecaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BibliotecaDataSet.xss">
+      <DependentUpon>BibliotecaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -99,6 +116,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BaseDeDatos\Biblioteca.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

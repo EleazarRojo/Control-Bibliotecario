@@ -17,6 +17,13 @@ namespace Control_Bibliotecario
             formaRegistro.Show();
         }
 
+        private void ingresoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IngresarForm formaIngreso = new IngresarForm();
+
+            formaIngreso.Show();
+        }
+
         /*
          * El sistema de busqueda esta organizado por palabras clave, mas bien este puede estar distribuido de tal manera
          * que se controle el tipo de busqueda a travez de un comboBox. El cambio se puede generar de manera automatica o

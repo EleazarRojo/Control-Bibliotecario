@@ -2,5 +2,10 @@
 {
     class Administrador
     {
+
+        
+
+
+
     }
 }
