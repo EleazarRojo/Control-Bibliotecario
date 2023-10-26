@@ -17,6 +17,11 @@ namespace Control_Bibliotecario
             InitializeComponent();
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         /*
          * El sistema de busqueda esta organizado por palabras clave, mas bien este puede estar distribuido de tal manera
          * que se controle el tipo de busqueda a travez de un comboBox. El cambio se puede generar de manera automatica o

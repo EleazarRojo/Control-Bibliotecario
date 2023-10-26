@@ -37,15 +37,11 @@ namespace Control_Bibliotecario
             this.titulo_Lbl = new System.Windows.Forms.Label();
             this.descripcion_Lbl = new System.Windows.Forms.Label();
             this.imagen_Lbl = new System.Windows.Forms.Label();
-            this.libre_Lbl = new System.Windows.Forms.Label();
-            this.bTitulo_Lbl = new System.Windows.Forms.Label();
-            this.bAutor_Lbl = new System.Windows.Forms.Label();
-            this.bTema_Lbl = new System.Windows.Forms.Label();
-            this.bLibre_Tbx = new System.Windows.Forms.TextBox();
-            this.bTitulo_Tbx = new System.Windows.Forms.TextBox();
-            this.bAutor_Tbx = new System.Windows.Forms.TextBox();
-            this.bTema_Tbx = new System.Windows.Forms.TextBox();
+            this.tipoBusqueda_Lbl = new System.Windows.Forms.Label();
+            this.busqueda_Tbx = new System.Windows.Forms.TextBox();
             this.buscar_Btn = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.detalles_Btn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.busqueda_DataGridView)).BeginInit();
             this.SuspendLayout();
@@ -83,127 +79,98 @@ namespace Control_Bibliotecario
             // busqueda_DataGridView
             // 
             this.busqueda_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.busqueda_DataGridView.Location = new System.Drawing.Point(114, 155);
+            this.busqueda_DataGridView.Location = new System.Drawing.Point(73, 155);
             this.busqueda_DataGridView.Name = "busqueda_DataGridView";
-            this.busqueda_DataGridView.Size = new System.Drawing.Size(545, 193);
+            this.busqueda_DataGridView.Size = new System.Drawing.Size(654, 317);
             this.busqueda_DataGridView.TabIndex = 1;
             // 
             // titulo_Lbl
             // 
             this.titulo_Lbl.AutoSize = true;
-            this.titulo_Lbl.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titulo_Lbl.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titulo_Lbl.Location = new System.Drawing.Point(275, 55);
             this.titulo_Lbl.Name = "titulo_Lbl";
-            this.titulo_Lbl.Size = new System.Drawing.Size(271, 33);
+            this.titulo_Lbl.Size = new System.Drawing.Size(248, 31);
             this.titulo_Lbl.TabIndex = 2;
             this.titulo_Lbl.Text = "Busqueda de Libros";
             // 
             // descripcion_Lbl
             // 
             this.descripcion_Lbl.AutoSize = true;
-            this.descripcion_Lbl.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descripcion_Lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descripcion_Lbl.Location = new System.Drawing.Point(277, 105);
             this.descripcion_Lbl.Name = "descripcion_Lbl";
-            this.descripcion_Lbl.Size = new System.Drawing.Size(122, 19);
+            this.descripcion_Lbl.Size = new System.Drawing.Size(108, 19);
             this.descripcion_Lbl.TabIndex = 3;
             this.descripcion_Lbl.Text = "Texto de prueba";
             // 
             // imagen_Lbl
             // 
             this.imagen_Lbl.AutoSize = true;
-            this.imagen_Lbl.Location = new System.Drawing.Point(70, 91);
+            this.imagen_Lbl.Location = new System.Drawing.Point(121, 88);
             this.imagen_Lbl.Name = "imagen_Lbl";
             this.imagen_Lbl.Size = new System.Drawing.Size(80, 13);
             this.imagen_Lbl.TabIndex = 4;
             this.imagen_Lbl.Text = "Insertar Imagen";
             // 
-            // libre_Lbl
+            // tipoBusqueda_Lbl
             // 
-            this.libre_Lbl.AutoSize = true;
-            this.libre_Lbl.Location = new System.Drawing.Point(111, 371);
-            this.libre_Lbl.Name = "libre_Lbl";
-            this.libre_Lbl.Size = new System.Drawing.Size(84, 13);
-            this.libre_Lbl.TabIndex = 5;
-            this.libre_Lbl.Text = "Busqueda Libre:";
+            this.tipoBusqueda_Lbl.AutoSize = true;
+            this.tipoBusqueda_Lbl.Location = new System.Drawing.Point(70, 502);
+            this.tipoBusqueda_Lbl.Name = "tipoBusqueda_Lbl";
+            this.tipoBusqueda_Lbl.Size = new System.Drawing.Size(97, 13);
+            this.tipoBusqueda_Lbl.TabIndex = 5;
+            this.tipoBusqueda_Lbl.Text = "Tipo de Busqueda:";
             // 
-            // bTitulo_Lbl
+            // busqueda_Tbx
             // 
-            this.bTitulo_Lbl.AutoSize = true;
-            this.bTitulo_Lbl.Location = new System.Drawing.Point(111, 411);
-            this.bTitulo_Lbl.Name = "bTitulo_Lbl";
-            this.bTitulo_Lbl.Size = new System.Drawing.Size(105, 13);
-            this.bTitulo_Lbl.TabIndex = 6;
-            this.bTitulo_Lbl.Text = "Busqueda por Titulo:";
-            // 
-            // bAutor_Lbl
-            // 
-            this.bAutor_Lbl.AutoSize = true;
-            this.bAutor_Lbl.Location = new System.Drawing.Point(111, 449);
-            this.bAutor_Lbl.Name = "bAutor_Lbl";
-            this.bAutor_Lbl.Size = new System.Drawing.Size(104, 13);
-            this.bAutor_Lbl.TabIndex = 7;
-            this.bAutor_Lbl.Text = "Busqueda por Autor:";
-            // 
-            // bTema_Lbl
-            // 
-            this.bTema_Lbl.AutoSize = true;
-            this.bTema_Lbl.Location = new System.Drawing.Point(111, 490);
-            this.bTema_Lbl.Name = "bTema_Lbl";
-            this.bTema_Lbl.Size = new System.Drawing.Size(106, 13);
-            this.bTema_Lbl.TabIndex = 8;
-            this.bTema_Lbl.Text = "Busqueda por Tema:";
-            // 
-            // bLibre_Tbx
-            // 
-            this.bLibre_Tbx.Location = new System.Drawing.Point(114, 388);
-            this.bLibre_Tbx.Name = "bLibre_Tbx";
-            this.bLibre_Tbx.Size = new System.Drawing.Size(545, 20);
-            this.bLibre_Tbx.TabIndex = 9;
-            // 
-            // bTitulo_Tbx
-            // 
-            this.bTitulo_Tbx.Location = new System.Drawing.Point(114, 427);
-            this.bTitulo_Tbx.Name = "bTitulo_Tbx";
-            this.bTitulo_Tbx.Size = new System.Drawing.Size(545, 20);
-            this.bTitulo_Tbx.TabIndex = 10;
-            // 
-            // bAutor_Tbx
-            // 
-            this.bAutor_Tbx.Location = new System.Drawing.Point(114, 467);
-            this.bAutor_Tbx.Name = "bAutor_Tbx";
-            this.bAutor_Tbx.Size = new System.Drawing.Size(545, 20);
-            this.bAutor_Tbx.TabIndex = 11;
-            // 
-            // bTema_Tbx
-            // 
-            this.bTema_Tbx.Location = new System.Drawing.Point(114, 506);
-            this.bTema_Tbx.Name = "bTema_Tbx";
-            this.bTema_Tbx.Size = new System.Drawing.Size(545, 20);
-            this.bTema_Tbx.TabIndex = 12;
+            this.busqueda_Tbx.Location = new System.Drawing.Point(73, 535);
+            this.busqueda_Tbx.Name = "busqueda_Tbx";
+            this.busqueda_Tbx.Size = new System.Drawing.Size(208, 20);
+            this.busqueda_Tbx.TabIndex = 9;
             // 
             // buscar_Btn
             // 
-            this.buscar_Btn.Location = new System.Drawing.Point(584, 543);
+            this.buscar_Btn.Location = new System.Drawing.Point(312, 532);
             this.buscar_Btn.Name = "buscar_Btn";
             this.buscar_Btn.Size = new System.Drawing.Size(75, 23);
             this.buscar_Btn.TabIndex = 13;
             this.buscar_Btn.Text = "Buscar";
             this.buscar_Btn.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Titulo",
+            "Autor",
+            "Tema"});
+            this.comboBox1.Location = new System.Drawing.Point(173, 499);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(108, 21);
+            this.comboBox1.TabIndex = 14;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // detalles_Btn
+            // 
+            this.detalles_Btn.Enabled = false;
+            this.detalles_Btn.Location = new System.Drawing.Point(410, 532);
+            this.detalles_Btn.Name = "detalles_Btn";
+            this.detalles_Btn.Size = new System.Drawing.Size(75, 23);
+            this.detalles_Btn.TabIndex = 15;
+            this.detalles_Btn.Text = "Detalles";
+            this.detalles_Btn.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 616);
+            this.Controls.Add(this.detalles_Btn);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buscar_Btn);
-            this.Controls.Add(this.bTema_Tbx);
-            this.Controls.Add(this.bAutor_Tbx);
-            this.Controls.Add(this.bTitulo_Tbx);
-            this.Controls.Add(this.bLibre_Tbx);
-            this.Controls.Add(this.bTema_Lbl);
-            this.Controls.Add(this.bAutor_Lbl);
-            this.Controls.Add(this.bTitulo_Lbl);
-            this.Controls.Add(this.libre_Lbl);
+            this.Controls.Add(this.busqueda_Tbx);
+            this.Controls.Add(this.tipoBusqueda_Lbl);
             this.Controls.Add(this.imagen_Lbl);
             this.Controls.Add(this.descripcion_Lbl);
             this.Controls.Add(this.titulo_Lbl);
@@ -230,15 +197,11 @@ namespace Control_Bibliotecario
         private System.Windows.Forms.Label titulo_Lbl;
         private System.Windows.Forms.Label descripcion_Lbl;
         private System.Windows.Forms.Label imagen_Lbl;
-        private System.Windows.Forms.Label libre_Lbl;
-        private System.Windows.Forms.Label bTitulo_Lbl;
-        private System.Windows.Forms.Label bAutor_Lbl;
-        private System.Windows.Forms.Label bTema_Lbl;
-        private System.Windows.Forms.TextBox bLibre_Tbx;
-        private System.Windows.Forms.TextBox bTitulo_Tbx;
-        private System.Windows.Forms.TextBox bAutor_Tbx;
-        private System.Windows.Forms.TextBox bTema_Tbx;
+        private System.Windows.Forms.Label tipoBusqueda_Lbl;
+        private System.Windows.Forms.TextBox busqueda_Tbx;
         private System.Windows.Forms.Button buscar_Btn;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button detalles_Btn;
     }
 }
 
