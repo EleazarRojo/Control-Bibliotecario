@@ -11,7 +11,7 @@
 
         public string IdUsuario { get; set; }
 
-        public  virtual string IdDeNivel { get; set; } 
+        public string IdDeNivel { get; set; } 
 
         public string Permisos { get; set; }
 
@@ -62,10 +62,7 @@
 
         }
 
-        public virtual void GenerarID()
-        {
-
-        }
+      
 
 
 
