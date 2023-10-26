@@ -42,6 +42,13 @@ namespace Control_Bibliotecario
             */
 
             oleDbConnection.Open();
+
+            /*
+             * TO DO: Valiadcion de Registro de Usuario ya existentes
+             * Utilizar acción SELECT para obtener lo datos
+             * Investigar funcionalidad de DataReader ?
+             */
+
             string lineComando = "insert into Usuarios (RFC, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno, FechaDeNacimiento, Edad, Genero, DireccionParticular) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(lineComando,oleDbConnection);
 
