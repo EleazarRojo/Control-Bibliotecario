@@ -29,12 +29,13 @@ namespace Control_Bibliotecario
             switch (tipoBusqueda_CB.SelectedIndex)
             {
                 case 0:
-                    
+                    librosTableAdapter.OrdenarPorTitulo(bibliotecaDataSet.Libros);
                     break;
                 case 1:
+                    librosTableAdapter.OrdenarPorAutor(bibliotecaDataSet.Libros);
                     break;
                 case 2:
-               
+                    librosTableAdapter.OrdenarPorTema(bibliotecaDataSet.Libros);
                     break;
             }
         }
