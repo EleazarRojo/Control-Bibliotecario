@@ -39,6 +39,7 @@ namespace Control_Bibliotecario
                     break;
                 case 3:
                     librosTableAdapter.OrdenarPorTema(bibliotecaDataSet.Libros);
+               
                     break;
                 case 4:
                     librosTableAdapter.OrdenarPorAño(bibliotecaDataSet.Libros);
@@ -87,8 +88,6 @@ namespace Control_Bibliotecario
          * que se controle el tipo de busqueda a travez de un comboBox. El cambio se puede generar de manera automatica o
          * de manera secuencial al presionar el boton de realizar Busqueda.
          */
-
-        //Comentario de prueba
 
 
     }
