@@ -29,12 +29,19 @@ namespace Control_Bibliotecario
             switch (tipoBusqueda_CB.SelectedIndex)
             {
                 case 0:
-                    
+                    librosTableAdapter.OrdenarPorISBN(bibliotecaDataSet.Libros);
                     break;
                 case 1:
+                    librosTableAdapter.OrdenarPorTitulo(bibliotecaDataSet.Libros);
                     break;
                 case 2:
-               
+                    librosTableAdapter.OrdenarPorAutor(bibliotecaDataSet.Libros);
+                    break;
+                case 3:
+                    librosTableAdapter.OrdenarPorTema(bibliotecaDataSet.Libros);
+                    break;
+                case 4:
+                    librosTableAdapter.OrdenarPorAño(bibliotecaDataSet.Libros);
                     break;
             }
         }
@@ -46,11 +53,42 @@ namespace Control_Bibliotecario
 
         }
 
+        private void buscar_Btn_Click(object sender, EventArgs e)
+        {
+            if(tipoBusqueda_CB.SelectedIndex >= 0)
+            {
+                switch (tipoBusqueda_CB.SelectedIndex)
+                {
+                    case 0:
+                        librosTableAdapter.OrdenarPorISBNEspecifico(bibliotecaDataSet.Libros, "%" + busqueda_Tbx.Text + "%");
+                        break;
+                    case 1:
+                        librosTableAdapter.OrdenarPorTituloEspecifico(bibliotecaDataSet.Libros, "%" + busqueda_Tbx.Text + "%");
+                        break;
+                    case 2:
+                        librosTableAdapter.OrdenarPorAutorEspecifico(bibliotecaDataSet.Libros, "%" + busqueda_Tbx.Text + "%");
+                        break;
+                    case 3:
+                        librosTableAdapter.OrdenarPorTemaEspecifico(bibliotecaDataSet.Libros, "%" + busqueda_Tbx.Text + "%");
+                        break;
+                    case 4:
+                        librosTableAdapter.OrdenarPorAñoEspecifico(bibliotecaDataSet.Libros, "%" + busqueda_Tbx.Text + "%");
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Favor de Seleccionar un Tipo de Busqueda");
+            }
+        }
+
         /*
          * El sistema de busqueda esta organizado por palabras clave, mas bien este puede estar distribuido de tal manera
          * que se controle el tipo de busqueda a travez de un comboBox. El cambio se puede generar de manera automatica o
          * de manera secuencial al presionar el boton de realizar Busqueda.
          */
+
+        //Comentario de prueba
 
 
     }
