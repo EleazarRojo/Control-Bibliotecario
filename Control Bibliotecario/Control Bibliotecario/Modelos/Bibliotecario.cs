@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Control_Bibliotecario.Modelos
 {
-    public class Usuario: Persona
+    class Bibliotecario
     {
-
-        public string  DireccionParticular { get; set; }
-
-
+       
+        
     }
 }

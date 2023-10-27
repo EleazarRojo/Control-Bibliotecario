@@ -29,10 +29,11 @@ namespace Control_Bibliotecario
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ingresoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.busqueda_DataGridView = new System.Windows.Forms.DataGridView();
             this.titulo_Lbl = new System.Windows.Forms.Label();
             this.descripcion_Lbl = new System.Windows.Forms.Label();
@@ -40,20 +41,34 @@ namespace Control_Bibliotecario
             this.tipoBusqueda_Lbl = new System.Windows.Forms.Label();
             this.busqueda_Tbx = new System.Windows.Forms.TextBox();
             this.buscar_Btn = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tipoBusqueda_CB = new System.Windows.Forms.ComboBox();
             this.detalles_Btn = new System.Windows.Forms.Button();
+            this.bibliotecaDataSet = new Control_Bibliotecario.BibliotecaDataSet();
+            this.librosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.librosTableAdapter = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.LibrosTableAdapter();
+            this.tableAdapterManager = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager();
+            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroEdicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.añoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.temaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ejemplaresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.busqueda_DataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ingresoToolStripMenuItem,
             this.registrarseToolStripMenuItem,
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
@@ -61,26 +76,38 @@ namespace Control_Bibliotecario
             // ingresoToolStripMenuItem
             // 
             this.ingresoToolStripMenuItem.Name = "ingresoToolStripMenuItem";
-            this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(61, 22);
             this.ingresoToolStripMenuItem.Text = "&Ingresar";
-            // 
-            // ayudaToolStripMenuItem
-            // 
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ayudaToolStripMenuItem.Text = "&Ayuda";
+            this.ingresoToolStripMenuItem.Click += new System.EventHandler(this.ingresoToolStripMenuItem_Click);
             // 
             // registrarseToolStripMenuItem
             // 
             this.registrarseToolStripMenuItem.Name = "registrarseToolStripMenuItem";
-            this.registrarseToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.registrarseToolStripMenuItem.Size = new System.Drawing.Size(76, 22);
             this.registrarseToolStripMenuItem.Text = "&Registrarse";
+            this.registrarseToolStripMenuItem.Click += new System.EventHandler(this.registrarseToolStripMenuItem_Click);
+            // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 22);
+            this.ayudaToolStripMenuItem.Text = "&Ayuda";
             // 
             // busqueda_DataGridView
             // 
+            this.busqueda_DataGridView.AutoGenerateColumns = false;
             this.busqueda_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.busqueda_DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iSBNDataGridViewTextBoxColumn,
+            this.tituloDataGridViewTextBoxColumn,
+            this.numeroEdicionDataGridViewTextBoxColumn,
+            this.añoDataGridViewTextBoxColumn,
+            this.temaDataGridViewTextBoxColumn,
+            this.ejemplaresDataGridViewTextBoxColumn});
+            this.busqueda_DataGridView.DataSource = this.librosBindingSource;
             this.busqueda_DataGridView.Location = new System.Drawing.Point(73, 155);
             this.busqueda_DataGridView.Name = "busqueda_DataGridView";
+            this.busqueda_DataGridView.RowHeadersWidth = 62;
             this.busqueda_DataGridView.Size = new System.Drawing.Size(654, 317);
             this.busqueda_DataGridView.TabIndex = 1;
             // 
@@ -138,18 +165,18 @@ namespace Control_Bibliotecario
             this.buscar_Btn.Text = "Buscar";
             this.buscar_Btn.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // tipoBusqueda_CB
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.tipoBusqueda_CB.FormattingEnabled = true;
+            this.tipoBusqueda_CB.Items.AddRange(new object[] {
             "Titulo",
             "Autor",
             "Tema"});
-            this.comboBox1.Location = new System.Drawing.Point(173, 499);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(108, 21);
-            this.comboBox1.TabIndex = 14;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.tipoBusqueda_CB.Location = new System.Drawing.Point(173, 499);
+            this.tipoBusqueda_CB.Name = "tipoBusqueda_CB";
+            this.tipoBusqueda_CB.Size = new System.Drawing.Size(108, 21);
+            this.tipoBusqueda_CB.TabIndex = 14;
+            this.tipoBusqueda_CB.SelectedIndexChanged += new System.EventHandler(this.tipoBusqueda_CB_SelectedIndexChanged);
             // 
             // detalles_Btn
             // 
@@ -161,13 +188,74 @@ namespace Control_Bibliotecario
             this.detalles_Btn.Text = "Detalles";
             this.detalles_Btn.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // bibliotecaDataSet
+            // 
+            this.bibliotecaDataSet.DataSetName = "BibliotecaDataSet";
+            this.bibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // librosBindingSource
+            // 
+            this.librosBindingSource.DataMember = "Libros";
+            this.librosBindingSource.DataSource = this.bibliotecaDataSet;
+            // 
+            // librosTableAdapter
+            // 
+            this.librosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AutoresTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ISBNAutorTableAdapter = null;
+            this.tableAdapterManager.LibrosTableAdapter = this.librosTableAdapter;
+            this.tableAdapterManager.NivelDeAccesoTableAdapter = null;
+            this.tableAdapterManager.PrestamosTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsuariosTableAdapter = null;
+            // 
+            // iSBNDataGridViewTextBoxColumn
+            // 
+            this.iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
+            // 
+            // tituloDataGridViewTextBoxColumn
+            // 
+            this.tituloDataGridViewTextBoxColumn.DataPropertyName = "Titulo";
+            this.tituloDataGridViewTextBoxColumn.HeaderText = "Titulo";
+            this.tituloDataGridViewTextBoxColumn.Name = "tituloDataGridViewTextBoxColumn";
+            // 
+            // numeroEdicionDataGridViewTextBoxColumn
+            // 
+            this.numeroEdicionDataGridViewTextBoxColumn.DataPropertyName = "NumeroEdicion";
+            this.numeroEdicionDataGridViewTextBoxColumn.HeaderText = "NumeroEdicion";
+            this.numeroEdicionDataGridViewTextBoxColumn.Name = "numeroEdicionDataGridViewTextBoxColumn";
+            // 
+            // añoDataGridViewTextBoxColumn
+            // 
+            this.añoDataGridViewTextBoxColumn.DataPropertyName = "Año";
+            this.añoDataGridViewTextBoxColumn.HeaderText = "Año";
+            this.añoDataGridViewTextBoxColumn.Name = "añoDataGridViewTextBoxColumn";
+            // 
+            // temaDataGridViewTextBoxColumn
+            // 
+            this.temaDataGridViewTextBoxColumn.DataPropertyName = "Tema";
+            this.temaDataGridViewTextBoxColumn.HeaderText = "Tema";
+            this.temaDataGridViewTextBoxColumn.Name = "temaDataGridViewTextBoxColumn";
+            // 
+            // ejemplaresDataGridViewTextBoxColumn
+            // 
+            this.ejemplaresDataGridViewTextBoxColumn.DataPropertyName = "Ejemplares";
+            this.ejemplaresDataGridViewTextBoxColumn.HeaderText = "Ejemplares";
+            this.ejemplaresDataGridViewTextBoxColumn.Name = "ejemplaresDataGridViewTextBoxColumn";
+            // 
+            // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 616);
             this.Controls.Add(this.detalles_Btn);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.tipoBusqueda_CB);
             this.Controls.Add(this.buscar_Btn);
             this.Controls.Add(this.busqueda_Tbx);
             this.Controls.Add(this.tipoBusqueda_Lbl);
@@ -177,11 +265,14 @@ namespace Control_Bibliotecario
             this.Controls.Add(this.busqueda_DataGridView);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "PrincipalForm";
             this.Text = "Busqueda";
+            this.Load += new System.EventHandler(this.PrincipalForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.busqueda_DataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,8 +291,18 @@ namespace Control_Bibliotecario
         private System.Windows.Forms.Label tipoBusqueda_Lbl;
         private System.Windows.Forms.TextBox busqueda_Tbx;
         private System.Windows.Forms.Button buscar_Btn;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox tipoBusqueda_CB;
         private System.Windows.Forms.Button detalles_Btn;
+        private BibliotecaDataSet bibliotecaDataSet;
+        private System.Windows.Forms.BindingSource librosBindingSource;
+        private BibliotecaDataSetTableAdapters.LibrosTableAdapter librosTableAdapter;
+        private BibliotecaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iSBNDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tituloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroEdicionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn añoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn temaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ejemplaresDataGridViewTextBoxColumn;
     }
 }
 

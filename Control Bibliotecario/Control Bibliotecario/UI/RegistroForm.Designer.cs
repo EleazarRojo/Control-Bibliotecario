@@ -35,14 +35,15 @@ namespace Control_Bibliotecario
             this.apellidoMaterno_Lbl = new System.Windows.Forms.Label();
             this.fechaDeNacimiento_lbl = new System.Windows.Forms.Label();
             this.genero_Lbl = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.fechaDeNacimiento_Calendar = new System.Windows.Forms.MonthCalendar();
             this.genero_Cbx = new System.Windows.Forms.ComboBox();
             this.apellidoPaterno_Tbx = new System.Windows.Forms.TextBox();
             this.ApellidoMaterno_Tbx = new System.Windows.Forms.TextBox();
             this.nombre_Tbx = new System.Windows.Forms.TextBox();
             this.direccion_Lbl = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.direccion_Tbx = new System.Windows.Forms.TextBox();
             this.registrar_Btn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titulo_Lbl
@@ -59,85 +60,94 @@ namespace Control_Bibliotecario
             // nombre_Lbl
             // 
             this.nombre_Lbl.AutoSize = true;
+            this.nombre_Lbl.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombre_Lbl.Location = new System.Drawing.Point(60, 92);
             this.nombre_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nombre_Lbl.Name = "nombre_Lbl";
-            this.nombre_Lbl.Size = new System.Drawing.Size(110, 30);
+            this.nombre_Lbl.Size = new System.Drawing.Size(85, 22);
             this.nombre_Lbl.TabIndex = 1;
             this.nombre_Lbl.Text = "Nombre: ";
             // 
             // apellidoPaterno_Lbl
             // 
             this.apellidoPaterno_Lbl.AutoSize = true;
+            this.apellidoPaterno_Lbl.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.apellidoPaterno_Lbl.Location = new System.Drawing.Point(60, 156);
             this.apellidoPaterno_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.apellidoPaterno_Lbl.Name = "apellidoPaterno_Lbl";
-            this.apellidoPaterno_Lbl.Size = new System.Drawing.Size(194, 30);
+            this.apellidoPaterno_Lbl.Size = new System.Drawing.Size(152, 22);
             this.apellidoPaterno_Lbl.TabIndex = 2;
             this.apellidoPaterno_Lbl.Text = "Apellido Paterno:";
             // 
             // apellidoMaterno_Lbl
             // 
             this.apellidoMaterno_Lbl.AutoSize = true;
+            this.apellidoMaterno_Lbl.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.apellidoMaterno_Lbl.Location = new System.Drawing.Point(60, 226);
             this.apellidoMaterno_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.apellidoMaterno_Lbl.Name = "apellidoMaterno_Lbl";
-            this.apellidoMaterno_Lbl.Size = new System.Drawing.Size(204, 30);
+            this.apellidoMaterno_Lbl.Size = new System.Drawing.Size(163, 22);
             this.apellidoMaterno_Lbl.TabIndex = 3;
             this.apellidoMaterno_Lbl.Text = "Apellido Materno: ";
             // 
             // fechaDeNacimiento_lbl
             // 
             this.fechaDeNacimiento_lbl.AutoSize = true;
+            this.fechaDeNacimiento_lbl.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechaDeNacimiento_lbl.Location = new System.Drawing.Point(726, 64);
             this.fechaDeNacimiento_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fechaDeNacimiento_lbl.Name = "fechaDeNacimiento_lbl";
-            this.fechaDeNacimiento_lbl.Size = new System.Drawing.Size(167, 20);
+            this.fechaDeNacimiento_lbl.Size = new System.Drawing.Size(188, 22);
             this.fechaDeNacimiento_lbl.TabIndex = 4;
             this.fechaDeNacimiento_lbl.Text = "Fecha de Nacimiento: ";
             // 
             // genero_Lbl
             // 
             this.genero_Lbl.AutoSize = true;
+            this.genero_Lbl.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.genero_Lbl.Location = new System.Drawing.Point(60, 282);
             this.genero_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.genero_Lbl.Name = "genero_Lbl";
-            this.genero_Lbl.Size = new System.Drawing.Size(107, 30);
+            this.genero_Lbl.Size = new System.Drawing.Size(79, 22);
             this.genero_Lbl.TabIndex = 5;
             this.genero_Lbl.Text = "Genero: ";
-            this.genero_Lbl.Click += new System.EventHandler(this.genero_Lbl_Click);
             // 
-            // monthCalendar1
+            // fechaDeNacimiento_Calendar
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(730, 106);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 6;
+            this.fechaDeNacimiento_Calendar.Location = new System.Drawing.Point(730, 106);
+            this.fechaDeNacimiento_Calendar.Name = "fechaDeNacimiento_Calendar";
+            this.fechaDeNacimiento_Calendar.TabIndex = 6;
             // 
             // genero_Cbx
             // 
             this.genero_Cbx.FormattingEnabled = true;
-            this.genero_Cbx.Location = new System.Drawing.Point(196, 279);
+            this.genero_Cbx.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino",
+            "Otro"});
+            this.genero_Cbx.Location = new System.Drawing.Point(223, 280);
             this.genero_Cbx.Name = "genero_Cbx";
             this.genero_Cbx.Size = new System.Drawing.Size(164, 28);
             this.genero_Cbx.TabIndex = 7;
+            this.genero_Cbx.Text = "Género";
             // 
             // apellidoPaterno_Tbx
             // 
-            this.apellidoPaterno_Tbx.Location = new System.Drawing.Point(196, 153);
+            this.apellidoPaterno_Tbx.Location = new System.Drawing.Point(223, 156);
             this.apellidoPaterno_Tbx.Name = "apellidoPaterno_Tbx";
             this.apellidoPaterno_Tbx.Size = new System.Drawing.Size(164, 26);
             this.apellidoPaterno_Tbx.TabIndex = 8;
             // 
             // ApellidoMaterno_Tbx
             // 
-            this.ApellidoMaterno_Tbx.Location = new System.Drawing.Point(196, 223);
+            this.ApellidoMaterno_Tbx.Location = new System.Drawing.Point(223, 224);
             this.ApellidoMaterno_Tbx.Name = "ApellidoMaterno_Tbx";
             this.ApellidoMaterno_Tbx.Size = new System.Drawing.Size(164, 26);
             this.ApellidoMaterno_Tbx.TabIndex = 9;
             // 
             // nombre_Tbx
             // 
-            this.nombre_Tbx.Location = new System.Drawing.Point(196, 96);
+            this.nombre_Tbx.Location = new System.Drawing.Point(223, 99);
             this.nombre_Tbx.Name = "nombre_Tbx";
             this.nombre_Tbx.Size = new System.Drawing.Size(164, 26);
             this.nombre_Tbx.TabIndex = 10;
@@ -145,18 +155,19 @@ namespace Control_Bibliotecario
             // direccion_Lbl
             // 
             this.direccion_Lbl.AutoSize = true;
+            this.direccion_Lbl.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.direccion_Lbl.Location = new System.Drawing.Point(60, 339);
             this.direccion_Lbl.Name = "direccion_Lbl";
-            this.direccion_Lbl.Size = new System.Drawing.Size(125, 30);
+            this.direccion_Lbl.Size = new System.Drawing.Size(100, 22);
             this.direccion_Lbl.TabIndex = 11;
             this.direccion_Lbl.Text = "Dirección: ";
             // 
-            // textBox1
+            // direccion_Tbx
             // 
-            this.textBox1.Location = new System.Drawing.Point(196, 333);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 26);
-            this.textBox1.TabIndex = 12;
+            this.direccion_Tbx.Location = new System.Drawing.Point(223, 333);
+            this.direccion_Tbx.Name = "direccion_Tbx";
+            this.direccion_Tbx.Size = new System.Drawing.Size(164, 26);
+            this.direccion_Tbx.TabIndex = 12;
             // 
             // registrar_Btn
             // 
@@ -166,20 +177,32 @@ namespace Control_Bibliotecario
             this.registrar_Btn.TabIndex = 13;
             this.registrar_Btn.Text = "Registrar ";
             this.registrar_Btn.UseVisualStyleBackColor = true;
+            this.registrar_Btn.Click += new System.EventHandler(this.registrar_Btn_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(266, 579);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(279, 36);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // RegistroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1199, 689);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.registrar_Btn);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.direccion_Tbx);
             this.Controls.Add(this.direccion_Lbl);
             this.Controls.Add(this.nombre_Tbx);
             this.Controls.Add(this.ApellidoMaterno_Tbx);
             this.Controls.Add(this.apellidoPaterno_Tbx);
             this.Controls.Add(this.genero_Cbx);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.fechaDeNacimiento_Calendar);
             this.Controls.Add(this.genero_Lbl);
             this.Controls.Add(this.fechaDeNacimiento_lbl);
             this.Controls.Add(this.apellidoMaterno_Lbl);
@@ -202,13 +225,14 @@ namespace Control_Bibliotecario
         private System.Windows.Forms.Label apellidoMaterno_Lbl;
         private System.Windows.Forms.Label fechaDeNacimiento_lbl;
         private System.Windows.Forms.Label genero_Lbl;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar fechaDeNacimiento_Calendar;
         private System.Windows.Forms.ComboBox genero_Cbx;
         private System.Windows.Forms.TextBox apellidoPaterno_Tbx;
         private System.Windows.Forms.TextBox ApellidoMaterno_Tbx;
         private System.Windows.Forms.TextBox nombre_Tbx;
         private System.Windows.Forms.Label direccion_Lbl;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox direccion_Tbx;
         private System.Windows.Forms.Button registrar_Btn;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -10,8 +10,39 @@ namespace Control_Bibliotecario
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void registrarseToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            RegistroForm formaRegistro = new RegistroForm();
+
+            formaRegistro.Show();
+        }
+
+        private void ingresoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IngresarForm formaIngreso = new IngresarForm();
+
+            formaIngreso.Show();
+        }
+
+        private void tipoBusqueda_CB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tipoBusqueda_CB.SelectedIndex)
+            {
+                case 0:
+                    librosTableAdapter.OrdenarPorTitulo(bibliotecaDataSet.Libros);
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    librosTableAdapter.OrdenarPorTema(bibliotecaDataSet.Libros);
+                    break;
+            }
+        }
+
+        private void PrincipalForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'bibliotecaDataSet.Libros' table. You can move, or remove it, as needed.
+            this.librosTableAdapter.Fill(this.bibliotecaDataSet.Libros);
 
         }
 
@@ -20,5 +51,7 @@ namespace Control_Bibliotecario
          * que se controle el tipo de busqueda a travez de un comboBox. El cambio se puede generar de manera automatica o
          * de manera secuencial al presionar el boton de realizar Busqueda.
          */
+
+
     }
 }
