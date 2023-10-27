@@ -24,10 +24,34 @@ namespace Control_Bibliotecario
             formaIngreso.Show();
         }
 
+        private void tipoBusqueda_CB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tipoBusqueda_CB.SelectedIndex)
+            {
+                case 0:
+                    librosTableAdapter.OrdenarPorTitulo(bibliotecaDataSet.Libros);
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    librosTableAdapter.OrdenarPorTema(bibliotecaDataSet.Libros);
+                    break;
+            }
+        }
+
+        private void PrincipalForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'bibliotecaDataSet.Libros' table. You can move, or remove it, as needed.
+            this.librosTableAdapter.Fill(this.bibliotecaDataSet.Libros);
+
+        }
+
         /*
          * El sistema de busqueda esta organizado por palabras clave, mas bien este puede estar distribuido de tal manera
          * que se controle el tipo de busqueda a travez de un comboBox. El cambio se puede generar de manera automatica o
          * de manera secuencial al presionar el boton de realizar Busqueda.
          */
+
+
     }
 }
