@@ -48,6 +48,7 @@ namespace Control_Bibliotecario
             this.tableAdapterManager = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroEdicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.añoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -210,6 +211,7 @@ namespace Control_Bibliotecario
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iSBNDataGridViewTextBoxColumn,
+            this.Autor,
             this.tituloDataGridViewTextBoxColumn,
             this.numeroEdicionDataGridViewTextBoxColumn,
             this.añoDataGridViewTextBoxColumn,
@@ -230,6 +232,14 @@ namespace Control_Bibliotecario
             this.iSBNDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
             this.iSBNDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // Autor
+            // 
+            this.Autor.DataPropertyName = "Autor";
+            this.Autor.HeaderText = "Autor";
+            this.Autor.MinimumWidth = 8;
+            this.Autor.Name = "Autor";
+            this.Autor.Width = 150;
             // 
             // tituloDataGridViewTextBoxColumn
             // 
@@ -321,6 +331,7 @@ namespace Control_Bibliotecario
         private BibliotecaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iSBNDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
         private System.Windows.Forms.DataGridViewTextBoxColumn tituloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroEdicionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn añoDataGridViewTextBoxColumn;
