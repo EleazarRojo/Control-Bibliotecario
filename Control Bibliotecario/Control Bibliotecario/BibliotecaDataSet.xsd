@@ -189,7 +189,28 @@
               <Mapping SourceColumn="Ejemplares" DataSetColumn="Ejemplares" />
               <Mapping SourceColumn="Autor" DataSetColumn="Autor" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="BibliotecaConnectionString (Settings)" DbObjectName="Libros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="OrdenarPorTema" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="ObtenerPorTema" GeneratorSourceName="OrdenarPorTema" GetMethodModifier="Public" GetMethodName="ObtenerPorTema" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="ObtenerPorTema" UserSourceName="OrdenarPorTema">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ISBN, Titulo, NumeroEdicion, Año, Tema, Ejemplares
+FROM            Libros
+ORDER BY Tema</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="BibliotecaConnectionString (Settings)" DbObjectName="Libros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="OrdenarPorTitulo" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="ObtenerPorTitulo" GeneratorSourceName="OrdenarPorTitulo" GetMethodModifier="Public" GetMethodName="ObtenerPorTitulo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="ObtenerPorTitulo" UserSourceName="OrdenarPorTitulo">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ISBN, Titulo, NumeroEdicion, Año, Tema, Ejemplares
+FROM            Libros
+ORDER BY Titulo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NivelDeAccesoTableAdapter" GeneratorDataComponentClassName="NivelDeAccesoTableAdapter" Name="NivelDeAcceso" UserDataComponentName="NivelDeAccesoTableAdapter">
             <MainSource>
