@@ -1030,6 +1030,8 @@ namespace Control_Bibliotecario {
             
             private global::System.Data.DataColumn columnEjemplares;
             
+            private global::System.Data.DataColumn columnAutor;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LibrosDataTable() {
@@ -1113,6 +1115,14 @@ namespace Control_Bibliotecario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AutorColumn {
+                get {
+                    return this.columnAutor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1148,7 +1158,7 @@ namespace Control_Bibliotecario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LibrosRow AddLibrosRow(string ISBN, string Titulo, int NumeroEdicion, string Año, string Tema, int Ejemplares) {
+            public LibrosRow AddLibrosRow(string ISBN, string Titulo, int NumeroEdicion, string Año, string Tema, int Ejemplares, string Autor) {
                 LibrosRow rowLibrosRow = ((LibrosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ISBN,
@@ -1156,7 +1166,8 @@ namespace Control_Bibliotecario {
                         NumeroEdicion,
                         Año,
                         Tema,
-                        Ejemplares};
+                        Ejemplares,
+                        Autor};
                 rowLibrosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLibrosRow);
                 return rowLibrosRow;
@@ -1192,6 +1203,7 @@ namespace Control_Bibliotecario {
                 this.columnAño = base.Columns["Año"];
                 this.columnTema = base.Columns["Tema"];
                 this.columnEjemplares = base.Columns["Ejemplares"];
+                this.columnAutor = base.Columns["Autor"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1209,6 +1221,8 @@ namespace Control_Bibliotecario {
                 base.Columns.Add(this.columnTema);
                 this.columnEjemplares = new global::System.Data.DataColumn("Ejemplares", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEjemplares);
+                this.columnAutor = new global::System.Data.DataColumn("Autor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAutor);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnISBN}, true));
                 this.columnISBN.AllowDBNull = false;
@@ -1217,6 +1231,7 @@ namespace Control_Bibliotecario {
                 this.columnTitulo.MaxLength = 255;
                 this.columnAño.MaxLength = 255;
                 this.columnTema.MaxLength = 255;
+                this.columnAutor.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2526,6 +2541,22 @@ namespace Control_Bibliotecario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Autor {
+                get {
+                    try {
+                        return ((string)(this[this.tableLibros.AutorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Autor\' de la tabla \'Libros\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLibros.AutorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTituloNull() {
                 return this.IsNull(this.tableLibros.TituloColumn);
             }
@@ -2582,6 +2613,18 @@ namespace Control_Bibliotecario {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetEjemplaresNull() {
                 this[this.tableLibros.EjemplaresColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAutorNull() {
+                return this.IsNull(this.tableLibros.AutorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAutorNull() {
+                this[this.tableLibros.AutorColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3979,10 +4022,11 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Año", "Año");
             tableMapping.ColumnMappings.Add("Tema", "Tema");
             tableMapping.ColumnMappings.Add("Ejemplares", "Ejemplares");
+            tableMapping.ColumnMappings.Add("Autor", "Autor");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Libros` WHERE ((`ISBN` = ?) AND ((? = 1 AND `Titulo` IS NULL) OR (`Titulo` = ?)) AND ((? = 1 AND `NumeroEdicion` IS NULL) OR (`NumeroEdicion` = ?)) AND ((? = 1 AND `Año` IS NULL) OR (`Año` = ?)) AND ((? = 1 AND `Tema` IS NULL) OR (`Tema` = ?)) AND ((? = 1 AND `Ejemplares` IS NULL) OR (`Ejemplares` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Libros` WHERE ((`ISBN` = ?) AND ((? = 1 AND `Titulo` IS NULL) OR (`Titulo` = ?)) AND ((? = 1 AND `NumeroEdicion` IS NULL) OR (`NumeroEdicion` = ?)) AND ((? = 1 AND `Año` IS NULL) OR (`Año` = ?)) AND ((? = 1 AND `Tema` IS NULL) OR (`Tema` = ?)) AND ((? = 1 AND `Ejemplares` IS NULL) OR (`Ejemplares` = ?)) AND ((? = 1 AND `Autor` IS NULL) OR (`Autor` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ISBN", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ISBN", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Titulo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Titulo", global::System.Data.DataRowVersion.Original, true, null));
@@ -3995,10 +4039,12 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Tema", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Tema", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Ejemplares", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Ejemplares", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Ejemplares", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Ejemplares", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Autor", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Autor", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Autor", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Autor", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `Libros` (`ISBN`, `Titulo`, `NumeroEdicion`, `Año`, `Tema`, `Ejemplar" +
-                "es`) VALUES (?, ?, ?, ?, ?, ?)";
+                "es`, `Autor`) VALUES (?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ISBN", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ISBN", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Titulo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Titulo", global::System.Data.DataRowVersion.Current, false, null));
@@ -4006,9 +4052,10 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Año", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Año", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Tema", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Tema", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Ejemplares", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Ejemplares", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Autor", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Autor", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Libros` SET `ISBN` = ?, `Titulo` = ?, `NumeroEdicion` = ?, `Año` = ?, `Tema` = ?, `Ejemplares` = ? WHERE ((`ISBN` = ?) AND ((? = 1 AND `Titulo` IS NULL) OR (`Titulo` = ?)) AND ((? = 1 AND `NumeroEdicion` IS NULL) OR (`NumeroEdicion` = ?)) AND ((? = 1 AND `Año` IS NULL) OR (`Año` = ?)) AND ((? = 1 AND `Tema` IS NULL) OR (`Tema` = ?)) AND ((? = 1 AND `Ejemplares` IS NULL) OR (`Ejemplares` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Libros` SET `ISBN` = ?, `Titulo` = ?, `NumeroEdicion` = ?, `Año` = ?, `Tema` = ?, `Ejemplares` = ?, `Autor` = ? WHERE ((`ISBN` = ?) AND ((? = 1 AND `Titulo` IS NULL) OR (`Titulo` = ?)) AND ((? = 1 AND `NumeroEdicion` IS NULL) OR (`NumeroEdicion` = ?)) AND ((? = 1 AND `Año` IS NULL) OR (`Año` = ?)) AND ((? = 1 AND `Tema` IS NULL) OR (`Tema` = ?)) AND ((? = 1 AND `Ejemplares` IS NULL) OR (`Ejemplares` = ?)) AND ((? = 1 AND `Autor` IS NULL) OR (`Autor` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ISBN", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ISBN", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Titulo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Titulo", global::System.Data.DataRowVersion.Current, false, null));
@@ -4016,6 +4063,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Año", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Año", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Tema", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Tema", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Ejemplares", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Ejemplares", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Autor", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Autor", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ISBN", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ISBN", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Titulo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Titulo", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Titulo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Titulo", global::System.Data.DataRowVersion.Original, false, null));
@@ -4027,6 +4075,8 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Tema", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Tema", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Ejemplares", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Ejemplares", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Ejemplares", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Ejemplares", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Autor", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Autor", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Autor", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Autor", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4042,7 +4092,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ISBN, Titulo, NumeroEdicion, Año, Tema, Ejemplares FROM Libros";
+            this._commandCollection[0].CommandText = "SELECT ISBN, Titulo, NumeroEdicion, Año, Tema, Ejemplares, Autor FROM Libros";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4103,7 +4153,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_ISBN, string Original_Titulo, global::System.Nullable<int> Original_NumeroEdicion, string Original_Año, string Original_Tema, global::System.Nullable<int> Original_Ejemplares) {
+        public virtual int Delete(string Original_ISBN, string Original_Titulo, global::System.Nullable<int> Original_NumeroEdicion, string Original_Año, string Original_Tema, global::System.Nullable<int> Original_Ejemplares, string Original_Autor) {
             if ((Original_ISBN == null)) {
                 throw new global::System.ArgumentNullException("Original_ISBN");
             }
@@ -4150,6 +4200,14 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
+            if ((Original_Autor == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Autor));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4170,7 +4228,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ISBN, string Titulo, global::System.Nullable<int> NumeroEdicion, string Año, string Tema, global::System.Nullable<int> Ejemplares) {
+        public virtual int Insert(string ISBN, string Titulo, global::System.Nullable<int> NumeroEdicion, string Año, string Tema, global::System.Nullable<int> Ejemplares, string Autor) {
             if ((ISBN == null)) {
                 throw new global::System.ArgumentNullException("ISBN");
             }
@@ -4207,6 +4265,12 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
+            if ((Autor == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Autor));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4227,7 +4291,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ISBN, string Titulo, global::System.Nullable<int> NumeroEdicion, string Año, string Tema, global::System.Nullable<int> Ejemplares, string Original_ISBN, string Original_Titulo, global::System.Nullable<int> Original_NumeroEdicion, string Original_Año, string Original_Tema, global::System.Nullable<int> Original_Ejemplares) {
+        public virtual int Update(string ISBN, string Titulo, global::System.Nullable<int> NumeroEdicion, string Año, string Tema, global::System.Nullable<int> Ejemplares, string Autor, string Original_ISBN, string Original_Titulo, global::System.Nullable<int> Original_NumeroEdicion, string Original_Año, string Original_Tema, global::System.Nullable<int> Original_Ejemplares, string Original_Autor) {
             if ((ISBN == null)) {
                 throw new global::System.ArgumentNullException("ISBN");
             }
@@ -4264,51 +4328,65 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
+            if ((Autor == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Autor));
+            }
             if ((Original_ISBN == null)) {
                 throw new global::System.ArgumentNullException("Original_ISBN");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_ISBN));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_ISBN));
             }
             if ((Original_Titulo == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Titulo));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Titulo));
             }
             if ((Original_NumeroEdicion.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_NumeroEdicion.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_NumeroEdicion.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             if ((Original_Año == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Año));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Año));
             }
             if ((Original_Tema == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Tema));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Tema));
             }
             if ((Original_Ejemplares.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Ejemplares.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_Ejemplares.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Autor == null)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Autor));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4330,8 +4408,8 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Titulo, global::System.Nullable<int> NumeroEdicion, string Año, string Tema, global::System.Nullable<int> Ejemplares, string Original_ISBN, string Original_Titulo, global::System.Nullable<int> Original_NumeroEdicion, string Original_Año, string Original_Tema, global::System.Nullable<int> Original_Ejemplares) {
-            return this.Update(Original_ISBN, Titulo, NumeroEdicion, Año, Tema, Ejemplares, Original_ISBN, Original_Titulo, Original_NumeroEdicion, Original_Año, Original_Tema, Original_Ejemplares);
+        public virtual int Update(string Titulo, global::System.Nullable<int> NumeroEdicion, string Año, string Tema, global::System.Nullable<int> Ejemplares, string Autor, string Original_ISBN, string Original_Titulo, global::System.Nullable<int> Original_NumeroEdicion, string Original_Año, string Original_Tema, global::System.Nullable<int> Original_Ejemplares, string Original_Autor) {
+            return this.Update(Original_ISBN, Titulo, NumeroEdicion, Año, Tema, Ejemplares, Autor, Original_ISBN, Original_Titulo, Original_NumeroEdicion, Original_Año, Original_Tema, Original_Ejemplares, Original_Autor);
         }
     }
     
