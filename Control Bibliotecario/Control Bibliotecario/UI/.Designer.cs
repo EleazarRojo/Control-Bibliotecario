@@ -34,8 +34,6 @@ namespace Control_Bibliotecario
             this.ingresoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.librosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bibliotecaDataSet = new Control_Bibliotecario.BibliotecaDataSet();
             this.titulo_Lbl = new System.Windows.Forms.Label();
             this.descripcion_Lbl = new System.Windows.Forms.Label();
             this.imagen_Lbl = new System.Windows.Forms.Label();
@@ -44,20 +42,22 @@ namespace Control_Bibliotecario
             this.buscar_Btn = new System.Windows.Forms.Button();
             this.tipoBusqueda_CB = new System.Windows.Forms.ComboBox();
             this.detalles_Btn = new System.Windows.Forms.Button();
-            this.librosTableAdapter = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.LibrosTableAdapter();
-            this.tableAdapterManager = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroEdicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.añoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.temaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ejemplaresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.librosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bibliotecaDataSet = new Control_Bibliotecario.BibliotecaDataSet();
+            this.librosTableAdapter = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.LibrosTableAdapter();
+            this.tableAdapterManager = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -70,7 +70,7 @@ namespace Control_Bibliotecario
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(794, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(957, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -93,16 +93,6 @@ namespace Control_Bibliotecario
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 22);
             this.ayudaToolStripMenuItem.Text = "&Ayuda";
-            // 
-            // librosBindingSource
-            // 
-            this.librosBindingSource.DataMember = "Libros";
-            this.librosBindingSource.DataSource = this.bibliotecaDataSet;
-            // 
-            // bibliotecaDataSet
-            // 
-            this.bibliotecaDataSet.DataSetName = "BibliotecaDataSet";
-            this.bibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // titulo_Lbl
             // 
@@ -157,14 +147,18 @@ namespace Control_Bibliotecario
             this.buscar_Btn.TabIndex = 13;
             this.buscar_Btn.Text = "Buscar";
             this.buscar_Btn.UseVisualStyleBackColor = true;
+            this.buscar_Btn.Click += new System.EventHandler(this.buscar_Btn_Click);
             // 
             // tipoBusqueda_CB
             // 
+            this.tipoBusqueda_CB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipoBusqueda_CB.FormattingEnabled = true;
             this.tipoBusqueda_CB.Items.AddRange(new object[] {
+            "ISBN",
             "Titulo",
             "Autor",
-            "Tema"});
+            "Tema",
+            "Año"});
             this.tipoBusqueda_CB.Location = new System.Drawing.Point(173, 499);
             this.tipoBusqueda_CB.Name = "tipoBusqueda_CB";
             this.tipoBusqueda_CB.Size = new System.Drawing.Size(108, 21);
@@ -180,21 +174,6 @@ namespace Control_Bibliotecario
             this.detalles_Btn.TabIndex = 15;
             this.detalles_Btn.Text = "Detalles";
             this.detalles_Btn.UseVisualStyleBackColor = true;
-            // 
-            // librosTableAdapter
-            // 
-            this.librosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AutoresTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ISBNAutorTableAdapter = null;
-            this.tableAdapterManager.LibrosTableAdapter = this.librosTableAdapter;
-            this.tableAdapterManager.NivelDeAccesoTableAdapter = null;
-            this.tableAdapterManager.PrestamosTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UsuariosTableAdapter = null;
             // 
             // dataGridView1
             // 
@@ -217,14 +196,6 @@ namespace Control_Bibliotecario
             this.dataGridView1.Size = new System.Drawing.Size(690, 365);
             this.dataGridView1.TabIndex = 16;
             // 
-            // iSBNDataGridViewTextBoxColumn
-            // 
-            this.iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
-            this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
-            this.iSBNDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
-            this.iSBNDataGridViewTextBoxColumn.Width = 150;
-            // 
             // Autor
             // 
             this.Autor.DataPropertyName = "Autor";
@@ -232,6 +203,14 @@ namespace Control_Bibliotecario
             this.Autor.MinimumWidth = 8;
             this.Autor.Name = "Autor";
             this.Autor.Width = 150;
+            // 
+            // iSBNDataGridViewTextBoxColumn
+            // 
+            this.iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
+            this.iSBNDataGridViewTextBoxColumn.Width = 150;
             // 
             // tituloDataGridViewTextBoxColumn
             // 
@@ -273,11 +252,36 @@ namespace Control_Bibliotecario
             this.ejemplaresDataGridViewTextBoxColumn.Name = "ejemplaresDataGridViewTextBoxColumn";
             this.ejemplaresDataGridViewTextBoxColumn.Width = 150;
             // 
+            // librosBindingSource
+            // 
+            this.librosBindingSource.DataMember = "Libros";
+            this.librosBindingSource.DataSource = this.bibliotecaDataSet;
+            // 
+            // bibliotecaDataSet
+            // 
+            this.bibliotecaDataSet.DataSetName = "BibliotecaDataSet";
+            this.bibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // librosTableAdapter
+            // 
+            this.librosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AutoresTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ISBNAutorTableAdapter = null;
+            this.tableAdapterManager.LibrosTableAdapter = this.librosTableAdapter;
+            this.tableAdapterManager.NivelDeAccesoTableAdapter = null;
+            this.tableAdapterManager.PrestamosTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsuariosTableAdapter = null;
+            // 
             // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 616);
+            this.ClientSize = new System.Drawing.Size(957, 616);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.detalles_Btn);
             this.Controls.Add(this.tipoBusqueda_CB);
@@ -294,9 +298,9 @@ namespace Control_Bibliotecario
             this.Load += new System.EventHandler(this.PrincipalForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
