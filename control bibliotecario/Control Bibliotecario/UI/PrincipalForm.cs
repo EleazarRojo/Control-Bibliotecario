@@ -39,6 +39,7 @@ namespace Control_Bibliotecario
                     break;
                 case 3:
                     librosTableAdapter.OrdenarPorTema(bibliotecaDataSet.Libros);
+               
                     break;
                 case 4:
                     librosTableAdapter.OrdenarPorAño(bibliotecaDataSet.Libros);
