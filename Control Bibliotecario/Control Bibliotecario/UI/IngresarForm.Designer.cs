@@ -44,18 +44,20 @@ namespace Control_Bibliotecario
             // idUsuario_tbx
             // 
             this.idUsuario_tbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idUsuario_tbx.Location = new System.Drawing.Point(141, 90);
+            this.idUsuario_tbx.Location = new System.Drawing.Point(212, 138);
+            this.idUsuario_tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.idUsuario_tbx.Name = "idUsuario_tbx";
-            this.idUsuario_tbx.Size = new System.Drawing.Size(128, 26);
+            this.idUsuario_tbx.Size = new System.Drawing.Size(190, 35);
             this.idUsuario_tbx.TabIndex = 5;
             // 
             // idUsario_lbl
             // 
             this.idUsario_lbl.AutoSize = true;
             this.idUsario_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idUsario_lbl.Location = new System.Drawing.Point(54, 94);
+            this.idUsario_lbl.Location = new System.Drawing.Point(81, 145);
+            this.idUsario_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.idUsario_lbl.Name = "idUsario_lbl";
-            this.idUsario_lbl.Size = new System.Drawing.Size(76, 19);
+            this.idUsario_lbl.Size = new System.Drawing.Size(118, 27);
             this.idUsario_lbl.TabIndex = 4;
             this.idUsario_lbl.Text = "Id Usuario:";
             // 
@@ -63,18 +65,20 @@ namespace Control_Bibliotecario
             // 
             this.Titulo_lbl.AutoSize = true;
             this.Titulo_lbl.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Titulo_lbl.Location = new System.Drawing.Point(148, 22);
+            this.Titulo_lbl.Location = new System.Drawing.Point(222, 34);
+            this.Titulo_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Titulo_lbl.Name = "Titulo_lbl";
-            this.Titulo_lbl.Size = new System.Drawing.Size(175, 31);
+            this.Titulo_lbl.Size = new System.Drawing.Size(262, 47);
             this.Titulo_lbl.TabIndex = 3;
             this.Titulo_lbl.Text = "Member Login";
             // 
             // acceder_btn
             // 
             this.acceder_btn.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.acceder_btn.Location = new System.Drawing.Point(408, 273);
+            this.acceder_btn.Location = new System.Drawing.Point(612, 420);
+            this.acceder_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.acceder_btn.Name = "acceder_btn";
-            this.acceder_btn.Size = new System.Drawing.Size(75, 23);
+            this.acceder_btn.Size = new System.Drawing.Size(112, 35);
             this.acceder_btn.TabIndex = 8;
             this.acceder_btn.Text = "Acceder";
             this.acceder_btn.UseVisualStyleBackColor = true;
@@ -84,9 +88,10 @@ namespace Control_Bibliotecario
             // 
             this.nombre_lbl.AutoSize = true;
             this.nombre_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombre_lbl.Location = new System.Drawing.Point(67, 143);
+            this.nombre_lbl.Location = new System.Drawing.Point(100, 220);
+            this.nombre_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nombre_lbl.Name = "nombre_lbl";
-            this.nombre_lbl.Size = new System.Drawing.Size(63, 19);
+            this.nombre_lbl.Size = new System.Drawing.Size(96, 27);
             this.nombre_lbl.TabIndex = 9;
             this.nombre_lbl.Text = "Nombre:";
             // 
@@ -94,9 +99,10 @@ namespace Control_Bibliotecario
             // 
             this.apellidoPaterno_lbl.AutoSize = true;
             this.apellidoPaterno_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.apellidoPaterno_lbl.Location = new System.Drawing.Point(16, 173);
+            this.apellidoPaterno_lbl.Location = new System.Drawing.Point(24, 266);
+            this.apellidoPaterno_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.apellidoPaterno_lbl.Name = "apellidoPaterno_lbl";
-            this.apellidoPaterno_lbl.Size = new System.Drawing.Size(114, 19);
+            this.apellidoPaterno_lbl.Size = new System.Drawing.Size(181, 27);
             this.apellidoPaterno_lbl.TabIndex = 10;
             this.apellidoPaterno_lbl.Text = "Apellido Paterno:";
             // 
@@ -104,41 +110,45 @@ namespace Control_Bibliotecario
             // 
             this.apellidoMaterno_lbl.AutoSize = true;
             this.apellidoMaterno_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.apellidoMaterno_lbl.Location = new System.Drawing.Point(16, 209);
+            this.apellidoMaterno_lbl.Location = new System.Drawing.Point(24, 322);
+            this.apellidoMaterno_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.apellidoMaterno_lbl.Name = "apellidoMaterno_lbl";
-            this.apellidoMaterno_lbl.Size = new System.Drawing.Size(119, 19);
+            this.apellidoMaterno_lbl.Size = new System.Drawing.Size(188, 27);
             this.apellidoMaterno_lbl.TabIndex = 11;
             this.apellidoMaterno_lbl.Text = "Apellido Materno:";
             // 
             // nombre_tbx
             // 
             this.nombre_tbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombre_tbx.Location = new System.Drawing.Point(141, 136);
+            this.nombre_tbx.Location = new System.Drawing.Point(212, 209);
+            this.nombre_tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nombre_tbx.Name = "nombre_tbx";
-            this.nombre_tbx.Size = new System.Drawing.Size(128, 26);
+            this.nombre_tbx.Size = new System.Drawing.Size(190, 35);
             this.nombre_tbx.TabIndex = 12;
             // 
             // apellidoPaterno_tbx
             // 
             this.apellidoPaterno_tbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.apellidoPaterno_tbx.Location = new System.Drawing.Point(141, 168);
+            this.apellidoPaterno_tbx.Location = new System.Drawing.Point(212, 258);
+            this.apellidoPaterno_tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.apellidoPaterno_tbx.Name = "apellidoPaterno_tbx";
-            this.apellidoPaterno_tbx.Size = new System.Drawing.Size(128, 26);
+            this.apellidoPaterno_tbx.Size = new System.Drawing.Size(190, 35);
             this.apellidoPaterno_tbx.TabIndex = 13;
             // 
             // apellidoMaterno_tbx
             // 
             this.apellidoMaterno_tbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.apellidoMaterno_tbx.Location = new System.Drawing.Point(141, 202);
+            this.apellidoMaterno_tbx.Location = new System.Drawing.Point(212, 311);
+            this.apellidoMaterno_tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.apellidoMaterno_tbx.Name = "apellidoMaterno_tbx";
-            this.apellidoMaterno_tbx.Size = new System.Drawing.Size(128, 26);
+            this.apellidoMaterno_tbx.Size = new System.Drawing.Size(190, 35);
             this.apellidoMaterno_tbx.TabIndex = 14;
             // 
             // IngresarForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 322);
+            this.ClientSize = new System.Drawing.Size(777, 495);
             this.Controls.Add(this.apellidoMaterno_tbx);
             this.Controls.Add(this.apellidoPaterno_tbx);
             this.Controls.Add(this.nombre_tbx);
@@ -149,9 +159,9 @@ namespace Control_Bibliotecario
             this.Controls.Add(this.idUsuario_tbx);
             this.Controls.Add(this.idUsario_lbl);
             this.Controls.Add(this.Titulo_lbl);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "IngresarForm";
             this.Text = "Ingresar";
-            this.Load += new System.EventHandler(this.IngresarForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

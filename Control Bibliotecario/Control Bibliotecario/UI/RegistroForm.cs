@@ -74,7 +74,7 @@ namespace Control_Bibliotecario
 
         private void button1_Click(object sender, EventArgs e)
         {
-            VistaUsuariosForm vistaUsuarios = new VistaUsuariosForm();
+            ControlDeUsuariosForm vistaUsuarios = new ControlDeUsuariosForm();
             vistaUsuarios.Show();
         }
     }

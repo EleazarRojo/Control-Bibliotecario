@@ -18,7 +18,8 @@ namespace Control_Bibliotecario
 {
     public partial class IngresarForm : Form      
     {
-       
+        public string Nombre { get; set; }
+        public string IdUsuario { get; set; }
 
         public IngresarForm()
         {
@@ -32,8 +33,17 @@ namespace Control_Bibliotecario
 
         private void acceder_btn_Click(object sender, System.EventArgs e)
         {
-         
-            
+            /*
+             * Agregar verificación previa del usario con su ID en el primer click
+             *Mostrar los datos del usuario
+             *Segundo click Realizar el ingreso
+             *Cerrar ventana Automaticamente
+             */
+
+            Nombre = nombre_tbx.Text;
+            IdUsuario = idUsuario_tbx.Text;
+            DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

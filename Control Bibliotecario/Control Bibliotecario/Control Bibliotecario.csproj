@@ -59,11 +59,29 @@
     <Compile Include="Modelos\Administrador.cs" />
     <Compile Include="Modelos\Bibliotecario.cs" />
     <Compile Include="Modelos\Usuario.cs" />
+    <Compile Include="UI\ControlDePrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ControlDePrestamos.Designer.cs">
+      <DependentUpon>ControlDePrestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HistorialDePrestamosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\HistorialDePrestamosForm.Designer.cs">
+      <DependentUpon>HistorialDePrestamosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\IngresarForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\IngresarForm.Designer.cs">
       <DependentUpon>IngresarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InventarioLibrosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\InventarioLibrosForm.Designer.cs">
+      <DependentUpon>InventarioLibrosForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\PrincipalForm.cs">
       <SubType>Form</SubType>
@@ -81,14 +99,23 @@
       <DependentUpon>RegistroForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Persona.cs" />
-    <Compile Include="UI\VistaUsuariosForm.cs">
+    <Compile Include="UI\ControlDeUsuariosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\VistaUsuariosForm.Designer.cs">
-      <DependentUpon>VistaUsuariosForm.cs</DependentUpon>
+    <Compile Include="UI\ControlDeUsuariosForm.Designer.cs">
+      <DependentUpon>ControlDeUsuariosForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\ControlDePrestamos.resx">
+      <DependentUpon>ControlDePrestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HistorialDePrestamosForm.resx">
+      <DependentUpon>HistorialDePrestamosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\IngresarForm.resx">
       <DependentUpon>IngresarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\InventarioLibrosForm.resx">
+      <DependentUpon>InventarioLibrosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PrincipalForm.resx">
       <DependentUpon>PrincipalForm.cs</DependentUpon>
@@ -105,8 +132,8 @@
     <EmbeddedResource Include="UI\RegistroForm.resx">
       <DependentUpon>RegistroForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\VistaUsuariosForm.resx">
-      <DependentUpon>VistaUsuariosForm.cs</DependentUpon>
+    <EmbeddedResource Include="UI\ControlDeUsuariosForm.resx">
+      <DependentUpon>ControlDeUsuariosForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="BibliotecaDataSet.xsc">
       <DependentUpon>BibliotecaDataSet.xsd</DependentUpon>

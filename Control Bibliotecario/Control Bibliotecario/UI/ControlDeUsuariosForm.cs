@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Control_Bibliotecario.UI
 {
-    public partial class VistaUsuariosForm : Form
+    public partial class ControlDeUsuariosForm : Form
     {
-        public VistaUsuariosForm()
+        public ControlDeUsuariosForm()
         {
             InitializeComponent();
         }

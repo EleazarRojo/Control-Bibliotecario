@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Control_Bibliotecario
 {
     public partial class PrincipalForm : Form
     {
+        public string IdUsuario { get; set; }
+
+        IngresarForm FormaIngreso;
+
         public PrincipalForm()
         {
             InitializeComponent();
+            usuarioToolStripMenuItem.Visible = false;
         }
 
         private void registrarseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -19,9 +25,24 @@ namespace Control_Bibliotecario
 
         private void ingresoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IngresarForm formaIngreso = new IngresarForm();
+        FormaIngreso = new IngresarForm();
 
-            formaIngreso.Show();
+            if(FormaIngreso.ShowDialog() == DialogResult.OK)
+            {
+                Label bienvenido_Lbl = new Label();
+                bienvenido_Lbl.AutoSize = true;
+                bienvenido_Lbl.Location = new Point(557, 49);
+                bienvenido_Lbl.Text = "Bienvenido " + FormaIngreso.Nombre;
+                usuarioToolStripMenuItem.Text = FormaIngreso.Nombre;
+                usuarioToolStripMenuItem.Visible = true;
+                ingresoToolStripMenuItem.Visible = false;
+                registrarseToolStripMenuItem.Visible = false;
+
+                IdUsuario = FormaIngreso.IdUsuario;
+
+                    
+                this.Controls.Add(bienvenido_Lbl);
+            }
         }
 
         private void tipoBusqueda_CB_SelectedIndexChanged(object sender, EventArgs e)
