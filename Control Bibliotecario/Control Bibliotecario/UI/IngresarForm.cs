@@ -106,7 +106,7 @@ namespace Control_Bibliotecario
             conexion.Close();
 
 
-            ;
+            
         }
     }
 }

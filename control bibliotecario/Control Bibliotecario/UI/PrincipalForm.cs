@@ -16,6 +16,7 @@ namespace Control_Bibliotecario
             usuarioToolStripMenuItem.Visible = false;
         }
 
+
         private void registrarseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegistroForm formaRegistro = new RegistroForm();
@@ -25,23 +26,57 @@ namespace Control_Bibliotecario
 
         private void ingresoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-        FormaIngreso = new IngresarForm();
+            FormaIngreso = new IngresarForm();
 
-            if(FormaIngreso.ShowDialog() == DialogResult.OK)
+            if (FormaIngreso.ShowDialog() == DialogResult.OK)
             {
-                Label bienvenido_Lbl = new Label();
-                bienvenido_Lbl.AutoSize = true;
-                bienvenido_Lbl.Location = new Point(557, 49);
-                bienvenido_Lbl.Text = "Bienvenido " + FormaIngreso.Nombre;
-                usuarioToolStripMenuItem.Text = FormaIngreso.Nombre;
-                usuarioToolStripMenuItem.Visible = true;
-                ingresoToolStripMenuItem.Visible = false;
-                registrarseToolStripMenuItem.Visible = false;
+                if (FormaIngreso.IdNivel == "003")
+                {
+                    Label bienvenido_Lbl = new Label();
+                    bienvenido_Lbl.AutoSize = true;
+                    bienvenido_Lbl.Location = new Point(557, 49);
+                    bienvenido_Lbl.Text = "Bienvenido " + FormaIngreso.Nombre;
+                    usuarioToolStripMenuItem.Text = FormaIngreso.Nombre;
+                    usuarioToolStripMenuItem.Visible = true;
+                    ingresoToolStripMenuItem.Visible = false;
+                    registrarseToolStripMenuItem.Visible = false;
+                    this.Controls.Add(bienvenido_Lbl);
+                }
+                else
+                {
+                    if(FormaIngreso.IdNivel == "010")
+                    {
+                        ingresoToolStripMenuItem.Visible = false;
+                        registrarseToolStripMenuItem.Visible = false;
+                         prestamosToolStripMenuItem.Visible = false;
+                        usuarioToolStripMenuItem.Visible = true;
+                        controlDeUsuariosToolStripMenuItem.Visible = true;
+                        controlDePrestamosToolStripMenuItem.Visible = true;
+                        inventarioDeLibrosToolStripMenuItem.Visible = true;
+                       
+
+                    }
+                    else
+                    {
+                        if(FormaIngreso.IdNivel == "020")
+                        {
+                            ingresoToolStripMenuItem.Visible = false;
+                            registrarseToolStripMenuItem.Visible = false;
+                            prestamosToolStripMenuItem.Visible = false;
+                            usuarioToolStripMenuItem.Visible = true;
+                            controlDePrestamosToolStripMenuItem.Visible = true;
+                            inventarioDeLibrosToolStripMenuItem.Visible = true;
+                        }
+                    }
+                        
+                }
+                
+
 
                 IdUsuario = FormaIngreso.IdUsuario;
 
-                    
-                this.Controls.Add(bienvenido_Lbl);
+
+                
             }
         }
 
@@ -60,7 +95,7 @@ namespace Control_Bibliotecario
                     break;
                 case 3:
                     librosTableAdapter.OrdenarPorTema(bibliotecaDataSet.Libros);
-               
+
                     break;
                 case 4:
                     librosTableAdapter.OrdenarPorAño(bibliotecaDataSet.Libros);
@@ -77,7 +112,7 @@ namespace Control_Bibliotecario
 
         private void buscar_Btn_Click(object sender, EventArgs e)
         {
-            if(tipoBusqueda_CB.SelectedIndex >= 0)
+            if (tipoBusqueda_CB.SelectedIndex >= 0)
             {
                 switch (tipoBusqueda_CB.SelectedIndex)
                 {
