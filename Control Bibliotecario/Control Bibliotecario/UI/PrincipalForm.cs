@@ -16,6 +16,7 @@ namespace Control_Bibliotecario
             usuarioToolStripMenuItem.Visible = false;
         }
 
+
         private void registrarseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegistroForm formaRegistro = new RegistroForm();
@@ -53,7 +54,6 @@ namespace Control_Bibliotecario
                         controlDePrestamosToolStripMenuItem.Visible = true;
                         inventarioDeLibrosToolStripMenuItem.Visible = true;
                        
-
 
                     }
                     else
