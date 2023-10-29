@@ -94,6 +94,7 @@ namespace Control_Bibliotecario
             this.nombre_lbl.Size = new System.Drawing.Size(96, 27);
             this.nombre_lbl.TabIndex = 9;
             this.nombre_lbl.Text = "Nombre:";
+            this.nombre_lbl.Visible = false;
             // 
             // apellidoPaterno_lbl
             // 
@@ -105,6 +106,7 @@ namespace Control_Bibliotecario
             this.apellidoPaterno_lbl.Size = new System.Drawing.Size(181, 27);
             this.apellidoPaterno_lbl.TabIndex = 10;
             this.apellidoPaterno_lbl.Text = "Apellido Paterno:";
+            this.apellidoPaterno_lbl.Visible = false;
             // 
             // apellidoMaterno_lbl
             // 
@@ -116,6 +118,7 @@ namespace Control_Bibliotecario
             this.apellidoMaterno_lbl.Size = new System.Drawing.Size(188, 27);
             this.apellidoMaterno_lbl.TabIndex = 11;
             this.apellidoMaterno_lbl.Text = "Apellido Materno:";
+            this.apellidoMaterno_lbl.Visible = false;
             // 
             // nombre_tbx
             // 
@@ -125,6 +128,7 @@ namespace Control_Bibliotecario
             this.nombre_tbx.Name = "nombre_tbx";
             this.nombre_tbx.Size = new System.Drawing.Size(190, 35);
             this.nombre_tbx.TabIndex = 12;
+            this.nombre_tbx.Visible = false;
             // 
             // apellidoPaterno_tbx
             // 
@@ -134,6 +138,7 @@ namespace Control_Bibliotecario
             this.apellidoPaterno_tbx.Name = "apellidoPaterno_tbx";
             this.apellidoPaterno_tbx.Size = new System.Drawing.Size(190, 35);
             this.apellidoPaterno_tbx.TabIndex = 13;
+            this.apellidoPaterno_tbx.Visible = false;
             // 
             // apellidoMaterno_tbx
             // 
@@ -143,6 +148,7 @@ namespace Control_Bibliotecario
             this.apellidoMaterno_tbx.Name = "apellidoMaterno_tbx";
             this.apellidoMaterno_tbx.Size = new System.Drawing.Size(190, 35);
             this.apellidoMaterno_tbx.TabIndex = 14;
+            this.apellidoMaterno_tbx.Visible = false;
             // 
             // IngresarForm
             // 

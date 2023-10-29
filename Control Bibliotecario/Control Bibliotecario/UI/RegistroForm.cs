@@ -10,8 +10,8 @@ namespace Control_Bibliotecario
 {
     public partial class RegistroForm : Form
     {
-       
-        
+
+
         public RegistroForm()
         {
             InitializeComponent();
@@ -24,14 +24,14 @@ namespace Control_Bibliotecario
             usuario.Nombre = nombre_Tbx.Text.ToUpper();
             usuario.ApellidoPaterno = apellidoPaterno_Tbx.Text.ToUpper();
             usuario.ApellidoMaterno = ApellidoMaterno_Tbx.Text.ToUpper();
-            usuario.Genero = genero_Cbx.SelectedItem.ToString().ToUpper() ;
+            usuario.Genero = genero_Cbx.SelectedItem.ToString().ToUpper();
             usuario.DireccionParticular = direccion_Tbx.Text.ToUpper();
             usuario.FechaDeNacimiento = fechaDeNacimiento_Calendar.SelectionStart;
             usuario.IdDeNivel = "003";
             usuario.Permisos = "Usuario".ToUpper();
             usuario.Edad = fechaDeNacimiento_Calendar.TodayDate.Year - usuario.FechaDeNacimiento.Year;
             usuario.CrearRFC();
-            
+
 
             System.Data.OleDb.OleDbConnection oleDbConnection = new System.Data.OleDb.OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0.;Data Source=|DataDirectory|\\BD\\Biblioteca.mdb");
             /*
@@ -49,10 +49,10 @@ namespace Control_Bibliotecario
              */
 
             string lineComando = "insert into Usuarios (RFC, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno, FechaDeNacimiento, Edad, Genero, DireccionParticular) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(lineComando,oleDbConnection);
-           
-            cmd.Parameters.AddWithValue("IdDeNivel", usuario.IdDeNivel);
+            System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(lineComando, oleDbConnection);
+
             cmd.Parameters.AddWithValue("RFC", usuario.RFC);
+            cmd.Parameters.AddWithValue("IdDeNivel", usuario.IdDeNivel);
             cmd.Parameters.AddWithValue("Nombre", usuario.Nombre);
             cmd.Parameters.AddWithValue("ApellidoPaterno", usuario.ApellidoPaterno);
             cmd.Parameters.AddWithValue("ApellidoMaterno", usuario.ApellidoMaterno);

@@ -64,11 +64,29 @@ namespace Control_Bibliotecario
                     IdUsuario = idUsuario_tbx.Text;
                     IdNivel = "003";
 
+                    nombre_lbl.Visible = true;
+                    nombre_tbx.Visible = true;
+                    apellidoPaterno_lbl.Visible = true;
+                    apellidoPaterno_tbx.Visible = true;
+                    apellidoMaterno_tbx.Visible = true;
+                    apellidoMaterno_lbl.Visible = true;
+                    apellidoMaterno_tbx.Visible = true;
+
+
+
+                      
                     if (acceso)
                     {
                     IdUsuario = idUsuario_tbx.Text;
                     DialogResult = DialogResult.OK;
-                    this.Close();
+
+                        nombre_lbl.Visible = false;
+                        nombre_tbx.Visible = false;
+                        apellidoPaterno_lbl.Visible = false;
+                        apellidoMaterno_tbx.Visible = false;
+                        apellidoMaterno_lbl.Visible = false;
+                        apellidoMaterno_tbx.Visible = false;
+                        this.Close();
                     }
 
                     acceso = true;
