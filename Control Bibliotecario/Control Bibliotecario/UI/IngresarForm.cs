@@ -1,4 +1,4 @@
-﻿ 
+﻿
 using System.Windows.Forms;
 using System.Data;
 using System.Data.OleDb;
@@ -16,10 +16,14 @@ using Control_Bibliotecario.UI;
 
 namespace Control_Bibliotecario
 {
-    public partial class IngresarForm : Form      
+    public partial class IngresarForm : Form
     {
         public string Nombre { get; set; }
         public string IdUsuario { get; set; }
+
+        public string IdNivel { get; set; }
+
+        public bool acceso = false;
 
         public IngresarForm()
         {
@@ -28,7 +32,7 @@ namespace Control_Bibliotecario
 
         private void IngresarForm_Load(object sender, System.EventArgs e)
         {
-           
+
         }
 
         private void acceder_btn_Click(object sender, System.EventArgs e)
@@ -39,11 +43,70 @@ namespace Control_Bibliotecario
              *Segundo click Realizar el ingreso
              *Cerrar ventana Automaticamente
              */
+            string direccion = "Provider=Microsoft.Jet.OLEDB.4.0.;Data Source=|DataDirectory|\\BD\\Biblioteca.mdb";
+            string consulta = "SELECT * FROM Usuarios WHERE IdUsuario LIKE " + idUsuario_tbx.Text;
+            
+            System.Data.OleDb.OleDbConnection conexion = new OleDbConnection();
+            conexion.ConnectionString = direccion;
+            conexion.Open();
+            DataSet ds = new DataSet();
+            OleDbDataAdapter adaptador = new OleDbDataAdapter(consulta, conexion);
+            adaptador.Fill(ds);
+            DataTable tablaDatos = ds.Tables[0];
+            if (tablaDatos.Rows.Count > 0)
+            {
+                if (tablaDatos.Rows[0].ItemArray[2].ToString() == "003")
+                {
+                    nombre_tbx.Text = tablaDatos.Rows[0].ItemArray[3].ToString(); 
+                    apellidoPaterno_tbx.Text  = tablaDatos.Rows[0].ItemArray[4].ToString();
+                    apellidoMaterno_tbx.Text = tablaDatos.Rows[0].ItemArray[5].ToString();
+                    Nombre = nombre_tbx.Text;
+                    IdUsuario = idUsuario_tbx.Text;
+                    IdNivel = "003";
 
-            Nombre = nombre_tbx.Text;
-            IdUsuario = idUsuario_tbx.Text;
-            DialogResult = DialogResult.OK;
-            this.Close();
+                    if (acceso)
+                    {
+                    IdUsuario = idUsuario_tbx.Text;
+                    DialogResult = DialogResult.OK;
+                    this.Close();
+                    }
+
+                    acceso = true;
+                    
+                }
+                else
+                {
+                    if (tablaDatos.Rows[0].ItemArray[2].ToString() == "010")
+                    {
+                        Nombre = nombre_tbx.Text;
+                        IdUsuario = idUsuario_tbx.Text;
+                        IdNivel = "010";
+                        IngresoAdmin adminForma = new IngresoAdmin();
+                        adminForma.Show();
+
+                    }
+                    else
+                    {
+                        if (tablaDatos.Rows[0].ItemArray[2].ToString() == "020")
+                        {
+                            Nombre = nombre_tbx.Text;
+                            IdUsuario = idUsuario_tbx.Text;
+                            IdNivel = "020";
+                            IngresoAdmin adminForma = new IngresoAdmin();
+                            adminForma.Show();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Usuario No registrado");
+            }
+
+            conexion.Close();
+
+
+            ;
         }
     }
 }

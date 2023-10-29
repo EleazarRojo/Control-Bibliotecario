@@ -4,14 +4,14 @@
 
     using System;
 
-     public class Persona
+    public class Persona
 
     {
         public string RFC { get; set; }
 
         public string IdUsuario { get; set; }
 
-        public string IdDeNivel { get; set; } 
+        public string IdDeNivel { get; set; }
 
         public string Permisos { get; set; }
 
@@ -49,17 +49,31 @@
 
             if (FechaDeNacimiento.Month < 10)
             {
-                RFC = RFC + yearString[2].ToString() + yearString[3].ToString() + 0.ToString() + FechaDeNacimiento.Month.ToString() + FechaDeNacimiento.Day.ToString();
+                if (FechaDeNacimiento.Day >= 10)
+                {
+                    RFC = RFC + yearString[2].ToString() + yearString[3].ToString() + 0.ToString() + FechaDeNacimiento.Month.ToString() + FechaDeNacimiento.Day.ToString();
+                }
+                else
+                {
+
+                    RFC = RFC + yearString[2].ToString() + yearString[3].ToString() + 0.ToString() + FechaDeNacimiento.Month.ToString() + "0" + FechaDeNacimiento.Day.ToString();
+                }
+
             }
             else
             {
-                RFC = RFC + yearString[2].ToString() + yearString[3].ToString() + FechaDeNacimiento.Month.ToString() + FechaDeNacimiento.Day.ToString();
+                if (FechaDeNacimiento.Day >= 10)
+                {
+                    RFC = RFC + yearString[2].ToString() + yearString[3].ToString() + FechaDeNacimiento.Month.ToString() + FechaDeNacimiento.Day.ToString();
+
+                }
+                RFC = RFC + yearString[2].ToString() + yearString[3].ToString() + FechaDeNacimiento.Month.ToString() + "0" + FechaDeNacimiento.Day.ToString();
             }
 
 
         }
 
-      
+
 
 
 

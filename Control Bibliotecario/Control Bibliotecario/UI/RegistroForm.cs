@@ -46,14 +46,13 @@ namespace Control_Bibliotecario
             /*
              * TO DO: Valiadcion de Registro de Usuario ya existentes
              * Utilizar acción SELECT para obtener lo datos
-             * Investigar funcionalidad de DataReader ?
              */
 
             string lineComando = "insert into Usuarios (RFC, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno, FechaDeNacimiento, Edad, Genero, DireccionParticular) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(lineComando,oleDbConnection);
-
-            cmd.Parameters.AddWithValue("RFC", usuario.RFC);
+           
             cmd.Parameters.AddWithValue("IdDeNivel", usuario.IdDeNivel);
+            cmd.Parameters.AddWithValue("RFC", usuario.RFC);
             cmd.Parameters.AddWithValue("Nombre", usuario.Nombre);
             cmd.Parameters.AddWithValue("ApellidoPaterno", usuario.ApellidoPaterno);
             cmd.Parameters.AddWithValue("ApellidoMaterno", usuario.ApellidoMaterno);
@@ -61,9 +60,6 @@ namespace Control_Bibliotecario
             cmd.Parameters.AddWithValue("Edad", usuario.Edad);
             cmd.Parameters.AddWithValue("Genero", usuario.Genero);
             cmd.Parameters.AddWithValue("DireccionParticular", usuario.DireccionParticular);
-
-
-
 
             cmd.ExecuteNonQuery();
             oleDbConnection.Close();

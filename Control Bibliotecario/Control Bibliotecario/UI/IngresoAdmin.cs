@@ -10,11 +10,10 @@ using System.Windows.Forms;
 
 namespace Control_Bibliotecario.UI
 {
-    public partial class HistorialDePrestamosForm : Form
+    public partial class IngresoAdmin : Form
     {
-        public HistorialDePrestamosForm(string idUsuario)
+        public IngresoAdmin()
         {
-
             InitializeComponent();
         }
     }

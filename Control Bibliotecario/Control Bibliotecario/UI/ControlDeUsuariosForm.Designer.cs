@@ -32,19 +32,6 @@ namespace Control_Bibliotecario.UI
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bibliotecaDataSet = new Control_Bibliotecario.BibliotecaDataSet();
-            this.usuariosTableAdapter = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.UsuariosTableAdapter();
-            this.tableAdapterManager = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager();
-            this.buscar_Btn = new System.Windows.Forms.Button();
-            this.eliminar_Btn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.registrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoDeBusqueda_Lbl = new System.Windows.Forms.Label();
-            this.tipoDeBusqueda_Cbx = new System.Windows.Forms.ComboBox();
             this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rFCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDeNivelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +43,19 @@ namespace Control_Bibliotecario.UI
             this.generoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccionParticularDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bibliotecaDataSet = new Control_Bibliotecario.BibliotecaDataSet();
+            this.usuariosTableAdapter = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.UsuariosTableAdapter();
+            this.tableAdapterManager = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager();
+            this.buscar_Btn = new System.Windows.Forms.Button();
+            this.eliminar_Btn = new System.Windows.Forms.Button();
+            this.buscar_Tbx = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.registrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDeBusqueda_Lbl = new System.Windows.Forms.Label();
+            this.tipoDeBusqueda_Cbx = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).BeginInit();
@@ -85,116 +85,6 @@ namespace Control_Bibliotecario.UI
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1414, 783);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "Usuarios";
-            this.usuariosBindingSource.DataSource = this.bibliotecaDataSet;
-            // 
-            // bibliotecaDataSet
-            // 
-            this.bibliotecaDataSet.DataSetName = "BibliotecaDataSet";
-            this.bibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuariosTableAdapter
-            // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AutoresTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ISBNAutorTableAdapter = null;
-            this.tableAdapterManager.LibrosTableAdapter = null;
-            this.tableAdapterManager.NivelDeAccesoTableAdapter = null;
-            this.tableAdapterManager.PrestamosTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UsuariosTableAdapter = this.usuariosTableAdapter;
-            // 
-            // buscar_Btn
-            // 
-            this.buscar_Btn.Location = new System.Drawing.Point(59, 885);
-            this.buscar_Btn.Name = "buscar_Btn";
-            this.buscar_Btn.Size = new System.Drawing.Size(114, 49);
-            this.buscar_Btn.TabIndex = 1;
-            this.buscar_Btn.Text = "Buscar";
-            this.buscar_Btn.UseVisualStyleBackColor = true;
-            // 
-            // eliminar_Btn
-            // 
-            this.eliminar_Btn.Enabled = false;
-            this.eliminar_Btn.Location = new System.Drawing.Point(1292, 885);
-            this.eliminar_Btn.Name = "eliminar_Btn";
-            this.eliminar_Btn.Size = new System.Drawing.Size(174, 49);
-            this.eliminar_Btn.TabIndex = 2;
-            this.eliminar_Btn.Text = "Eliminar Usuario";
-            this.eliminar_Btn.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(179, 895);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(294, 30);
-            this.textBox1.TabIndex = 4;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 33);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1478, 24);
-            this.menuStrip1.TabIndex = 6;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // menuStrip2
-            // 
-            this.menuStrip2.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarToolStripMenuItem,
-            this.modificarUsuarioToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1478, 33);
-            this.menuStrip2.TabIndex = 7;
-            this.menuStrip2.Text = "menuStrip2";
-            // 
-            // registrarToolStripMenuItem
-            // 
-            this.registrarToolStripMenuItem.Name = "registrarToolStripMenuItem";
-            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(162, 29);
-            this.registrarToolStripMenuItem.Text = "Registrar Usuario";
-            // 
-            // modificarUsuarioToolStripMenuItem
-            // 
-            this.modificarUsuarioToolStripMenuItem.Name = "modificarUsuarioToolStripMenuItem";
-            this.modificarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(173, 29);
-            this.modificarUsuarioToolStripMenuItem.Text = "Modificar Usuario ";
-            // 
-            // tipoDeBusqueda_Lbl
-            // 
-            this.tipoDeBusqueda_Lbl.AutoSize = true;
-            this.tipoDeBusqueda_Lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tipoDeBusqueda_Lbl.Location = new System.Drawing.Point(54, 841);
-            this.tipoDeBusqueda_Lbl.Name = "tipoDeBusqueda_Lbl";
-            this.tipoDeBusqueda_Lbl.Size = new System.Drawing.Size(193, 27);
-            this.tipoDeBusqueda_Lbl.TabIndex = 8;
-            this.tipoDeBusqueda_Lbl.Text = "Tipo de búsqueda: ";
-            // 
-            // tipoDeBusqueda_Cbx
-            // 
-            this.tipoDeBusqueda_Cbx.FormattingEnabled = true;
-            this.tipoDeBusqueda_Cbx.Items.AddRange(new object[] {
-            "IdUsuario",
-            "RFC",
-            "Eliminación "});
-            this.tipoDeBusqueda_Cbx.Location = new System.Drawing.Point(241, 843);
-            this.tipoDeBusqueda_Cbx.Name = "tipoDeBusqueda_Cbx";
-            this.tipoDeBusqueda_Cbx.Size = new System.Drawing.Size(240, 28);
-            this.tipoDeBusqueda_Cbx.TabIndex = 9;
-            this.tipoDeBusqueda_Cbx.Text = "Seleccione tipo de búsqueda";
             // 
             // idUsuarioDataGridViewTextBoxColumn
             // 
@@ -287,6 +177,117 @@ namespace Control_Bibliotecario.UI
             this.Prestamo.Name = "Prestamo";
             this.Prestamo.Width = 150;
             // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "Usuarios";
+            this.usuariosBindingSource.DataSource = this.bibliotecaDataSet;
+            // 
+            // bibliotecaDataSet
+            // 
+            this.bibliotecaDataSet.DataSetName = "BibliotecaDataSet";
+            this.bibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usuariosTableAdapter
+            // 
+            this.usuariosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AutoresTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ISBNAutorTableAdapter = null;
+            this.tableAdapterManager.LibrosTableAdapter = null;
+            this.tableAdapterManager.NivelDeAccesoTableAdapter = null;
+            this.tableAdapterManager.PrestamosTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsuariosTableAdapter = this.usuariosTableAdapter;
+            // 
+            // buscar_Btn
+            // 
+            this.buscar_Btn.Location = new System.Drawing.Point(59, 885);
+            this.buscar_Btn.Name = "buscar_Btn";
+            this.buscar_Btn.Size = new System.Drawing.Size(114, 49);
+            this.buscar_Btn.TabIndex = 1;
+            this.buscar_Btn.Text = "Buscar";
+            this.buscar_Btn.UseVisualStyleBackColor = true;
+            this.buscar_Btn.Click += new System.EventHandler(this.buscar_Btn_Click);
+            // 
+            // eliminar_Btn
+            // 
+            this.eliminar_Btn.Enabled = false;
+            this.eliminar_Btn.Location = new System.Drawing.Point(1292, 885);
+            this.eliminar_Btn.Name = "eliminar_Btn";
+            this.eliminar_Btn.Size = new System.Drawing.Size(174, 49);
+            this.eliminar_Btn.TabIndex = 2;
+            this.eliminar_Btn.Text = "Eliminar Usuario";
+            this.eliminar_Btn.UseVisualStyleBackColor = true;
+            // 
+            // buscar_Tbx
+            // 
+            this.buscar_Tbx.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscar_Tbx.Location = new System.Drawing.Point(179, 895);
+            this.buscar_Tbx.Name = "buscar_Tbx";
+            this.buscar_Tbx.Size = new System.Drawing.Size(294, 30);
+            this.buscar_Tbx.TabIndex = 4;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 33);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1478, 24);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarToolStripMenuItem,
+            this.modificarUsuarioToolStripMenuItem});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(1478, 33);
+            this.menuStrip2.TabIndex = 7;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // registrarToolStripMenuItem
+            // 
+            this.registrarToolStripMenuItem.Name = "registrarToolStripMenuItem";
+            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(162, 29);
+            this.registrarToolStripMenuItem.Text = "Registrar Usuario";
+            // 
+            // modificarUsuarioToolStripMenuItem
+            // 
+            this.modificarUsuarioToolStripMenuItem.Name = "modificarUsuarioToolStripMenuItem";
+            this.modificarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(173, 29);
+            this.modificarUsuarioToolStripMenuItem.Text = "Modificar Usuario ";
+            // 
+            // tipoDeBusqueda_Lbl
+            // 
+            this.tipoDeBusqueda_Lbl.AutoSize = true;
+            this.tipoDeBusqueda_Lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tipoDeBusqueda_Lbl.Location = new System.Drawing.Point(54, 841);
+            this.tipoDeBusqueda_Lbl.Name = "tipoDeBusqueda_Lbl";
+            this.tipoDeBusqueda_Lbl.Size = new System.Drawing.Size(193, 27);
+            this.tipoDeBusqueda_Lbl.TabIndex = 8;
+            this.tipoDeBusqueda_Lbl.Text = "Tipo de búsqueda: ";
+            // 
+            // tipoDeBusqueda_Cbx
+            // 
+            this.tipoDeBusqueda_Cbx.FormattingEnabled = true;
+            this.tipoDeBusqueda_Cbx.Items.AddRange(new object[] {
+            "IdUsuario",
+            "RFC",
+            "Eliminación "});
+            this.tipoDeBusqueda_Cbx.Location = new System.Drawing.Point(241, 843);
+            this.tipoDeBusqueda_Cbx.Name = "tipoDeBusqueda_Cbx";
+            this.tipoDeBusqueda_Cbx.Size = new System.Drawing.Size(240, 28);
+            this.tipoDeBusqueda_Cbx.TabIndex = 9;
+            this.tipoDeBusqueda_Cbx.Text = "Seleccione tipo de búsqueda";
+            // 
             // ControlDeUsuariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -294,7 +295,7 @@ namespace Control_Bibliotecario.UI
             this.ClientSize = new System.Drawing.Size(1478, 982);
             this.Controls.Add(this.tipoDeBusqueda_Cbx);
             this.Controls.Add(this.tipoDeBusqueda_Lbl);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.buscar_Tbx);
             this.Controls.Add(this.eliminar_Btn);
             this.Controls.Add(this.buscar_Btn);
             this.Controls.Add(this.dataGridView1);
@@ -323,7 +324,7 @@ namespace Control_Bibliotecario.UI
         private BibliotecaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Button buscar_Btn;
         private System.Windows.Forms.Button eliminar_Btn;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox buscar_Tbx;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem registrarToolStripMenuItem;

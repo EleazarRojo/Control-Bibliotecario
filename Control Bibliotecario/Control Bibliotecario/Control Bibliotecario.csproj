@@ -77,6 +77,12 @@
     <Compile Include="UI\IngresarForm.Designer.cs">
       <DependentUpon>IngresarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\IngresoAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\IngresoAdmin.Designer.cs">
+      <DependentUpon>IngresoAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\InventarioLibrosForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -33,6 +33,12 @@ namespace Control_Bibliotecario
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ingresoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlDePrestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventarioDeLibrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.titulo_Lbl = new System.Windows.Forms.Label();
             this.descripcion_Lbl = new System.Windows.Forms.Label();
@@ -54,9 +60,6 @@ namespace Control_Bibliotecario
             this.bibliotecaDataSet = new Control_Bibliotecario.BibliotecaDataSet();
             this.librosTableAdapter = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.LibrosTableAdapter();
             this.tableAdapterManager = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager();
-            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).BeginInit();
@@ -71,32 +74,76 @@ namespace Control_Bibliotecario
             this.ingresoToolStripMenuItem,
             this.registrarseToolStripMenuItem,
             this.usuarioToolStripMenuItem,
+            this.controlDeUsuariosToolStripMenuItem,
+            this.controlDePrestamosToolStripMenuItem,
+            this.inventarioDeLibrosToolStripMenuItem,
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1324, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1450, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // ingresoToolStripMenuItem
             // 
             this.ingresoToolStripMenuItem.Name = "ingresoToolStripMenuItem";
-            this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(92, 29);
+            this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(92, 50);
             this.ingresoToolStripMenuItem.Text = "&Ingresar";
             this.ingresoToolStripMenuItem.Click += new System.EventHandler(this.ingresoToolStripMenuItem_Click);
             // 
             // registrarseToolStripMenuItem
             // 
             this.registrarseToolStripMenuItem.Name = "registrarseToolStripMenuItem";
-            this.registrarseToolStripMenuItem.Size = new System.Drawing.Size(114, 29);
+            this.registrarseToolStripMenuItem.Size = new System.Drawing.Size(114, 50);
             this.registrarseToolStripMenuItem.Text = "&Registrarse";
             this.registrarseToolStripMenuItem.Click += new System.EventHandler(this.registrarseToolStripMenuItem_Click);
+            // 
+            // usuarioToolStripMenuItem
+            // 
+            this.usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.prestamosToolStripMenuItem,
+            this.cerrarSesiónToolStripMenuItem});
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(88, 50);
+            this.usuarioToolStripMenuItem.Text = "Usuario";
+            // 
+            // prestamosToolStripMenuItem
+            // 
+            this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
+            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(223, 34);
+            this.prestamosToolStripMenuItem.Text = "Prestamos";
+            // 
+            // cerrarSesiónToolStripMenuItem
+            // 
+            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(223, 34);
+            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión ";
+            // 
+            // controlDeUsuariosToolStripMenuItem
+            // 
+            this.controlDeUsuariosToolStripMenuItem.Name = "controlDeUsuariosToolStripMenuItem";
+            this.controlDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(185, 50);
+            this.controlDeUsuariosToolStripMenuItem.Text = "Control de Usuarios";
+            this.controlDeUsuariosToolStripMenuItem.Visible = false;
+            // 
+            // controlDePrestamosToolStripMenuItem
+            // 
+            this.controlDePrestamosToolStripMenuItem.Name = "controlDePrestamosToolStripMenuItem";
+            this.controlDePrestamosToolStripMenuItem.Size = new System.Drawing.Size(200, 29);
+            this.controlDePrestamosToolStripMenuItem.Text = "Control de Prestamos";
+            this.controlDePrestamosToolStripMenuItem.Visible = false;
+            // 
+            // inventarioDeLibrosToolStripMenuItem
+            // 
+            this.inventarioDeLibrosToolStripMenuItem.Name = "inventarioDeLibrosToolStripMenuItem";
+            this.inventarioDeLibrosToolStripMenuItem.Size = new System.Drawing.Size(185, 29);
+            this.inventarioDeLibrosToolStripMenuItem.Text = "Inventario de Libros";
+            this.inventarioDeLibrosToolStripMenuItem.Visible = false;
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(79, 29);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(79, 50);
             this.ayudaToolStripMenuItem.Text = "&Ayuda";
             // 
             // titulo_Lbl
@@ -289,32 +336,11 @@ namespace Control_Bibliotecario
             this.tableAdapterManager.UpdateOrder = Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuariosTableAdapter = null;
             // 
-            // usuarioToolStripMenuItem
-            // 
-            this.usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.prestamosToolStripMenuItem,
-            this.cerrarSesiónToolStripMenuItem});
-            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
-            this.usuarioToolStripMenuItem.Text = "Usuario";
-            // 
-            // prestamosToolStripMenuItem
-            // 
-            this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
-            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.prestamosToolStripMenuItem.Text = "Prestamos";
-            // 
-            // cerrarSesiónToolStripMenuItem
-            // 
-            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión ";
-            // 
             // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1324, 943);
+            this.ClientSize = new System.Drawing.Size(1450, 1459);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.detalles_Btn);
             this.Controls.Add(this.tipoBusqueda_CB);
@@ -369,6 +395,9 @@ namespace Control_Bibliotecario
         private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prestamosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem controlDeUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem controlDePrestamosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inventarioDeLibrosToolStripMenuItem;
     }
 }
 
