@@ -12,9 +12,14 @@ namespace Control_Bibliotecario.UI
 {
     public partial class IngresoAdmin : Form
     {
-        public IngresoAdmin()
+        public string IdUsuario { get; set; }
+
+        public string Nombre { get; set; }
+        public IngresoAdmin(string idUsuario, string nombre)
         {
             InitializeComponent();
+
+
         }
     }
 }

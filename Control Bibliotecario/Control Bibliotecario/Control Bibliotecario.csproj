@@ -120,6 +120,9 @@
     <EmbeddedResource Include="UI\IngresarForm.resx">
       <DependentUpon>IngresarForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\IngresoAdmin.resx">
+      <DependentUpon>IngresoAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\InventarioLibrosForm.resx">
       <DependentUpon>InventarioLibrosForm.cs</DependentUpon>
     </EmbeddedResource>

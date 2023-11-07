@@ -1030,7 +1030,9 @@ namespace Control_Bibliotecario {
             
             private global::System.Data.DataColumn columnTema;
             
-            private global::System.Data.DataColumn columnEjemplares;
+            private global::System.Data.DataColumn columnIdCopia;
+            
+            private global::System.Data.DataColumn columnEstadoPrestamo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1115,9 +1117,17 @@ namespace Control_Bibliotecario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn EjemplaresColumn {
+            public global::System.Data.DataColumn IdCopiaColumn {
                 get {
-                    return this.columnEjemplares;
+                    return this.columnIdCopia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EstadoPrestamoColumn {
+                get {
+                    return this.columnEstadoPrestamo;
                 }
             }
             
@@ -1158,7 +1168,7 @@ namespace Control_Bibliotecario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LibrosRow AddLibrosRow(string ISBN, string Titulo, string Autor, int NumeroEdicion, string Año, string Tema, int Ejemplares) {
+            public LibrosRow AddLibrosRow(string ISBN, string Titulo, string Autor, int NumeroEdicion, string Año, string Tema, string EstadoPrestamo) {
                 LibrosRow rowLibrosRow = ((LibrosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ISBN,
@@ -1167,17 +1177,11 @@ namespace Control_Bibliotecario {
                         NumeroEdicion,
                         Año,
                         Tema,
-                        Ejemplares};
+                        null,
+                        EstadoPrestamo};
                 rowLibrosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLibrosRow);
                 return rowLibrosRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LibrosRow FindByISBN(string ISBN) {
-                return ((LibrosRow)(this.Rows.Find(new object[] {
-                            ISBN})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1203,7 +1207,8 @@ namespace Control_Bibliotecario {
                 this.columnNumeroEdicion = base.Columns["NumeroEdicion"];
                 this.columnAño = base.Columns["Año"];
                 this.columnTema = base.Columns["Tema"];
-                this.columnEjemplares = base.Columns["Ejemplares"];
+                this.columnIdCopia = base.Columns["IdCopia"];
+                this.columnEstadoPrestamo = base.Columns["EstadoPrestamo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1221,17 +1226,20 @@ namespace Control_Bibliotecario {
                 base.Columns.Add(this.columnAño);
                 this.columnTema = new global::System.Data.DataColumn("Tema", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTema);
-                this.columnEjemplares = new global::System.Data.DataColumn("Ejemplares", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEjemplares);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnISBN}, true));
+                this.columnIdCopia = new global::System.Data.DataColumn("IdCopia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdCopia);
+                this.columnEstadoPrestamo = new global::System.Data.DataColumn("EstadoPrestamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstadoPrestamo);
                 this.columnISBN.AllowDBNull = false;
-                this.columnISBN.Unique = true;
                 this.columnISBN.MaxLength = 255;
                 this.columnTitulo.MaxLength = 255;
                 this.columnAutor.MaxLength = 255;
                 this.columnAño.MaxLength = 255;
                 this.columnTema.MaxLength = 255;
+                this.columnIdCopia.AutoIncrement = true;
+                this.columnIdCopia.AutoIncrementSeed = -1;
+                this.columnIdCopia.AutoIncrementStep = -1;
+                this.columnEstadoPrestamo.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2025,6 +2033,8 @@ namespace Control_Bibliotecario {
             
             private global::System.Data.DataColumn columnPrestamo;
             
+            private global::System.Data.DataColumn columnContrasenia;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public UsuariosDataTable() {
@@ -2148,6 +2158,14 @@ namespace Control_Bibliotecario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ContraseniaColumn {
+                get {
+                    return this.columnContrasenia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2183,7 +2201,7 @@ namespace Control_Bibliotecario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsuariosRow AddUsuariosRow(string RFC, string IdDeNivel, string Nombre, string ApellidoPaterno, string ApellidoMaterno, System.DateTime FechaDeNacimiento, int Edad, string Genero, string DireccionParticular, int Prestamo) {
+            public UsuariosRow AddUsuariosRow(string RFC, string IdDeNivel, string Nombre, string ApellidoPaterno, string ApellidoMaterno, System.DateTime FechaDeNacimiento, int Edad, string Genero, string DireccionParticular, int Prestamo, string Contrasenia) {
                 UsuariosRow rowUsuariosRow = ((UsuariosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         RFC,
@@ -2196,7 +2214,8 @@ namespace Control_Bibliotecario {
                         Edad,
                         Genero,
                         DireccionParticular,
-                        Prestamo};
+                        Prestamo,
+                        Contrasenia};
                 rowUsuariosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUsuariosRow);
                 return rowUsuariosRow;
@@ -2237,6 +2256,7 @@ namespace Control_Bibliotecario {
                 this.columnGenero = base.Columns["Genero"];
                 this.columnDireccionParticular = base.Columns["DireccionParticular"];
                 this.columnPrestamo = base.Columns["Prestamo"];
+                this.columnContrasenia = base.Columns["Contrasenia"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2264,6 +2284,8 @@ namespace Control_Bibliotecario {
                 base.Columns.Add(this.columnDireccionParticular);
                 this.columnPrestamo = new global::System.Data.DataColumn("Prestamo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrestamo);
+                this.columnContrasenia = new global::System.Data.DataColumn("Contrasenia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnContrasenia);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdUsuario}, true));
                 this.columnRFC.AllowDBNull = false;
@@ -2279,6 +2301,7 @@ namespace Control_Bibliotecario {
                 this.columnApellidoMaterno.MaxLength = 255;
                 this.columnGenero.MaxLength = 255;
                 this.columnDireccionParticular.MaxLength = 536870910;
+                this.columnContrasenia.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2648,17 +2671,33 @@ namespace Control_Bibliotecario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Ejemplares {
+            public int IdCopia {
                 get {
                     try {
-                        return ((int)(this[this.tableLibros.EjemplaresColumn]));
+                        return ((int)(this[this.tableLibros.IdCopiaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Ejemplares\' de la tabla \'Libros\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'IdCopia\' de la tabla \'Libros\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLibros.EjemplaresColumn] = value;
+                    this[this.tableLibros.IdCopiaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string EstadoPrestamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableLibros.EstadoPrestamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'EstadoPrestamo\' de la tabla \'Libros\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLibros.EstadoPrestamoColumn] = value;
                 }
             }
             
@@ -2724,14 +2763,26 @@ namespace Control_Bibliotecario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsEjemplaresNull() {
-                return this.IsNull(this.tableLibros.EjemplaresColumn);
+            public bool IsIdCopiaNull() {
+                return this.IsNull(this.tableLibros.IdCopiaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetEjemplaresNull() {
-                this[this.tableLibros.EjemplaresColumn] = global::System.Convert.DBNull;
+            public void SetIdCopiaNull() {
+                this[this.tableLibros.IdCopiaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEstadoPrestamoNull() {
+                return this.IsNull(this.tableLibros.EstadoPrestamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEstadoPrestamoNull() {
+                this[this.tableLibros.EstadoPrestamoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3193,6 +3244,22 @@ namespace Control_Bibliotecario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Contrasenia {
+                get {
+                    try {
+                        return ((string)(this[this.tableUsuarios.ContraseniaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Contrasenia\' de la tabla \'Usuarios\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUsuarios.ContraseniaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsIdDeNivelNull() {
                 return this.IsNull(this.tableUsuarios.IdDeNivelColumn);
             }
@@ -3297,6 +3364,18 @@ namespace Control_Bibliotecario {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPrestamoNull() {
                 this[this.tableUsuarios.PrestamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsContraseniaNull() {
+                return this.IsNull(this.tableUsuarios.ContraseniaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetContraseniaNull() {
+                this[this.tableUsuarios.ContraseniaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4308,7 +4387,8 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("NumeroEdicion", "NumeroEdicion");
             tableMapping.ColumnMappings.Add("Año", "Año");
             tableMapping.ColumnMappings.Add("Tema", "Tema");
-            tableMapping.ColumnMappings.Add("Ejemplares", "Ejemplares");
+            tableMapping.ColumnMappings.Add("IdCopia", "IdCopia");
+            tableMapping.ColumnMappings.Add("EstadoPrestamo", "EstadoPrestamo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -4330,7 +4410,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `Libros` (`ISBN`, `Titulo`, `Autor`, `NumeroEdicion`, `Año`, `Tema`, " +
-                "`Ejemplares`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                "`EstadoPrestamo`) VALUES (?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ISBN", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ISBN", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Titulo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Titulo", global::System.Data.DataRowVersion.Current, false, null));
@@ -4338,7 +4418,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NumeroEdicion", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NumeroEdicion", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Año", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Año", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Tema", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Tema", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Ejemplares", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Ejemplares", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("EstadoPrestamo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "EstadoPrestamo", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE `Libros` SET `ISBN` = ?, `Titulo` = ?, `Autor` = ?, `NumeroEdicion` = ?, `Año` = ?, `Tema` = ?, `Ejemplares` = ? WHERE ((`ISBN` = ?) AND ((? = 1 AND `Titulo` IS NULL) OR (`Titulo` = ?)) AND ((? = 1 AND `Autor` IS NULL) OR (`Autor` = ?)) AND ((? = 1 AND `NumeroEdicion` IS NULL) OR (`NumeroEdicion` = ?)) AND ((? = 1 AND `Año` IS NULL) OR (`Año` = ?)) AND ((? = 1 AND `Tema` IS NULL) OR (`Tema` = ?)) AND ((? = 1 AND `Ejemplares` IS NULL) OR (`Ejemplares` = ?)))";
@@ -4378,61 +4458,62 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[11];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, Ejemplares FROM Libros";
+            this._commandCollection[0].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
+                "M Libros";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, Ejemplares\r\nFROM    " +
-                "        Libros\r\nORDER BY Año";
+            this._commandCollection[1].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
+                "M Libros ORDER BY Año";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, Ejemplares\r\nFROM    " +
-                "        Libros\r\nWHERE        (Año LIKE ?)\r\nORDER BY Año";
+            this._commandCollection[2].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
+                "M Libros WHERE (Año LIKE ?) ORDER BY Año";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Año", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Año", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, Ejemplares\r\nFROM    " +
-                "        Libros\r\nORDER BY Autor";
+            this._commandCollection[3].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
+                "M Libros ORDER BY Autor";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT        ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, Ejemplares\r\nFROM    " +
-                "        Libros\r\nWHERE        (Autor LIKE ?)\r\nORDER BY Autor";
+            this._commandCollection[4].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
+                "M Libros WHERE (Autor LIKE ?) ORDER BY Autor";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Autor", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Autor", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[5] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT        ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, Ejemplares\r\nFROM    " +
-                "        Libros\r\nORDER BY ISBN";
+            this._commandCollection[5].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
+                "M Libros ORDER BY ISBN";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT        ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, Ejemplares\r\nFROM    " +
-                "        Libros\r\nWHERE        (ISBN LIKE ?)\r\nORDER BY ISBN";
+            this._commandCollection[6].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
+                "M Libros WHERE (ISBN LIKE ?) ORDER BY ISBN";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ISBN", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ISBN", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[7] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "SELECT        ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, Ejemplares\r\nFROM    " +
-                "        Libros\r\nORDER BY Tema";
+            this._commandCollection[7].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
+                "M Libros ORDER BY Tema";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[8] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "SELECT        ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, Ejemplares\r\nFROM    " +
-                "        Libros\r\nWHERE        (Tema LIKE ?)\r\nORDER BY Tema";
+            this._commandCollection[8].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
+                "M Libros WHERE (Tema LIKE ?) ORDER BY Tema";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Tema", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Tema", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[9] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = "SELECT        ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, Ejemplares\r\nFROM    " +
-                "        Libros\r\nORDER BY Titulo";
+            this._commandCollection[9].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
+                "M Libros ORDER BY Titulo";
             this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[10] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[10].Connection = this.Connection;
-            this._commandCollection[10].CommandText = "SELECT        ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, Ejemplares\r\nFROM    " +
-                "        Libros\r\nWHERE        (Titulo LIKE ?)\r\nORDER BY Titulo";
+            this._commandCollection[10].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
+                "M Libros WHERE (Titulo LIKE ?) ORDER BY Titulo";
             this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Titulo", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Titulo", global::System.Data.DataRowVersion.Current, false, null));
         }
@@ -4869,7 +4950,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ISBN, string Titulo, string Autor, global::System.Nullable<int> NumeroEdicion, string Año, string Tema, global::System.Nullable<int> Ejemplares) {
+        public virtual int Insert(string ISBN, string Titulo, string Autor, global::System.Nullable<int> NumeroEdicion, string Año, string Tema, string EstadoPrestamo) {
             if ((ISBN == null)) {
                 throw new global::System.ArgumentNullException("ISBN");
             }
@@ -4906,11 +4987,11 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Tema));
             }
-            if ((Ejemplares.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Ejemplares.Value));
+            if ((EstadoPrestamo == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(EstadoPrestamo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5043,14 +5124,6 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Titulo, string Autor, global::System.Nullable<int> NumeroEdicion, string Año, string Tema, global::System.Nullable<int> Ejemplares, string Original_ISBN, string Original_Titulo, string Original_Autor, global::System.Nullable<int> Original_NumeroEdicion, string Original_Año, string Original_Tema, global::System.Nullable<int> Original_Ejemplares) {
-            return this.Update(Original_ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, Ejemplares, Original_ISBN, Original_Titulo, Original_Autor, Original_NumeroEdicion, Original_Año, Original_Tema, Original_Ejemplares);
         }
     }
     
@@ -6058,10 +6131,11 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Genero", "Genero");
             tableMapping.ColumnMappings.Add("DireccionParticular", "DireccionParticular");
             tableMapping.ColumnMappings.Add("Prestamo", "Prestamo");
+            tableMapping.ColumnMappings.Add("Contrasenia", "Contrasenia");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Usuarios` WHERE (((? = 1 AND `RFC` IS NULL) OR (`RFC` = ?)) AND (`IdUsuario` = ?) AND ((? = 1 AND `IdDeNivel` IS NULL) OR (`IdDeNivel` = ?)) AND ((? = 1 AND `Nombre` IS NULL) OR (`Nombre` = ?)) AND ((? = 1 AND `ApellidoPaterno` IS NULL) OR (`ApellidoPaterno` = ?)) AND ((? = 1 AND `ApellidoMaterno` IS NULL) OR (`ApellidoMaterno` = ?)) AND ((? = 1 AND `FechaDeNacimiento` IS NULL) OR (`FechaDeNacimiento` = ?)) AND ((? = 1 AND `Edad` IS NULL) OR (`Edad` = ?)) AND ((? = 1 AND `Genero` IS NULL) OR (`Genero` = ?)) AND ((? = 1 AND `Prestamo` IS NULL) OR (`Prestamo` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Usuarios` WHERE (((? = 1 AND `RFC` IS NULL) OR (`RFC` = ?)) AND (`IdUsuario` = ?) AND ((? = 1 AND `IdDeNivel` IS NULL) OR (`IdDeNivel` = ?)) AND ((? = 1 AND `Nombre` IS NULL) OR (`Nombre` = ?)) AND ((? = 1 AND `ApellidoPaterno` IS NULL) OR (`ApellidoPaterno` = ?)) AND ((? = 1 AND `ApellidoMaterno` IS NULL) OR (`ApellidoMaterno` = ?)) AND ((? = 1 AND `FechaDeNacimiento` IS NULL) OR (`FechaDeNacimiento` = ?)) AND ((? = 1 AND `Edad` IS NULL) OR (`Edad` = ?)) AND ((? = 1 AND `Genero` IS NULL) OR (`Genero` = ?)) AND ((? = 1 AND `Prestamo` IS NULL) OR (`Prestamo` = ?)) AND ((? = 1 AND `Contrasenia` IS NULL) OR (`Contrasenia` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_RFC", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "RFC", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_RFC", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "RFC", global::System.Data.DataRowVersion.Original, false, null));
@@ -6082,11 +6156,13 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Genero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Genero", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Prestamo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Prestamo", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Prestamo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Prestamo", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Contrasenia", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Contrasenia", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Contrasenia", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Contrasenia", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `Usuarios` (`RFC`, `IdDeNivel`, `Nombre`, `ApellidoPaterno`, `Apellid" +
                 "oMaterno`, `FechaDeNacimiento`, `Edad`, `Genero`, `DireccionParticular`, `Presta" +
-                "mo`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "mo`, `Contrasenia`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("RFC", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "RFC", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IdDeNivel", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IdDeNivel", global::System.Data.DataRowVersion.Current, false, null));
@@ -6098,9 +6174,10 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Genero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Genero", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DireccionParticular", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DireccionParticular", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Prestamo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Prestamo", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Contrasenia", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Contrasenia", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Usuarios` SET `RFC` = ?, `IdDeNivel` = ?, `Nombre` = ?, `ApellidoPaterno` = ?, `ApellidoMaterno` = ?, `FechaDeNacimiento` = ?, `Edad` = ?, `Genero` = ?, `DireccionParticular` = ?, `Prestamo` = ? WHERE (((? = 1 AND `RFC` IS NULL) OR (`RFC` = ?)) AND (`IdUsuario` = ?) AND ((? = 1 AND `IdDeNivel` IS NULL) OR (`IdDeNivel` = ?)) AND ((? = 1 AND `Nombre` IS NULL) OR (`Nombre` = ?)) AND ((? = 1 AND `ApellidoPaterno` IS NULL) OR (`ApellidoPaterno` = ?)) AND ((? = 1 AND `ApellidoMaterno` IS NULL) OR (`ApellidoMaterno` = ?)) AND ((? = 1 AND `FechaDeNacimiento` IS NULL) OR (`FechaDeNacimiento` = ?)) AND ((? = 1 AND `Edad` IS NULL) OR (`Edad` = ?)) AND ((? = 1 AND `Genero` IS NULL) OR (`Genero` = ?)) AND ((? = 1 AND `Prestamo` IS NULL) OR (`Prestamo` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Usuarios` SET `RFC` = ?, `IdDeNivel` = ?, `Nombre` = ?, `ApellidoPaterno` = ?, `ApellidoMaterno` = ?, `FechaDeNacimiento` = ?, `Edad` = ?, `Genero` = ?, `DireccionParticular` = ?, `Prestamo` = ?, `Contrasenia` = ? WHERE (((? = 1 AND `RFC` IS NULL) OR (`RFC` = ?)) AND (`IdUsuario` = ?) AND ((? = 1 AND `IdDeNivel` IS NULL) OR (`IdDeNivel` = ?)) AND ((? = 1 AND `Nombre` IS NULL) OR (`Nombre` = ?)) AND ((? = 1 AND `ApellidoPaterno` IS NULL) OR (`ApellidoPaterno` = ?)) AND ((? = 1 AND `ApellidoMaterno` IS NULL) OR (`ApellidoMaterno` = ?)) AND ((? = 1 AND `FechaDeNacimiento` IS NULL) OR (`FechaDeNacimiento` = ?)) AND ((? = 1 AND `Edad` IS NULL) OR (`Edad` = ?)) AND ((? = 1 AND `Genero` IS NULL) OR (`Genero` = ?)) AND ((? = 1 AND `Prestamo` IS NULL) OR (`Prestamo` = ?)) AND ((? = 1 AND `Contrasenia` IS NULL) OR (`Contrasenia` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("RFC", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "RFC", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IdDeNivel", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IdDeNivel", global::System.Data.DataRowVersion.Current, false, null));
@@ -6112,6 +6189,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Genero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Genero", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DireccionParticular", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DireccionParticular", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Prestamo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Prestamo", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Contrasenia", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Contrasenia", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_RFC", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "RFC", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_RFC", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "RFC", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_IdUsuario", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IdUsuario", global::System.Data.DataRowVersion.Original, false, null));
@@ -6131,6 +6209,8 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Genero", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Genero", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Prestamo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Prestamo", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Prestamo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Prestamo", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Contrasenia", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Contrasenia", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Contrasenia", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Contrasenia", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6147,12 +6227,13 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT RFC, IdUsuario, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno, Fecha" +
-                "DeNacimiento, Edad, Genero, DireccionParticular, Prestamo FROM Usuarios";
+                "DeNacimiento, Edad, Genero, DireccionParticular, Prestamo, Contrasenia FROM Usua" +
+                "rios";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT IdUsuario, Nombre, ApellidoPaterno, ApellidoMaterno, Prestamo FROM Usuario" +
-                "s WHERE (IdUsuario = ?)";
+            this._commandCollection[1].CommandText = "SELECT IdUsuario, Nombre, ApellidoPaterno, ApellidoMaterno, Prestamo, Contrasenia" +
+                " FROM Usuarios WHERE (IdUsuario = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IdUsuario", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IdUsuario", global::System.Data.DataRowVersion.Current, false, null));
         }
@@ -6240,7 +6321,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_RFC, int Original_IdUsuario, string Original_IdDeNivel, string Original_Nombre, string Original_ApellidoPaterno, string Original_ApellidoMaterno, global::System.Nullable<global::System.DateTime> Original_FechaDeNacimiento, global::System.Nullable<int> Original_Edad, string Original_Genero, global::System.Nullable<int> Original_Prestamo) {
+        public virtual int Delete(string Original_RFC, int Original_IdUsuario, string Original_IdDeNivel, string Original_Nombre, string Original_ApellidoPaterno, string Original_ApellidoMaterno, global::System.Nullable<global::System.DateTime> Original_FechaDeNacimiento, global::System.Nullable<int> Original_Edad, string Original_Genero, global::System.Nullable<int> Original_Prestamo, string Original_Contrasenia) {
             if ((Original_RFC == null)) {
                 throw new global::System.ArgumentNullException("Original_RFC");
             }
@@ -6313,6 +6394,14 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
+            if ((Original_Contrasenia == null)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_Contrasenia));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6333,7 +6422,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string RFC, string IdDeNivel, string Nombre, string ApellidoPaterno, string ApellidoMaterno, global::System.Nullable<global::System.DateTime> FechaDeNacimiento, global::System.Nullable<int> Edad, string Genero, string DireccionParticular, global::System.Nullable<int> Prestamo) {
+        public virtual int Insert(string RFC, string IdDeNivel, string Nombre, string ApellidoPaterno, string ApellidoMaterno, global::System.Nullable<global::System.DateTime> FechaDeNacimiento, global::System.Nullable<int> Edad, string Genero, string DireccionParticular, global::System.Nullable<int> Prestamo, string Contrasenia) {
             if ((RFC == null)) {
                 throw new global::System.ArgumentNullException("RFC");
             }
@@ -6394,6 +6483,12 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
+            if ((Contrasenia == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Contrasenia));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6425,6 +6520,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
                     string Genero, 
                     string DireccionParticular, 
                     global::System.Nullable<int> Prestamo, 
+                    string Contrasenia, 
                     string Original_RFC, 
                     int Original_IdUsuario, 
                     string Original_IdDeNivel, 
@@ -6434,7 +6530,8 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
                     global::System.Nullable<global::System.DateTime> Original_FechaDeNacimiento, 
                     global::System.Nullable<int> Original_Edad, 
                     string Original_Genero, 
-                    global::System.Nullable<int> Original_Prestamo) {
+                    global::System.Nullable<int> Original_Prestamo, 
+                    string Original_Contrasenia) {
             if ((RFC == null)) {
                 throw new global::System.ArgumentNullException("RFC");
             }
@@ -6495,77 +6592,91 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
+            if ((Contrasenia == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Contrasenia));
+            }
             if ((Original_RFC == null)) {
                 throw new global::System.ArgumentNullException("Original_RFC");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_RFC));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_RFC));
             }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_IdUsuario));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_IdUsuario));
             if ((Original_IdDeNivel == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_IdDeNivel));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_IdDeNivel));
             }
             if ((Original_Nombre == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Nombre));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Nombre));
             }
             if ((Original_ApellidoPaterno == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_ApellidoPaterno));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_ApellidoPaterno));
             }
             if ((Original_ApellidoMaterno == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_ApellidoMaterno));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_ApellidoMaterno));
             }
             if ((Original_FechaDeNacimiento.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_FechaDeNacimiento.Value));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_FechaDeNacimiento.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             if ((Original_Edad.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_Edad.Value));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_Edad.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             if ((Original_Genero == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_Genero));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_Genero));
             }
             if ((Original_Prestamo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_Prestamo.Value));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(Original_Prestamo.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Contrasenia == null)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_Contrasenia));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 

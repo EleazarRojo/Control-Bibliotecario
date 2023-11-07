@@ -96,10 +96,10 @@ namespace Control_Bibliotecario
                 {
                     if (tablaDatos.Rows[0].ItemArray[2].ToString() == "010")
                     {
-                        Nombre = nombre_tbx.Text;
+                        Nombre = tablaDatos.Rows[0].ItemArray[3].ToString();
                         IdUsuario = idUsuario_tbx.Text;
                         IdNivel = "010";
-                        IngresoAdmin adminForma = new IngresoAdmin();
+                        IngresoAdmin adminForma = new IngresoAdmin(IdUsuario,Nombre);
                         adminForma.Show();
 
                     }
@@ -107,10 +107,10 @@ namespace Control_Bibliotecario
                     {
                         if (tablaDatos.Rows[0].ItemArray[2].ToString() == "020")
                         {
-                            Nombre = nombre_tbx.Text;
+                            Nombre = tablaDatos.Rows[0].ItemArray[3].ToString();
                             IdUsuario = idUsuario_tbx.Text;
                             IdNivel = "020";
-                            IngresoAdmin adminForma = new IngresoAdmin();
+                            IngresoAdmin adminForma = new IngresoAdmin(IdUsuario,Nombre);
                             adminForma.Show();
                         }
                     }
