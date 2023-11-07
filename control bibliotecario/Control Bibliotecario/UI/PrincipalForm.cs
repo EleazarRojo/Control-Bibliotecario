@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Drawing;
+using Control_Bibliotecario.UI;
 
 namespace Control_Bibliotecario
 {
@@ -137,6 +138,32 @@ namespace Control_Bibliotecario
             {
                 MessageBox.Show("Favor de Seleccionar un Tipo de Busqueda");
             }
+        }
+
+        private void controlDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ControlDeUsuariosForm formControlDeUsuarios = new ControlDeUsuariosForm();
+            formControlDeUsuarios.Show();
+        }
+
+        private void controlDePrestamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ControlDePrestamos formControlDePrestamos = new ControlDePrestamos();
+
+            formControlDePrestamos.Show();
+        }
+
+        private void inventarioDeLibrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InventarioLibrosForm formInventarioLibros = new InventarioLibrosForm();
+            formInventarioLibros.Show();
+        }
+
+        private void prestamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HistorialDePrestamosForm formHistorialPrestamos = new HistorialDePrestamosForm(IdUsuario);
+            formHistorialPrestamos.Show();
+
         }
 
         /*
