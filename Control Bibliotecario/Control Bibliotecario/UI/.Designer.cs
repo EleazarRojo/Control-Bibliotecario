@@ -74,10 +74,10 @@ namespace Control_Bibliotecario
             this.ingresoToolStripMenuItem,
             this.registrarseToolStripMenuItem,
             this.usuarioToolStripMenuItem,
+            this.ayudaToolStripMenuItem,
             this.controlDeUsuariosToolStripMenuItem,
             this.controlDePrestamosToolStripMenuItem,
-            this.inventarioDeLibrosToolStripMenuItem,
-            this.ayudaToolStripMenuItem});
+            this.inventarioDeLibrosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
@@ -111,13 +111,14 @@ namespace Control_Bibliotecario
             // prestamosToolStripMenuItem
             // 
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
-            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.prestamosToolStripMenuItem.Text = "Prestamos";
+            this.prestamosToolStripMenuItem.Click += new System.EventHandler(this.prestamosToolStripMenuItem_Click);
             // 
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión ";
             // 
             // controlDeUsuariosToolStripMenuItem
@@ -125,21 +126,21 @@ namespace Control_Bibliotecario
             this.controlDeUsuariosToolStripMenuItem.Name = "controlDeUsuariosToolStripMenuItem";
             this.controlDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.controlDeUsuariosToolStripMenuItem.Text = "Control de Usuarios";
-            this.controlDeUsuariosToolStripMenuItem.Visible = false;
+            this.controlDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.controlDeUsuariosToolStripMenuItem_Click);
             // 
             // controlDePrestamosToolStripMenuItem
             // 
             this.controlDePrestamosToolStripMenuItem.Name = "controlDePrestamosToolStripMenuItem";
             this.controlDePrestamosToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.controlDePrestamosToolStripMenuItem.Text = "Control de Prestamos";
-            this.controlDePrestamosToolStripMenuItem.Visible = false;
+            this.controlDePrestamosToolStripMenuItem.Click += new System.EventHandler(this.controlDePrestamosToolStripMenuItem_Click);
             // 
             // inventarioDeLibrosToolStripMenuItem
             // 
             this.inventarioDeLibrosToolStripMenuItem.Name = "inventarioDeLibrosToolStripMenuItem";
             this.inventarioDeLibrosToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.inventarioDeLibrosToolStripMenuItem.Text = "Inventario de Libros";
-            this.inventarioDeLibrosToolStripMenuItem.Visible = false;
+            this.inventarioDeLibrosToolStripMenuItem.Click += new System.EventHandler(this.inventarioDeLibrosToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -228,7 +229,7 @@ namespace Control_Bibliotecario
             this.ejemplaresDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.librosBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(61, 105);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;

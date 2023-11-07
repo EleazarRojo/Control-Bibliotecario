@@ -16,5 +16,20 @@ namespace Control_Bibliotecario.UI
         {
             InitializeComponent();
         }
+
+        private void librosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.librosBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.bibliotecaDataSet);
+
+        }
+
+        private void InventarioLibrosForm_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'bibliotecaDataSet.Libros' Puede moverla o quitarla según sea necesario.
+            this.librosTableAdapter.Fill(this.bibliotecaDataSet.Libros);
+
+        }
     }
 }
