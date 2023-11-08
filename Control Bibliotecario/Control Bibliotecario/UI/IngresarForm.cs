@@ -44,7 +44,7 @@ namespace Control_Bibliotecario
              *Cerrar ventana Automaticamente
              */
             string direccion = "Provider=Microsoft.Jet.OLEDB.4.0.;Data Source=|DataDirectory|\\BD\\Biblioteca.mdb";
-            string consulta = "SELECT * FROM Usuarios WHERE IdUsuario LIKE " + idUsuario_tbx.Text;
+            string consulta = "SELECT * FROM Usuarios WHERE IdUsuario = " + idUsuario_tbx.Text;
             
             System.Data.OleDb.OleDbConnection conexion = new OleDbConnection();
             conexion.ConnectionString = direccion;
@@ -80,12 +80,17 @@ namespace Control_Bibliotecario
                     IdUsuario = idUsuario_tbx.Text;
                     DialogResult = DialogResult.OK;
 
+                        acceso = false;
                         nombre_lbl.Visible = false;
                         nombre_tbx.Visible = false;
+                        nombre_tbx.Clear();
                         apellidoPaterno_lbl.Visible = false;
+                        apellidoPaterno_tbx.Clear();
                         apellidoMaterno_tbx.Visible = false;
+                        apellidoMaterno_tbx.Clear();
                         apellidoMaterno_lbl.Visible = false;
                         apellidoMaterno_tbx.Visible = false;
+                        idUsuario_tbx.Clear();
                         this.Close();
                     }
 
@@ -100,7 +105,27 @@ namespace Control_Bibliotecario
                         IdUsuario = idUsuario_tbx.Text;
                         IdNivel = "010";
                         IngresoAdmin adminForma = new IngresoAdmin(IdUsuario,Nombre);
-                        adminForma.Show();
+                        
+
+                        if(adminForma.ShowDialog() == DialogResult.OK)
+                        {
+                            acceso = true;
+                            DialogResult = DialogResult.OK;
+
+                            if (acceso)
+                            {
+                                acceso = false;
+                                IdUsuario = idUsuario_tbx.Text;
+                                idUsuario_tbx.Clear();
+                                this.Close();
+
+                            }
+                                
+                        }
+
+                      
+
+
 
                     }
                     else
@@ -111,7 +136,24 @@ namespace Control_Bibliotecario
                             IdUsuario = idUsuario_tbx.Text;
                             IdNivel = "020";
                             IngresoAdmin adminForma = new IngresoAdmin(IdUsuario,Nombre);
-                            adminForma.Show();
+
+                            if (adminForma.ShowDialog() == DialogResult.OK)
+                            {
+                                acceso = true;
+                                DialogResult = DialogResult.OK;
+
+                                if (acceso)
+                                {
+                                    acceso = false;
+                                    IdUsuario = idUsuario_tbx.Text;
+                                    idUsuario_tbx.Clear();
+                                    this.Close();
+
+                                }
+
+                            }
+
+
                         }
                     }
                 }
