@@ -30,7 +30,7 @@ namespace Control_Bibliotecario.UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rFCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +56,7 @@ namespace Control_Bibliotecario.UI
             this.modificarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeBusqueda_Lbl = new System.Windows.Forms.Label();
             this.tipoDeBusqueda_Cbx = new System.Windows.Forms.ComboBox();
+            this.registrarColaboradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).BeginInit();
@@ -89,9 +90,9 @@ namespace Control_Bibliotecario.UI
             // idUsuarioDataGridViewTextBoxColumn
             // 
             this.idUsuarioDataGridViewTextBoxColumn.DataPropertyName = "IdUsuario";
-            dataGridViewCellStyle2.Format = "000000";
-            dataGridViewCellStyle2.NullValue = null;
-            this.idUsuarioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Format = "000000";
+            dataGridViewCellStyle7.NullValue = null;
+            this.idUsuarioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.idUsuarioDataGridViewTextBoxColumn.Frozen = true;
             this.idUsuarioDataGridViewTextBoxColumn.HeaderText = "IdUsuario";
             this.idUsuarioDataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -248,6 +249,7 @@ namespace Control_Bibliotecario.UI
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarToolStripMenuItem,
+            this.registrarColaboradorToolStripMenuItem,
             this.modificarUsuarioToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
@@ -293,6 +295,13 @@ namespace Control_Bibliotecario.UI
             this.tipoDeBusqueda_Cbx.TabIndex = 9;
             this.tipoDeBusqueda_Cbx.Text = "Seleccione tipo de búsqueda";
             this.tipoDeBusqueda_Cbx.SelectedIndexChanged += new System.EventHandler(this.tipoDeBusqueda_Cbx_SelectedIndexChanged);
+            // 
+            // registrarColaboradorToolStripMenuItem
+            // 
+            this.registrarColaboradorToolStripMenuItem.Name = "registrarColaboradorToolStripMenuItem";
+            this.registrarColaboradorToolStripMenuItem.Size = new System.Drawing.Size(202, 29);
+            this.registrarColaboradorToolStripMenuItem.Text = "Registrar Colaborador";
+            this.registrarColaboradorToolStripMenuItem.Click += new System.EventHandler(this.registrarColaboradorToolStripMenuItem_Click);
             // 
             // ControlDeUsuariosForm
             // 
@@ -348,5 +357,6 @@ namespace Control_Bibliotecario.UI
         private System.Windows.Forms.DataGridViewTextBoxColumn generoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccionParticularDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prestamo;
+        private System.Windows.Forms.ToolStripMenuItem registrarColaboradorToolStripMenuItem;
     }
 }

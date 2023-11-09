@@ -67,7 +67,11 @@
                     RFC = RFC + yearString[2].ToString() + yearString[3].ToString() + FechaDeNacimiento.Month.ToString() + FechaDeNacimiento.Day.ToString();
 
                 }
-                RFC = RFC + yearString[2].ToString() + yearString[3].ToString() + FechaDeNacimiento.Month.ToString() + "0" + FechaDeNacimiento.Day.ToString();
+                else
+                {
+                    RFC = RFC + yearString[2].ToString() + yearString[3].ToString() + FechaDeNacimiento.Month.ToString() + "0" + FechaDeNacimiento.Day.ToString();
+                }
+               
             }
 
 

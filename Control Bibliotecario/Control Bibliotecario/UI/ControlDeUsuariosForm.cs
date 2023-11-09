@@ -88,8 +88,27 @@ namespace Control_Bibliotecario.UI
         private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegistroForm registrarForm = new RegistroForm();
-            registrarForm.Show();
 
+            if(registrarForm.ShowDialog() == DialogResult.OK)
+            {
+                this.usuariosTableAdapter.Fill(this.bibliotecaDataSet.Usuarios);
+            }
+
+           
+        }
+
+        private void registrarColaboradorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroAdminBiblio registrarColabForm = new RegistroAdminBiblio();
+
+            if(registrarColabForm.ShowDialog() == DialogResult.OK)
+            {
+                this.usuariosTableAdapter.Fill(this.bibliotecaDataSet.Usuarios);
+            }
+            
+
+          
+            
         }
     }
 }
