@@ -31,13 +31,16 @@ namespace Control_Bibliotecario.UI
             {
                 case 0:
                     usuariosTableAdapter.OrdenarPorIdUsuarioEspecifico(bibliotecaDataSet.Usuarios, int.Parse(buscar_Tbx.Text));
+                     modificarUsuarioToolStripMenuItem.Visible = true;
                     break;
                 case 1:
                     usuariosTableAdapter.OrdenarPorRFCEspecifico(bibliotecaDataSet.Usuarios, buscar_Tbx.Text);
+                    modificarUsuarioToolStripMenuItem.Visible = false;
                     break;
                 case 2:
                     usuariosTableAdapter.OrdenarPorIdUsuarioEspecifico(bibliotecaDataSet.Usuarios, int.Parse(buscar_Tbx.Text));
                     eliminar_Btn.Enabled = true;
+                    modificarUsuarioToolStripMenuItem.Visible = false;
                     break;
             }
         }
@@ -80,6 +83,13 @@ namespace Control_Bibliotecario.UI
             {
                 MessageBox.Show("No se ha encontrado al Usuario", "Eliminación de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroForm registrarForm = new RegistroForm();
+            registrarForm.Show();
+
         }
     }
 }
