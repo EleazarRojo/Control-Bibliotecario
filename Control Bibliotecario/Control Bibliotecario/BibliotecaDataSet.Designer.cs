@@ -4455,7 +4455,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[11];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[13];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
@@ -4485,37 +4485,48 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Autor", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Autor", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[5] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
-                "M Libros ORDER BY ISBN";
+            this._commandCollection[5].CommandText = "SELECT        ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCo" +
+                "pia\r\nFROM            Libros\r\nORDER BY IdCopia";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
-                "M Libros WHERE (ISBN LIKE ?) ORDER BY ISBN";
+            this._commandCollection[6].CommandText = "SELECT        ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCo" +
+                "pia\r\nFROM            Libros\r\nWHERE        (IdCopia = ?)\r\nORDER BY IdCopia";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ISBN", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ISBN", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IdCopia", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IdCopia", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[7] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[7].Connection = this.Connection;
             this._commandCollection[7].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
-                "M Libros ORDER BY Tema";
+                "M Libros ORDER BY ISBN";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[8] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[8].Connection = this.Connection;
             this._commandCollection[8].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
-                "M Libros WHERE (Tema LIKE ?) ORDER BY Tema";
+                "M Libros WHERE (ISBN LIKE ?) ORDER BY ISBN";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Tema", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Tema", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ISBN", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ISBN", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[9] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[9].Connection = this.Connection;
             this._commandCollection[9].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
-                "M Libros ORDER BY Titulo";
+                "M Libros ORDER BY Tema";
             this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[10] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[10].Connection = this.Connection;
             this._commandCollection[10].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
-                "M Libros WHERE (Titulo LIKE ?) ORDER BY Titulo";
+                "M Libros WHERE (Tema LIKE ?) ORDER BY Tema";
             this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Titulo", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Titulo", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Tema", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Tema", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[11] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[11].Connection = this.Connection;
+            this._commandCollection[11].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
+                "M Libros ORDER BY Titulo";
+            this._commandCollection[11].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[12] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[12].Connection = this.Connection;
+            this._commandCollection[12].CommandText = "SELECT ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia FRO" +
+                "M Libros WHERE (Titulo LIKE ?) ORDER BY Titulo";
+            this._commandCollection[12].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[12].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Titulo", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Titulo", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4666,7 +4677,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int OrdenarPorISBN(BibliotecaDataSet.LibrosDataTable dataTable) {
+        public virtual int OrdenarPorIdCopia(BibliotecaDataSet.LibrosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4679,7 +4690,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual BibliotecaDataSet.LibrosDataTable ObtenerPorISBN() {
+        public virtual BibliotecaDataSet.LibrosDataTable ObtenerPorIdCopia() {
             this.Adapter.SelectCommand = this.CommandCollection[5];
             BibliotecaDataSet.LibrosDataTable dataTable = new BibliotecaDataSet.LibrosDataTable();
             this.Adapter.Fill(dataTable);
@@ -4690,8 +4701,58 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int OrdenarPorISBNEspecifico(BibliotecaDataSet.LibrosDataTable dataTable, string ISBN) {
+        public virtual int OrdenarPorIdCopiaEspecifico(BibliotecaDataSet.LibrosDataTable dataTable, int IdCopia) {
             this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IdCopia));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual BibliotecaDataSet.LibrosDataTable ObtenerPorIdCopiaEspecifico(int IdCopia) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IdCopia));
+            BibliotecaDataSet.LibrosDataTable dataTable = new BibliotecaDataSet.LibrosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int OrdenarPorISBN(BibliotecaDataSet.LibrosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[7];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual BibliotecaDataSet.LibrosDataTable ObtenerPorISBN() {
+            this.Adapter.SelectCommand = this.CommandCollection[7];
+            BibliotecaDataSet.LibrosDataTable dataTable = new BibliotecaDataSet.LibrosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int OrdenarPorISBNEspecifico(BibliotecaDataSet.LibrosDataTable dataTable, string ISBN) {
+            this.Adapter.SelectCommand = this.CommandCollection[8];
             if ((ISBN == null)) {
                 throw new global::System.ArgumentNullException("ISBN");
             }
@@ -4710,7 +4771,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual BibliotecaDataSet.LibrosDataTable ObtenerPorISBNEspecifico(string ISBN) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[8];
             if ((ISBN == null)) {
                 throw new global::System.ArgumentNullException("ISBN");
             }
@@ -4727,7 +4788,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int OrdenarPorTema(BibliotecaDataSet.LibrosDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[7];
+            this.Adapter.SelectCommand = this.CommandCollection[9];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -4740,7 +4801,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual BibliotecaDataSet.LibrosDataTable ObtenerPorTema() {
-            this.Adapter.SelectCommand = this.CommandCollection[7];
+            this.Adapter.SelectCommand = this.CommandCollection[9];
             BibliotecaDataSet.LibrosDataTable dataTable = new BibliotecaDataSet.LibrosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4751,7 +4812,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int OrdenarPorTemaEspecifico(BibliotecaDataSet.LibrosDataTable dataTable, string Tema) {
-            this.Adapter.SelectCommand = this.CommandCollection[8];
+            this.Adapter.SelectCommand = this.CommandCollection[10];
             if ((Tema == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4770,7 +4831,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual BibliotecaDataSet.LibrosDataTable ObtenerPorTemaEspecifico(string Tema) {
-            this.Adapter.SelectCommand = this.CommandCollection[8];
+            this.Adapter.SelectCommand = this.CommandCollection[10];
             if ((Tema == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4787,7 +4848,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int OrdenarPorTitulo(BibliotecaDataSet.LibrosDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[9];
+            this.Adapter.SelectCommand = this.CommandCollection[11];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -4800,7 +4861,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual BibliotecaDataSet.LibrosDataTable ObtenerPorTitulo() {
-            this.Adapter.SelectCommand = this.CommandCollection[9];
+            this.Adapter.SelectCommand = this.CommandCollection[11];
             BibliotecaDataSet.LibrosDataTable dataTable = new BibliotecaDataSet.LibrosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4811,7 +4872,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int OrdenarPorTituloEspecifico(BibliotecaDataSet.LibrosDataTable dataTable, string Titulo) {
-            this.Adapter.SelectCommand = this.CommandCollection[10];
+            this.Adapter.SelectCommand = this.CommandCollection[12];
             if ((Titulo == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4830,7 +4891,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual BibliotecaDataSet.LibrosDataTable ObtenerPorTituloEspecifico(string Titulo) {
-            this.Adapter.SelectCommand = this.CommandCollection[10];
+            this.Adapter.SelectCommand = this.CommandCollection[12];
             if ((Titulo == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
