@@ -80,19 +80,19 @@ namespace Control_Bibliotecario.UI
             switch (tipoBusqueda_CB.SelectedIndex)
             {
                 case 0:
-                    librosTableAdapter.OrdenarPorISBNEspecifico(bibliotecaDataSet.Libros, buscar_Tbx.Text);
+                    librosTableAdapter.OrdenarPorISBNEspecifico(bibliotecaDataSet.Libros, "%" + buscar_Tbx.Text + "%");
                     break;
                 case 1:
                     librosTableAdapter.OrdenarPorIdCopiaEspecifico(bibliotecaDataSet.Libros, int.Parse(buscar_Tbx.Text));
                     break;
                 case 2:
-                    librosTableAdapter.OrdenarPorTituloEspecifico(bibliotecaDataSet.Libros, buscar_Tbx.Text);
+                    librosTableAdapter.OrdenarPorTituloEspecifico(bibliotecaDataSet.Libros, "%" + buscar_Tbx.Text + "%");
                     break;
                 case 3:
-                    librosTableAdapter.OrdenarPorAutorEspecifico(bibliotecaDataSet.Libros, buscar_Tbx.Text);
+                    librosTableAdapter.OrdenarPorAutorEspecifico(bibliotecaDataSet.Libros, "%" + buscar_Tbx.Text + "%");
                     break;
                 case 4:
-                    librosTableAdapter.OrdenarPorAñoEspecifico(bibliotecaDataSet.Libros, buscar_Tbx.Text);
+                    librosTableAdapter.OrdenarPorAñoEspecifico(bibliotecaDataSet.Libros, "%" + buscar_Tbx.Text + "%");
                     break;
                 case 5:
                     break;
@@ -240,6 +240,7 @@ namespace Control_Bibliotecario.UI
         private void modificar_Btn_Click(object sender, EventArgs e)
         {
             string direccion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\BD\\Biblioteca.mdb";
+            string update = "UPDATE Libros SET ISBN = <> WHERE IdCopia = " + buscar_Tbx.Text;
         }
     }
 }
