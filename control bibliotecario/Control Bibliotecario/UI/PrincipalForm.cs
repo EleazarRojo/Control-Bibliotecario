@@ -50,6 +50,7 @@ namespace Control_Bibliotecario
                         ingresoToolStripMenuItem.Visible = false;
                         registrarseToolStripMenuItem.Visible = false;
                          prestamosToolStripMenuItem.Visible = false;
+                        usuarioToolStripMenuItem.Text = FormaIngreso.Nombre;
                         usuarioToolStripMenuItem.Visible = true;
                         controlDeUsuariosToolStripMenuItem.Visible = true;
                         controlDePrestamosToolStripMenuItem.Visible = true;
@@ -64,6 +65,7 @@ namespace Control_Bibliotecario
                             ingresoToolStripMenuItem.Visible = false;
                             registrarseToolStripMenuItem.Visible = false;
                             prestamosToolStripMenuItem.Visible = false;
+                            usuarioToolStripMenuItem.Text = FormaIngreso.Nombre;
                             usuarioToolStripMenuItem.Visible = true;
                             controlDePrestamosToolStripMenuItem.Visible = true;
                             inventarioDeLibrosToolStripMenuItem.Visible = true;
@@ -163,6 +165,22 @@ namespace Control_Bibliotecario
         {
             HistorialDePrestamosForm formHistorialPrestamos = new HistorialDePrestamosForm(IdUsuario);
             formHistorialPrestamos.Show();
+
+        }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ingresoToolStripMenuItem.Visible = true;
+            registrarseToolStripMenuItem.Visible = true;
+
+            usuarioToolStripMenuItem.Text = "Usuario";
+            usuarioToolStripMenuItem.Visible = false;
+            controlDePrestamosToolStripMenuItem.Visible = false;
+            inventarioDeLibrosToolStripMenuItem.Visible = false;
+            controlDeUsuariosToolStripMenuItem.Visible = false;
+
+            IdUsuario = "";
+
 
         }
 

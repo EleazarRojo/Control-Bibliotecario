@@ -47,24 +47,23 @@ namespace Control_Bibliotecario
             this.tipoBusqueda_CB = new System.Windows.Forms.ComboBox();
             this.detalles_Btn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroEdicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.añoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.temaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ejemplaresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.librosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bibliotecaDataSet = new Control_Bibliotecario.BibliotecaDataSet();
             this.librosTableAdapter = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.LibrosTableAdapter();
             this.tableAdapterManager = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -74,10 +73,10 @@ namespace Control_Bibliotecario
             this.ingresoToolStripMenuItem,
             this.registrarseToolStripMenuItem,
             this.usuarioToolStripMenuItem,
-            this.ayudaToolStripMenuItem,
             this.controlDeUsuariosToolStripMenuItem,
             this.controlDePrestamosToolStripMenuItem,
-            this.inventarioDeLibrosToolStripMenuItem});
+            this.inventarioDeLibrosToolStripMenuItem,
+            this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
@@ -111,7 +110,7 @@ namespace Control_Bibliotecario
             // prestamosToolStripMenuItem
             // 
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
-            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.prestamosToolStripMenuItem.Text = "Prestamos";
             this.prestamosToolStripMenuItem.Click += new System.EventHandler(this.prestamosToolStripMenuItem_Click);
             // 
@@ -120,6 +119,7 @@ namespace Control_Bibliotecario
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
             this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión ";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // controlDeUsuariosToolStripMenuItem
             // 
@@ -225,8 +225,7 @@ namespace Control_Bibliotecario
             this.tituloDataGridViewTextBoxColumn,
             this.numeroEdicionDataGridViewTextBoxColumn,
             this.añoDataGridViewTextBoxColumn,
-            this.temaDataGridViewTextBoxColumn,
-            this.ejemplaresDataGridViewTextBoxColumn});
+            this.temaDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.librosBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(61, 105);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -236,14 +235,6 @@ namespace Control_Bibliotecario
             this.dataGridView1.Size = new System.Drawing.Size(1114, 478);
             this.dataGridView1.TabIndex = 16;
             // 
-            // iSBNDataGridViewTextBoxColumn
-            // 
-            this.iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
-            this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
-            this.iSBNDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
-            this.iSBNDataGridViewTextBoxColumn.Width = 150;
-            // 
             // Autor
             // 
             this.Autor.DataPropertyName = "Autor";
@@ -251,6 +242,41 @@ namespace Control_Bibliotecario
             this.Autor.MinimumWidth = 8;
             this.Autor.Name = "Autor";
             this.Autor.Width = 150;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.tipoBusqueda_Lbl);
+            this.flowLayoutPanel1.Controls.Add(this.tipoBusqueda_CB);
+            this.flowLayoutPanel1.Controls.Add(this.busqueda_Tbx);
+            this.flowLayoutPanel1.Controls.Add(this.buscar_Btn);
+            this.flowLayoutPanel1.Controls.Add(this.detalles_Btn);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(61, 630);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1114, 41);
+            this.flowLayoutPanel1.TabIndex = 17;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Location = new System.Drawing.Point(61, 38);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(0, 0);
+            this.panel1.TabIndex = 18;
+            // 
+            // iSBNDataGridViewTextBoxColumn
+            // 
+            this.iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
+            this.iSBNDataGridViewTextBoxColumn.Width = 150;
             // 
             // tituloDataGridViewTextBoxColumn
             // 
@@ -284,14 +310,6 @@ namespace Control_Bibliotecario
             this.temaDataGridViewTextBoxColumn.Name = "temaDataGridViewTextBoxColumn";
             this.temaDataGridViewTextBoxColumn.Width = 150;
             // 
-            // ejemplaresDataGridViewTextBoxColumn
-            // 
-            this.ejemplaresDataGridViewTextBoxColumn.DataPropertyName = "Ejemplares";
-            this.ejemplaresDataGridViewTextBoxColumn.HeaderText = "Ejemplares";
-            this.ejemplaresDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.ejemplaresDataGridViewTextBoxColumn.Name = "ejemplaresDataGridViewTextBoxColumn";
-            this.ejemplaresDataGridViewTextBoxColumn.Width = 150;
-            // 
             // librosBindingSource
             // 
             this.librosBindingSource.DataMember = "Libros";
@@ -317,33 +335,6 @@ namespace Control_Bibliotecario
             this.tableAdapterManager.UpdateOrder = Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuariosTableAdapter = null;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Controls.Add(this.tipoBusqueda_Lbl);
-            this.flowLayoutPanel1.Controls.Add(this.tipoBusqueda_CB);
-            this.flowLayoutPanel1.Controls.Add(this.busqueda_Tbx);
-            this.flowLayoutPanel1.Controls.Add(this.buscar_Btn);
-            this.flowLayoutPanel1.Controls.Add(this.detalles_Btn);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(61, 630);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1114, 41);
-            this.flowLayoutPanel1.TabIndex = 17;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.AutoSize = true;
-            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.Location = new System.Drawing.Point(61, 38);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(0, 0);
-            this.panel1.TabIndex = 18;
-            // 
             // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,10 +352,10 @@ namespace Control_Bibliotecario
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,7 +384,6 @@ namespace Control_Bibliotecario
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroEdicionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn añoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn temaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ejemplaresDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prestamosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;

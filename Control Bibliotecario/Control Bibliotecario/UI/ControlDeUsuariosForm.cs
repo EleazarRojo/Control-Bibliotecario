@@ -27,25 +27,88 @@ namespace Control_Bibliotecario.UI
 
         private void buscar_Btn_Click(object sender, EventArgs e)
         {
-            if(tipoDeBusqueda_Cbx.SelectedIndex >= 0)
+            switch (tipoDeBusqueda_Cbx.SelectedIndex)
             {
-                if (tipoDeBusqueda_Cbx.Text == "IdUsuario") 
-                {
-                    string direccion = "Provider=Microsoft.Jet.OLEDB.4.0.;Data Source=|DataDirectory|\\BD\\Biblioteca.mdb";
-                    string consulta = "SELECT * FROM Usuarios WHERE IdUsuario LIKE " + buscar_Tbx.Text;
-
-                    System.Data.OleDb.OleDbConnection conexion = new OleDbConnection();
-                    conexion.ConnectionString = direccion;
-                    conexion.Open();
-                    DataSet ds = new DataSet();
-                    OleDbDataAdapter adaptador = new OleDbDataAdapter(consulta, conexion);
-                    adaptador.Fill(ds);
-                    DataTable tablaDatos = ds.Tables[0];
-                   
-                    dataGridView1.DataSource = tablaDatos;
-                    conexion.Close();
-                }
+                case 0:
+                    usuariosTableAdapter.OrdenarPorIdUsuarioEspecifico(bibliotecaDataSet.Usuarios, int.Parse(buscar_Tbx.Text));
+                     modificarUsuarioToolStripMenuItem.Visible = true;
+                    break;
+                case 1:
+                    usuariosTableAdapter.OrdenarPorRFCEspecifico(bibliotecaDataSet.Usuarios, buscar_Tbx.Text);
+                    modificarUsuarioToolStripMenuItem.Visible = false;
+                    break;
+                case 2:
+                    usuariosTableAdapter.OrdenarPorIdUsuarioEspecifico(bibliotecaDataSet.Usuarios, int.Parse(buscar_Tbx.Text));
+                    eliminar_Btn.Enabled = true;
+                    modificarUsuarioToolStripMenuItem.Visible = false;
+                    break;
             }
+        }
+
+        private void tipoDeBusqueda_Cbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tipoDeBusqueda_Cbx.SelectedIndex)
+            {
+                case 0:
+                    usuariosTableAdapter.OrdenarPorIdUsuario(bibliotecaDataSet.Usuarios);
+                    break;
+                case 1:
+                    usuariosTableAdapter.OrdenarPorRFC(bibliotecaDataSet.Usuarios);
+                    break;
+                case 2:
+                    usuariosTableAdapter.OrdenarPorIdUsuario(bibliotecaDataSet.Usuarios);
+                    break;
+            }
+        }
+
+        private void eliminar_Btn_Click(object sender, EventArgs e)
+        {
+            string direccion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\BD\\Biblioteca.mdb";
+            string consulta = "SELECT * FROM Usuarios WHERE IdUsuario = " +buscar_Tbx.Text;
+            string delete = "DELETE * FROM Usuarios WHERE IdUsuario = " +buscar_Tbx.Text; //Correción de string [DELET --> DELETE] e [Id Usuario --> IdUsuario]
+            OleDbConnection conexion = new OleDbConnection();
+            conexion.ConnectionString = direccion;
+            OleDbDataAdapter ada = new OleDbDataAdapter(consulta, conexion);
+            conexion.Open();
+            DataTable dt = new DataTable();
+            ada.Fill(dt);
+
+            if(dt.Rows.Count != 0)
+            {
+                OleDbCommand cmd = new OleDbCommand(delete, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Se ha eliminado al Usuario", "Eliminación de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No se ha encontrado al Usuario", "Eliminación de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroForm registrarForm = new RegistroForm();
+
+            if(registrarForm.ShowDialog() == DialogResult.OK)
+            {
+                this.usuariosTableAdapter.Fill(this.bibliotecaDataSet.Usuarios);
+            }
+
+           
+        }
+
+        private void registrarColaboradorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroAdminBiblio registrarColabForm = new RegistroAdminBiblio();
+
+            if(registrarColabForm.ShowDialog() == DialogResult.OK)
+            {
+                this.usuariosTableAdapter.Fill(this.bibliotecaDataSet.Usuarios);
+            }
+            
+
+          
+            
         }
     }
 }

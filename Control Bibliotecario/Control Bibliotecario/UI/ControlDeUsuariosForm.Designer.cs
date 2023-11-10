@@ -30,7 +30,7 @@ namespace Control_Bibliotecario.UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rFCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +56,7 @@ namespace Control_Bibliotecario.UI
             this.modificarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeBusqueda_Lbl = new System.Windows.Forms.Label();
             this.tipoDeBusqueda_Cbx = new System.Windows.Forms.ComboBox();
+            this.registrarColaboradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).BeginInit();
@@ -79,7 +80,7 @@ namespace Control_Bibliotecario.UI
             this.direccionParticularDataGridViewTextBoxColumn,
             this.Prestamo});
             this.dataGridView1.DataSource = this.usuariosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 33);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 32);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
@@ -89,9 +90,9 @@ namespace Control_Bibliotecario.UI
             // idUsuarioDataGridViewTextBoxColumn
             // 
             this.idUsuarioDataGridViewTextBoxColumn.DataPropertyName = "IdUsuario";
-            dataGridViewCellStyle1.Format = "000000";
-            dataGridViewCellStyle1.NullValue = null;
-            this.idUsuarioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Format = "000000";
+            dataGridViewCellStyle7.NullValue = null;
+            this.idUsuarioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.idUsuarioDataGridViewTextBoxColumn.Frozen = true;
             this.idUsuarioDataGridViewTextBoxColumn.HeaderText = "IdUsuario";
             this.idUsuarioDataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -204,7 +205,7 @@ namespace Control_Bibliotecario.UI
             // 
             // buscar_Btn
             // 
-            this.buscar_Btn.Location = new System.Drawing.Point(59, 885);
+            this.buscar_Btn.Location = new System.Drawing.Point(58, 885);
             this.buscar_Btn.Name = "buscar_Btn";
             this.buscar_Btn.Size = new System.Drawing.Size(114, 49);
             this.buscar_Btn.TabIndex = 1;
@@ -221,11 +222,12 @@ namespace Control_Bibliotecario.UI
             this.eliminar_Btn.TabIndex = 2;
             this.eliminar_Btn.Text = "Eliminar Usuario";
             this.eliminar_Btn.UseVisualStyleBackColor = true;
+            this.eliminar_Btn.Click += new System.EventHandler(this.eliminar_Btn_Click);
             // 
             // buscar_Tbx
             // 
             this.buscar_Tbx.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscar_Tbx.Location = new System.Drawing.Point(179, 895);
+            this.buscar_Tbx.Location = new System.Drawing.Point(178, 895);
             this.buscar_Tbx.Name = "buscar_Tbx";
             this.buscar_Tbx.Size = new System.Drawing.Size(294, 30);
             this.buscar_Tbx.TabIndex = 4;
@@ -236,6 +238,7 @@ namespace Control_Bibliotecario.UI
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Location = new System.Drawing.Point(0, 33);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1478, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
@@ -246,9 +249,11 @@ namespace Control_Bibliotecario.UI
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarToolStripMenuItem,
+            this.registrarColaboradorToolStripMenuItem,
             this.modificarUsuarioToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip2.Size = new System.Drawing.Size(1478, 33);
             this.menuStrip2.TabIndex = 7;
             this.menuStrip2.Text = "menuStrip2";
@@ -258,18 +263,20 @@ namespace Control_Bibliotecario.UI
             this.registrarToolStripMenuItem.Name = "registrarToolStripMenuItem";
             this.registrarToolStripMenuItem.Size = new System.Drawing.Size(162, 29);
             this.registrarToolStripMenuItem.Text = "Registrar Usuario";
+            this.registrarToolStripMenuItem.Click += new System.EventHandler(this.registrarToolStripMenuItem_Click);
             // 
             // modificarUsuarioToolStripMenuItem
             // 
             this.modificarUsuarioToolStripMenuItem.Name = "modificarUsuarioToolStripMenuItem";
             this.modificarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(173, 29);
             this.modificarUsuarioToolStripMenuItem.Text = "Modificar Usuario ";
+            this.modificarUsuarioToolStripMenuItem.Visible = false;
             // 
             // tipoDeBusqueda_Lbl
             // 
             this.tipoDeBusqueda_Lbl.AutoSize = true;
             this.tipoDeBusqueda_Lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tipoDeBusqueda_Lbl.Location = new System.Drawing.Point(54, 841);
+            this.tipoDeBusqueda_Lbl.Location = new System.Drawing.Point(54, 842);
             this.tipoDeBusqueda_Lbl.Name = "tipoDeBusqueda_Lbl";
             this.tipoDeBusqueda_Lbl.Size = new System.Drawing.Size(193, 27);
             this.tipoDeBusqueda_Lbl.TabIndex = 8;
@@ -282,11 +289,19 @@ namespace Control_Bibliotecario.UI
             "IdUsuario",
             "RFC",
             "Eliminación "});
-            this.tipoDeBusqueda_Cbx.Location = new System.Drawing.Point(241, 843);
+            this.tipoDeBusqueda_Cbx.Location = new System.Drawing.Point(242, 843);
             this.tipoDeBusqueda_Cbx.Name = "tipoDeBusqueda_Cbx";
             this.tipoDeBusqueda_Cbx.Size = new System.Drawing.Size(240, 28);
             this.tipoDeBusqueda_Cbx.TabIndex = 9;
             this.tipoDeBusqueda_Cbx.Text = "Seleccione tipo de búsqueda";
+            this.tipoDeBusqueda_Cbx.SelectedIndexChanged += new System.EventHandler(this.tipoDeBusqueda_Cbx_SelectedIndexChanged);
+            // 
+            // registrarColaboradorToolStripMenuItem
+            // 
+            this.registrarColaboradorToolStripMenuItem.Name = "registrarColaboradorToolStripMenuItem";
+            this.registrarColaboradorToolStripMenuItem.Size = new System.Drawing.Size(202, 29);
+            this.registrarColaboradorToolStripMenuItem.Text = "Registrar Colaborador";
+            this.registrarColaboradorToolStripMenuItem.Click += new System.EventHandler(this.registrarColaboradorToolStripMenuItem_Click);
             // 
             // ControlDeUsuariosForm
             // 
@@ -342,5 +357,6 @@ namespace Control_Bibliotecario.UI
         private System.Windows.Forms.DataGridViewTextBoxColumn generoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccionParticularDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prestamo;
+        private System.Windows.Forms.ToolStripMenuItem registrarColaboradorToolStripMenuItem;
     }
 }
