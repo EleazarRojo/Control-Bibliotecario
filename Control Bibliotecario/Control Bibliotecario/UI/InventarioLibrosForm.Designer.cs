@@ -31,9 +31,6 @@ namespace Control_Bibliotecario.UI
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tipoBusqueda_CB = new System.Windows.Forms.ComboBox();
-            this.buscar_Tbx = new System.Windows.Forms.TextBox();
-            this.buscar_Btn = new System.Windows.Forms.Button();
             this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.autorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +41,9 @@ namespace Control_Bibliotecario.UI
             this.estadoPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.librosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bibliotecaDataSet = new Control_Bibliotecario.BibliotecaDataSet();
+            this.tipoBusqueda_CB = new System.Windows.Forms.ComboBox();
+            this.buscar_Tbx = new System.Windows.Forms.TextBox();
+            this.buscar_Btn = new System.Windows.Forms.Button();
             this.librosTableAdapter = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.LibrosTableAdapter();
             this.tableAdapterManager = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager();
             this.eliminar_Btn = new System.Windows.Forms.Button();
@@ -60,6 +60,7 @@ namespace Control_Bibliotecario.UI
             this.year_Tbx = new System.Windows.Forms.TextBox();
             this.numEdicion_Tbx = new System.Windows.Forms.TextBox();
             this.agregar_Btn = new System.Windows.Forms.Button();
+            this.modificar_Btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).BeginInit();
@@ -83,41 +84,6 @@ namespace Control_Bibliotecario.UI
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(900, 454);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // tipoBusqueda_CB
-            // 
-            this.tipoBusqueda_CB.FormattingEnabled = true;
-            this.tipoBusqueda_CB.Items.AddRange(new object[] {
-            "ISBN",
-            "IdCopia",
-            "Titulo",
-            "Autor",
-            "Año",
-            "Agregar Libro",
-            "Eliminar Libro"});
-            this.tipoBusqueda_CB.Location = new System.Drawing.Point(12, 512);
-            this.tipoBusqueda_CB.Name = "tipoBusqueda_CB";
-            this.tipoBusqueda_CB.Size = new System.Drawing.Size(142, 21);
-            this.tipoBusqueda_CB.TabIndex = 1;
-            this.tipoBusqueda_CB.Text = "Tipo de Busqueda";
-            this.tipoBusqueda_CB.SelectedIndexChanged += new System.EventHandler(this.tipoBusqueda_CB_SelectedIndexChanged);
-            // 
-            // buscar_Tbx
-            // 
-            this.buscar_Tbx.Location = new System.Drawing.Point(161, 512);
-            this.buscar_Tbx.Name = "buscar_Tbx";
-            this.buscar_Tbx.Size = new System.Drawing.Size(259, 20);
-            this.buscar_Tbx.TabIndex = 2;
-            // 
-            // buscar_Btn
-            // 
-            this.buscar_Btn.Location = new System.Drawing.Point(426, 512);
-            this.buscar_Btn.Name = "buscar_Btn";
-            this.buscar_Btn.Size = new System.Drawing.Size(75, 23);
-            this.buscar_Btn.TabIndex = 3;
-            this.buscar_Btn.Text = "Buscar";
-            this.buscar_Btn.UseVisualStyleBackColor = true;
-            this.buscar_Btn.Click += new System.EventHandler(this.buscar_Btn_Click);
             // 
             // iSBNDataGridViewTextBoxColumn
             // 
@@ -177,6 +143,42 @@ namespace Control_Bibliotecario.UI
             this.bibliotecaDataSet.DataSetName = "BibliotecaDataSet";
             this.bibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // tipoBusqueda_CB
+            // 
+            this.tipoBusqueda_CB.FormattingEnabled = true;
+            this.tipoBusqueda_CB.Items.AddRange(new object[] {
+            "ISBN",
+            "IdCopia",
+            "Titulo",
+            "Autor",
+            "Año",
+            "Agregar Libro",
+            "Editar Libro",
+            "Eliminar Libro"});
+            this.tipoBusqueda_CB.Location = new System.Drawing.Point(12, 512);
+            this.tipoBusqueda_CB.Name = "tipoBusqueda_CB";
+            this.tipoBusqueda_CB.Size = new System.Drawing.Size(142, 21);
+            this.tipoBusqueda_CB.TabIndex = 1;
+            this.tipoBusqueda_CB.Text = "Tipo de Busqueda";
+            this.tipoBusqueda_CB.SelectedIndexChanged += new System.EventHandler(this.tipoBusqueda_CB_SelectedIndexChanged);
+            // 
+            // buscar_Tbx
+            // 
+            this.buscar_Tbx.Location = new System.Drawing.Point(161, 512);
+            this.buscar_Tbx.Name = "buscar_Tbx";
+            this.buscar_Tbx.Size = new System.Drawing.Size(259, 20);
+            this.buscar_Tbx.TabIndex = 2;
+            // 
+            // buscar_Btn
+            // 
+            this.buscar_Btn.Location = new System.Drawing.Point(426, 512);
+            this.buscar_Btn.Name = "buscar_Btn";
+            this.buscar_Btn.Size = new System.Drawing.Size(75, 23);
+            this.buscar_Btn.TabIndex = 3;
+            this.buscar_Btn.Text = "Buscar";
+            this.buscar_Btn.UseVisualStyleBackColor = true;
+            this.buscar_Btn.Click += new System.EventHandler(this.buscar_Btn_Click);
+            // 
             // librosTableAdapter
             // 
             this.librosTableAdapter.ClearBeforeFill = true;
@@ -201,6 +203,7 @@ namespace Control_Bibliotecario.UI
             this.eliminar_Btn.TabIndex = 4;
             this.eliminar_Btn.Text = "Eliminar Libro";
             this.eliminar_Btn.UseVisualStyleBackColor = true;
+            this.eliminar_Btn.Click += new System.EventHandler(this.eliminar_Btn_Click);
             // 
             // ISBN_Lbl
             // 
@@ -321,11 +324,23 @@ namespace Control_Bibliotecario.UI
             this.agregar_Btn.Visible = false;
             this.agregar_Btn.Click += new System.EventHandler(this.agregar_Btn_Click);
             // 
+            // modificar_Btn
+            // 
+            this.modificar_Btn.Enabled = false;
+            this.modificar_Btn.Location = new System.Drawing.Point(616, 610);
+            this.modificar_Btn.Name = "modificar_Btn";
+            this.modificar_Btn.Size = new System.Drawing.Size(93, 23);
+            this.modificar_Btn.TabIndex = 18;
+            this.modificar_Btn.Text = "Modificar Libro";
+            this.modificar_Btn.UseVisualStyleBackColor = true;
+            this.modificar_Btn.Click += new System.EventHandler(this.modificar_Btn_Click);
+            // 
             // InventarioLibrosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 551);
+            this.ClientSize = new System.Drawing.Size(925, 690);
+            this.Controls.Add(this.modificar_Btn);
             this.Controls.Add(this.agregar_Btn);
             this.Controls.Add(this.tema_Tbx);
             this.Controls.Add(this.year_Tbx);
@@ -389,5 +404,6 @@ namespace Control_Bibliotecario.UI
         private System.Windows.Forms.TextBox year_Tbx;
         private System.Windows.Forms.TextBox numEdicion_Tbx;
         private System.Windows.Forms.Button agregar_Btn;
+        private System.Windows.Forms.Button modificar_Btn;
     }
 }

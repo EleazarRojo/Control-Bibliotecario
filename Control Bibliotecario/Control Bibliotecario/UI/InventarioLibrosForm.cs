@@ -63,6 +63,13 @@ namespace Control_Bibliotecario.UI
                     break;
                 case 6:
                     librosTableAdapter.OrdenarPorIdCopia(bibliotecaDataSet.Libros);
+                    spawn();
+                    buscar_Tbx.Enabled = true;
+                    buscar_Btn.Enabled = true;
+                    agregar_Btn.Enabled = false;
+                    break;
+                case 7:
+                    librosTableAdapter.OrdenarPorIdCopia(bibliotecaDataSet.Libros);
                     disspawn();
                     break;
             }
@@ -89,7 +96,10 @@ namespace Control_Bibliotecario.UI
                     break;
                 case 5:
                     break;
-                case 6:
+                case 6://[Proceso de Modificación] Para modificar el libro se requerira de buscar el libro deseado y al presionar buscar se desplegara la información del libro y un boton de modificar//
+                    busqueda();
+                    break;
+                case 7:
                     librosTableAdapter.OrdenarPorIdCopiaEspecifico(bibliotecaDataSet.Libros, int.Parse(buscar_Tbx.Text));
                     eliminar_Btn.Enabled = true;
                     break;
@@ -98,6 +108,7 @@ namespace Control_Bibliotecario.UI
 
         public void disspawn()
         {
+            buscar_Tbx.Enabled = true;
             buscar_Btn.Enabled = true;
             this.Size = new Size(941, 590);
             ISBN_Lbl.Visible = false;
@@ -117,6 +128,7 @@ namespace Control_Bibliotecario.UI
 
         public void spawn()
         {
+            buscar_Tbx.Enabled = false;
             buscar_Btn.Enabled = false;
             this.Size = new Size(941, 710);
             ISBN_Lbl.Visible = true;
@@ -132,6 +144,41 @@ namespace Control_Bibliotecario.UI
             tema_Lbl.Visible = true;
             tema_Tbx.Visible = true;
             agregar_Btn.Visible = true;
+        }
+
+        public void busqueda()
+        {
+            if(buscar_Tbx.TextLength != 0)
+            {
+                librosTableAdapter.OrdenarPorIdCopiaEspecifico(bibliotecaDataSet.Libros, int.Parse(buscar_Tbx.Text));
+                string direccion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\BD\\Biblioteca.mdb";
+                string consulta = "SELECT * FROM Libros WHERE IdCopia = " +buscar_Tbx.Text;
+                OleDbConnection conexion = new OleDbConnection();
+                conexion.ConnectionString = direccion;
+                conexion.Open();
+                OleDbDataAdapter ada = new OleDbDataAdapter(consulta, conexion);
+                DataTable dt = new DataTable();
+                ada.Fill(dt);
+
+                if(dt.Rows.Count != 0)
+                {
+                    ISBN_Tbx.Text = dt.Rows[0].ItemArray[0].ToString();
+                    titulo_Tbx.Text = dt.Rows[0].ItemArray[1].ToString();
+                    autor_Tbx.Text = dt.Rows[0].ItemArray[2].ToString();
+                    numEdicion_Tbx.Text = dt.Rows[0].ItemArray[3].ToString();
+                    year_Tbx.Text = dt.Rows[0].ItemArray[4].ToString();
+                    tema_Tbx.Text = dt.Rows[0].ItemArray[5].ToString();
+                    modificar_Btn.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("No se a encontrado el libro buscado", "Busqueda de Libro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Favor de llenar el cambo de Busqueda", "Busqueda de Libro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void agregar_Btn_Click(object sender, EventArgs e)
@@ -164,6 +211,35 @@ namespace Control_Bibliotecario.UI
             {
                 MessageBox.Show("Complete todos los campos requeridos", "Campos Vacios", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void eliminar_Btn_Click(object sender, EventArgs e)
+        {
+            string direccion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\BD\\Biblioteca.mdb";
+            string consulta = "SELECT * FROM Libros WHERE IdCopia = " + buscar_Tbx.Text;
+            string delete = "DELETE * FROM Libros WHERE IdCopia = " + buscar_Tbx.Text;
+            OleDbConnection conexion = new OleDbConnection();
+            conexion.ConnectionString = direccion;
+            OleDbDataAdapter ada = new OleDbDataAdapter(consulta, conexion);
+            conexion.Open();
+            DataTable dt = new DataTable();
+            ada.Fill(dt);
+
+            if (dt.Rows.Count != 0)
+            {
+                OleDbCommand cmd = new OleDbCommand(delete, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Se ha eliminado el Libro Exitosamente", "Eliminación de Libro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No se ha encontrado el Libro", "Eliminación de Libro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void modificar_Btn_Click(object sender, EventArgs e)
+        {
+            string direccion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\BD\\Biblioteca.mdb";
         }
     }
 }

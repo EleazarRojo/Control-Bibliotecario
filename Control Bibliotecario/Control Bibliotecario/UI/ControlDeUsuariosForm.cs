@@ -65,7 +65,7 @@ namespace Control_Bibliotecario.UI
         {
             string direccion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\BD\\Biblioteca.mdb";
             string consulta = "SELECT * FROM Usuarios WHERE IdUsuario = " +buscar_Tbx.Text;
-            string delete = "DELET * FROM Usuarios WHERE Id Usuario = " +buscar_Tbx.Text;
+            string delete = "DELETE * FROM Usuarios WHERE IdUsuario = " +buscar_Tbx.Text; //Correción de string [DELET --> DELETE] e [Id Usuario --> IdUsuario]
             OleDbConnection conexion = new OleDbConnection();
             conexion.ConnectionString = direccion;
             OleDbDataAdapter ada = new OleDbDataAdapter(consulta, conexion);
