@@ -65,6 +65,12 @@
     <Compile Include="UI\ControlDePrestamos.Designer.cs">
       <DependentUpon>ControlDePrestamos.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\DevolverPrestamoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DevolverPrestamoForm.Designer.cs">
+      <DependentUpon>DevolverPrestamoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\HistorialDePrestamosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\RealizarPrestamoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RealizarPrestamoForm.Designer.cs">
+      <DependentUpon>RealizarPrestamoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\RegistroForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +125,9 @@
     </Compile>
     <EmbeddedResource Include="UI\ControlDePrestamos.resx">
       <DependentUpon>ControlDePrestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DevolverPrestamoForm.resx">
+      <DependentUpon>DevolverPrestamoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\HistorialDePrestamosForm.resx">
       <DependentUpon>HistorialDePrestamosForm.cs</DependentUpon>
@@ -139,6 +154,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\RealizarPrestamoForm.resx">
+      <DependentUpon>RealizarPrestamoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\RegistroForm.resx">
       <DependentUpon>RegistroForm.cs</DependentUpon>
     </EmbeddedResource>

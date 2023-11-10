@@ -30,12 +30,8 @@ namespace Control_Bibliotecario.UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.prestamosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bibliotecaDataSet = new Control_Bibliotecario.BibliotecaDataSet();
-            this.prestamosTableAdapter = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.PrestamosTableAdapter();
-            this.tableAdapterManager = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager();
             this.folioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,16 +40,21 @@ namespace Control_Bibliotecario.UI
             this.fechaInicialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDevolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.realizarPrestamo_Btn = new System.Windows.Forms.Button();
-            this.IdUsuario_lbl = new System.Windows.Forms.Label();
-            this.IdUsuario_Tbx = new System.Windows.Forms.TextBox();
-            this.ISBN_lbl = new System.Windows.Forms.Label();
-            this.ISBN_Tbx = new System.Windows.Forms.TextBox();
-            this.devolverPrestamo_Btn = new System.Windows.Forms.Button();
+            this.prestamosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bibliotecaDataSet = new Control_Bibliotecario.BibliotecaDataSet();
+            this.prestamosTableAdapter = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.PrestamosTableAdapter();
+            this.tableAdapterManager = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager();
             this.button1 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.relizarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.devolverPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscar_lbl = new System.Windows.Forms.Label();
+            this.IdUsuario_Tbx = new System.Windows.Forms.TextBox();
+            this.tipoBusqueda_CB = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -70,44 +71,20 @@ namespace Control_Bibliotecario.UI
             this.fechaDevolucionDataGridViewTextBoxColumn,
             this.estatusDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.prestamosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(80, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 26);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1167, 511);
+            this.dataGridView1.Size = new System.Drawing.Size(897, 428);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // prestamosBindingSource
-            // 
-            this.prestamosBindingSource.DataMember = "Prestamos";
-            this.prestamosBindingSource.DataSource = this.bibliotecaDataSet;
-            // 
-            // bibliotecaDataSet
-            // 
-            this.bibliotecaDataSet.DataSetName = "BibliotecaDataSet";
-            this.bibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // prestamosTableAdapter
-            // 
-            this.prestamosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AutoresTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ISBNAutorTableAdapter = null;
-            this.tableAdapterManager.LibrosTableAdapter = null;
-            this.tableAdapterManager.NivelDeAccesoTableAdapter = null;
-            this.tableAdapterManager.PrestamosTableAdapter = this.prestamosTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UsuariosTableAdapter = null;
             // 
             // folioDataGridViewTextBoxColumn
             // 
             this.folioDataGridViewTextBoxColumn.DataPropertyName = "Folio";
-            dataGridViewCellStyle1.Format = "0000000000";
-            dataGridViewCellStyle1.NullValue = null;
-            this.folioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Format = "0000000000";
+            dataGridViewCellStyle4.NullValue = null;
+            this.folioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.folioDataGridViewTextBoxColumn.HeaderText = "Folio";
             this.folioDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.folioDataGridViewTextBoxColumn.Name = "folioDataGridViewTextBoxColumn";
@@ -169,90 +146,122 @@ namespace Control_Bibliotecario.UI
             this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
             this.estatusDataGridViewTextBoxColumn.Width = 150;
             // 
-            // realizarPrestamo_Btn
+            // prestamosBindingSource
             // 
-            this.realizarPrestamo_Btn.Enabled = false;
-            this.realizarPrestamo_Btn.Location = new System.Drawing.Point(981, 687);
-            this.realizarPrestamo_Btn.Name = "realizarPrestamo_Btn";
-            this.realizarPrestamo_Btn.Size = new System.Drawing.Size(156, 49);
-            this.realizarPrestamo_Btn.TabIndex = 1;
-            this.realizarPrestamo_Btn.Text = "Realizar Prestamo";
-            this.realizarPrestamo_Btn.UseVisualStyleBackColor = true;
+            this.prestamosBindingSource.DataMember = "Prestamos";
+            this.prestamosBindingSource.DataSource = this.bibliotecaDataSet;
             // 
-            // IdUsuario_lbl
+            // bibliotecaDataSet
             // 
-            this.IdUsuario_lbl.AutoSize = true;
-            this.IdUsuario_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IdUsuario_lbl.Location = new System.Drawing.Point(75, 572);
-            this.IdUsuario_lbl.Name = "IdUsuario_lbl";
-            this.IdUsuario_lbl.Size = new System.Drawing.Size(124, 27);
-            this.IdUsuario_lbl.TabIndex = 2;
-            this.IdUsuario_lbl.Text = "Id Usuario: ";
+            this.bibliotecaDataSet.DataSetName = "BibliotecaDataSet";
+            this.bibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // prestamosTableAdapter
+            // 
+            this.prestamosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AutoresTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ISBNAutorTableAdapter = null;
+            this.tableAdapterManager.LibrosTableAdapter = null;
+            this.tableAdapterManager.NivelDeAccesoTableAdapter = null;
+            this.tableAdapterManager.PrestamosTableAdapter = this.prestamosTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsuariosTableAdapter = null;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(746, 496);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.relizarPrestamoToolStripMenuItem,
+            this.devolverPrestamoToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(897, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // relizarPrestamoToolStripMenuItem
+            // 
+            this.relizarPrestamoToolStripMenuItem.Name = "relizarPrestamoToolStripMenuItem";
+            this.relizarPrestamoToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
+            this.relizarPrestamoToolStripMenuItem.Text = "Relizar Prestamo";
+            this.relizarPrestamoToolStripMenuItem.Click += new System.EventHandler(this.relizarPrestamoToolStripMenuItem_Click);
+            // 
+            // devolverPrestamoToolStripMenuItem
+            // 
+            this.devolverPrestamoToolStripMenuItem.Name = "devolverPrestamoToolStripMenuItem";
+            this.devolverPrestamoToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
+            this.devolverPrestamoToolStripMenuItem.Text = "Devolver Prestamo";
+            this.devolverPrestamoToolStripMenuItem.Click += new System.EventHandler(this.devolverPrestamoToolStripMenuItem_Click);
+            // 
+            // buscar_lbl
+            // 
+            this.buscar_lbl.AutoSize = true;
+            this.buscar_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscar_lbl.Location = new System.Drawing.Point(39, 497);
+            this.buscar_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.buscar_lbl.Name = "buscar_lbl";
+            this.buscar_lbl.Size = new System.Drawing.Size(54, 19);
+            this.buscar_lbl.TabIndex = 2;
+            this.buscar_lbl.Text = "Buscar:";
             // 
             // IdUsuario_Tbx
             // 
             this.IdUsuario_Tbx.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IdUsuario_Tbx.Location = new System.Drawing.Point(205, 572);
+            this.IdUsuario_Tbx.Location = new System.Drawing.Point(329, 496);
+            this.IdUsuario_Tbx.Margin = new System.Windows.Forms.Padding(2);
             this.IdUsuario_Tbx.Name = "IdUsuario_Tbx";
-            this.IdUsuario_Tbx.Size = new System.Drawing.Size(254, 30);
+            this.IdUsuario_Tbx.Size = new System.Drawing.Size(413, 23);
             this.IdUsuario_Tbx.TabIndex = 3;
+            this.IdUsuario_Tbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IdUsuario_Tbx_KeyPress);
             // 
-            // ISBN_lbl
+            // tipoBusqueda_CB
             // 
-            this.ISBN_lbl.AutoSize = true;
-            this.ISBN_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ISBN_lbl.Location = new System.Drawing.Point(75, 632);
-            this.ISBN_lbl.Name = "ISBN_lbl";
-            this.ISBN_lbl.Size = new System.Drawing.Size(77, 27);
-            this.ISBN_lbl.TabIndex = 4;
-            this.ISBN_lbl.Text = "ISBN: ";
-            // 
-            // ISBN_Tbx
-            // 
-            this.ISBN_Tbx.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ISBN_Tbx.Location = new System.Drawing.Point(205, 629);
-            this.ISBN_Tbx.Name = "ISBN_Tbx";
-            this.ISBN_Tbx.Size = new System.Drawing.Size(254, 30);
-            this.ISBN_Tbx.TabIndex = 5;
-            // 
-            // devolverPrestamo_Btn
-            // 
-            this.devolverPrestamo_Btn.Enabled = false;
-            this.devolverPrestamo_Btn.Location = new System.Drawing.Point(1165, 687);
-            this.devolverPrestamo_Btn.Name = "devolverPrestamo_Btn";
-            this.devolverPrestamo_Btn.Size = new System.Drawing.Size(156, 49);
-            this.devolverPrestamo_Btn.TabIndex = 6;
-            this.devolverPrestamo_Btn.Text = "Devolver Prestamo";
-            this.devolverPrestamo_Btn.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(80, 687);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 43);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.tipoBusqueda_CB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tipoBusqueda_CB.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tipoBusqueda_CB.FormattingEnabled = true;
+            this.tipoBusqueda_CB.Items.AddRange(new object[] {
+            "ISBN",
+            "ID Usario",
+            "ESTATUS"});
+            this.tipoBusqueda_CB.Location = new System.Drawing.Point(96, 496);
+            this.tipoBusqueda_CB.Name = "tipoBusqueda_CB";
+            this.tipoBusqueda_CB.Size = new System.Drawing.Size(228, 23);
+            this.tipoBusqueda_CB.TabIndex = 15;
             // 
             // ControlDePrestamos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1346, 763);
+            this.ClientSize = new System.Drawing.Size(897, 566);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.devolverPrestamo_Btn);
-            this.Controls.Add(this.ISBN_Tbx);
-            this.Controls.Add(this.ISBN_lbl);
+            this.Controls.Add(this.tipoBusqueda_CB);
             this.Controls.Add(this.IdUsuario_Tbx);
-            this.Controls.Add(this.IdUsuario_lbl);
-            this.Controls.Add(this.realizarPrestamo_Btn);
+            this.Controls.Add(this.buscar_lbl);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ControlDePrestamos";
             this.Text = "ControlDePrestamos";
-            this.Load += new System.EventHandler(this.ControlDePrestamos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,12 +282,12 @@ namespace Control_Bibliotecario.UI
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicialDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDevolucionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button realizarPrestamo_Btn;
-        private System.Windows.Forms.Label IdUsuario_lbl;
-        private System.Windows.Forms.TextBox IdUsuario_Tbx;
-        private System.Windows.Forms.Label ISBN_lbl;
-        private System.Windows.Forms.TextBox ISBN_Tbx;
-        private System.Windows.Forms.Button devolverPrestamo_Btn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem relizarPrestamoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem devolverPrestamoToolStripMenuItem;
+        private System.Windows.Forms.Label buscar_lbl;
+        private System.Windows.Forms.TextBox IdUsuario_Tbx;
+        private System.Windows.Forms.ComboBox tipoBusqueda_CB;
     }
 }
