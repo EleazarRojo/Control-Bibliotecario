@@ -333,13 +333,14 @@ namespace Control_Bibliotecario.UI
             this.modificar_Btn.TabIndex = 18;
             this.modificar_Btn.Text = "Modificar Libro";
             this.modificar_Btn.UseVisualStyleBackColor = true;
+            this.modificar_Btn.Visible = false;
             this.modificar_Btn.Click += new System.EventHandler(this.modificar_Btn_Click);
             // 
             // InventarioLibrosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 690);
+            this.ClientSize = new System.Drawing.Size(925, 551);
             this.Controls.Add(this.modificar_Btn);
             this.Controls.Add(this.agregar_Btn);
             this.Controls.Add(this.tema_Tbx);

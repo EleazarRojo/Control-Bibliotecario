@@ -108,6 +108,7 @@ namespace Control_Bibliotecario.UI
 
         public void disspawn()
         {
+            modificar_Btn.Visible = false;
             buscar_Tbx.Enabled = true;
             buscar_Btn.Enabled = true;
             this.Size = new Size(941, 590);
@@ -128,6 +129,7 @@ namespace Control_Bibliotecario.UI
 
         public void spawn()
         {
+            modificar_Btn.Visible = true;
             buscar_Tbx.Enabled = false;
             buscar_Btn.Enabled = false;
             this.Size = new Size(941, 710);
@@ -192,7 +194,7 @@ namespace Control_Bibliotecario.UI
                 conexion.Open();
                 OleDbCommand ins = new OleDbCommand(insertar, conexion);
 
-                ins.Parameters.AddWithValue("ISBN", int.Parse(ISBN_Tbx.Text));
+                ins.Parameters.AddWithValue("ISBN", long.Parse(ISBN_Tbx.Text));
                 ins.Parameters.AddWithValue("Titulo", titulo_Tbx.Text);
                 ins.Parameters.AddWithValue("Autor", autor_Tbx.Text);
                 ins.Parameters.AddWithValue("NumeroEducion", numEdicion_Tbx.Text);
@@ -230,17 +232,29 @@ namespace Control_Bibliotecario.UI
                 OleDbCommand cmd = new OleDbCommand(delete, conexion);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Se ha eliminado el Libro Exitosamente", "Eliminación de Libro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.librosTableAdapter.Fill(this.bibliotecaDataSet.Libros);
             }
             else
             {
                 MessageBox.Show("No se ha encontrado el Libro", "Eliminación de Libro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            conexion.Close();
         }
 
         private void modificar_Btn_Click(object sender, EventArgs e)
         {
             string direccion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\BD\\Biblioteca.mdb";
-            string update = "UPDATE Libros SET ISBN = <> WHERE IdCopia = " + buscar_Tbx.Text;
+            string update = "UPDATE Libros SET ISBN = '" +ISBN_Tbx.Text +"', Titulo = '"+ titulo_Tbx.Text +"', Autor = '"+autor_Tbx.Text+"', NumeroEdicion = "+numEdicion_Tbx.Text+", Año = "+year_Tbx.Text+", Tema = '"+tema_Tbx.Text+"'  WHERE IdCopia = " + buscar_Tbx.Text;
+            OleDbConnection conexion = new OleDbConnection();
+            conexion.ConnectionString = direccion;
+            conexion.Open();
+
+            OleDbCommand cmd = new OleDbCommand(update, conexion);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Se ha modificado el libro con exito", "Modificación de Libro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.librosTableAdapter.Fill(this.bibliotecaDataSet.Libros);
+
+            conexion.Close();
         }
     }
 }
