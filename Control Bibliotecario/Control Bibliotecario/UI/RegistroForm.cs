@@ -48,7 +48,7 @@ namespace Control_Bibliotecario
 
                 if (!(dt.Rows.Count > 0))
                 {
-                    string lineComando = "insert into Usuarios (RFC, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno, FechaDeNacimiento, Edad, Genero, DireccionParticular) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    string lineComando = "insert into Usuarios (RFC, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno, FechaDeNacimiento, Edad, Genero, DireccionParticular, Prestamo) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                     System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(lineComando, conexion);
 
                     cmd.Parameters.AddWithValue("RFC", usuario.RFC);
@@ -60,6 +60,7 @@ namespace Control_Bibliotecario
                     cmd.Parameters.AddWithValue("Edad", usuario.Edad);
                     cmd.Parameters.AddWithValue("Genero", usuario.Genero);
                     cmd.Parameters.AddWithValue("DireccionParticular", usuario.DireccionParticular);
+                    cmd.Parameters.AddWithValue("Prestamo", 0);
 
                     cmd.ExecuteNonQuery();
 

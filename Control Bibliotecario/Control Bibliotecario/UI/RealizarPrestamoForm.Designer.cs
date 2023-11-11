@@ -36,17 +36,17 @@ namespace Control_Bibliotecario.UI
             this.librosTableAdapter = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.LibrosTableAdapter();
             this.tableAdapterManager = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager();
             this.librosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.librosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.librosDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -106,6 +106,7 @@ namespace Control_Bibliotecario.UI
             this.librosBindingNavigator.BindingSource = this.librosBindingSource;
             this.librosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.librosBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.librosBindingNavigator.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.librosBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -125,10 +126,36 @@ namespace Control_Bibliotecario.UI
             this.librosBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.librosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.librosBindingNavigator.Name = "librosBindingNavigator";
+            this.librosBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.librosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.librosBindingNavigator.Size = new System.Drawing.Size(855, 25);
+            this.librosBindingNavigator.Size = new System.Drawing.Size(1282, 33);
             this.librosBindingNavigator.TabIndex = 0;
             this.librosBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(57, 28);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorDeleteItem.Text = "Eliminar";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -136,7 +163,7 @@ namespace Control_Bibliotecario.UI
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
             // 
             // bindingNavigatorMovePreviousItem
@@ -145,13 +172,13 @@ namespace Control_Bibliotecario.UI
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -159,21 +186,14 @@ namespace Control_Bibliotecario.UI
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(73, 31);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -181,7 +201,7 @@ namespace Control_Bibliotecario.UI
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
             // 
             // bindingNavigatorMoveLastItem
@@ -190,38 +210,20 @@ namespace Control_Bibliotecario.UI
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
             // 
             // librosBindingNavigatorSaveItem
             // 
             this.librosBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.librosBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("librosBindingNavigatorSaveItem.Image")));
             this.librosBindingNavigatorSaveItem.Name = "librosBindingNavigatorSaveItem";
-            this.librosBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.librosBindingNavigatorSaveItem.Size = new System.Drawing.Size(34, 28);
             this.librosBindingNavigatorSaveItem.Text = "Guardar datos";
             this.librosBindingNavigatorSaveItem.Click += new System.EventHandler(this.librosBindingNavigatorSaveItem_Click);
             // 
@@ -239,64 +241,83 @@ namespace Control_Bibliotecario.UI
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.librosDataGridView.DataSource = this.librosBindingSource;
-            this.librosDataGridView.Location = new System.Drawing.Point(0, 28);
+            this.librosDataGridView.Location = new System.Drawing.Point(0, 43);
+            this.librosDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.librosDataGridView.Name = "librosDataGridView";
-            this.librosDataGridView.Size = new System.Drawing.Size(843, 220);
+            this.librosDataGridView.RowHeadersWidth = 62;
+            this.librosDataGridView.Size = new System.Drawing.Size(1264, 338);
             this.librosDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ISBN";
             this.dataGridViewTextBoxColumn1.HeaderText = "ISBN";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 150;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Titulo";
             this.dataGridViewTextBoxColumn2.HeaderText = "Titulo";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 150;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Autor";
             this.dataGridViewTextBoxColumn3.HeaderText = "Autor";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 150;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "NumeroEdicion";
             this.dataGridViewTextBoxColumn4.HeaderText = "NumeroEdicion";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 150;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Año";
             this.dataGridViewTextBoxColumn5.HeaderText = "Año";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 150;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Tema";
             this.dataGridViewTextBoxColumn6.HeaderText = "Tema";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 150;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "IdCopia";
             this.dataGridViewTextBoxColumn7.HeaderText = "IdCopia";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 150;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "EstadoPrestamo";
             this.dataGridViewTextBoxColumn8.HeaderText = "EstadoPrestamo";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 150;
             // 
             // realizarPresatamo_btn
             // 
-            this.realizarPresatamo_btn.Location = new System.Drawing.Point(680, 421);
+            this.realizarPresatamo_btn.Location = new System.Drawing.Point(1104, 717);
+            this.realizarPresatamo_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.realizarPresatamo_btn.Name = "realizarPresatamo_btn";
-            this.realizarPresatamo_btn.Size = new System.Drawing.Size(107, 23);
+            this.realizarPresatamo_btn.Size = new System.Drawing.Size(160, 35);
             this.realizarPresatamo_btn.TabIndex = 15;
             this.realizarPresatamo_btn.Text = "Realizar Prestamo";
             this.realizarPresatamo_btn.UseVisualStyleBackColor = true;
@@ -304,54 +325,60 @@ namespace Control_Bibliotecario.UI
             // idCopia_tbx
             // 
             this.idCopia_tbx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idCopia_tbx.Location = new System.Drawing.Point(682, 267);
+            this.idCopia_tbx.Location = new System.Drawing.Point(619, 408);
+            this.idCopia_tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.idCopia_tbx.Name = "idCopia_tbx";
-            this.idCopia_tbx.Size = new System.Drawing.Size(100, 26);
+            this.idCopia_tbx.Size = new System.Drawing.Size(148, 35);
             this.idCopia_tbx.TabIndex = 14;
             // 
             // idCopia_lbl
             // 
             this.idCopia_lbl.AutoSize = true;
             this.idCopia_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idCopia_lbl.Location = new System.Drawing.Point(599, 270);
+            this.idCopia_lbl.Location = new System.Drawing.Point(510, 411);
+            this.idCopia_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.idCopia_lbl.Name = "idCopia_lbl";
-            this.idCopia_lbl.Size = new System.Drawing.Size(66, 19);
+            this.idCopia_lbl.Size = new System.Drawing.Size(101, 27);
             this.idCopia_lbl.TabIndex = 13;
             this.idCopia_lbl.Text = "Id Copia:";
             // 
             // iSBN_tbx
             // 
             this.iSBN_tbx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iSBN_tbx.Location = new System.Drawing.Point(357, 267);
+            this.iSBN_tbx.Location = new System.Drawing.Point(97, 407);
+            this.iSBN_tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iSBN_tbx.Name = "iSBN_tbx";
-            this.iSBN_tbx.Size = new System.Drawing.Size(100, 26);
+            this.iSBN_tbx.Size = new System.Drawing.Size(148, 35);
             this.iSBN_tbx.TabIndex = 12;
             // 
             // iSBN_lbl
             // 
             this.iSBN_lbl.AutoSize = true;
             this.iSBN_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iSBN_lbl.Location = new System.Drawing.Point(277, 270);
+            this.iSBN_lbl.Location = new System.Drawing.Point(18, 411);
+            this.iSBN_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.iSBN_lbl.Name = "iSBN_lbl";
-            this.iSBN_lbl.Size = new System.Drawing.Size(48, 19);
+            this.iSBN_lbl.Size = new System.Drawing.Size(71, 27);
             this.iSBN_lbl.TabIndex = 11;
             this.iSBN_lbl.Text = "ISBN:";
             // 
             // idUsuario_tbx
             // 
             this.idUsuario_tbx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idUsuario_tbx.Location = new System.Drawing.Point(92, 267);
+            this.idUsuario_tbx.Location = new System.Drawing.Point(1059, 413);
+            this.idUsuario_tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.idUsuario_tbx.Name = "idUsuario_tbx";
-            this.idUsuario_tbx.Size = new System.Drawing.Size(100, 26);
+            this.idUsuario_tbx.Size = new System.Drawing.Size(171, 35);
             this.idUsuario_tbx.TabIndex = 10;
             // 
             // idUsario_lbl
             // 
             this.idUsario_lbl.AutoSize = true;
             this.idUsario_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idUsario_lbl.Location = new System.Drawing.Point(12, 270);
+            this.idUsario_lbl.Location = new System.Drawing.Point(933, 416);
+            this.idUsario_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.idUsario_lbl.Name = "idUsario_lbl";
-            this.idUsario_lbl.Size = new System.Drawing.Size(76, 19);
+            this.idUsario_lbl.Size = new System.Drawing.Size(118, 27);
             this.idUsario_lbl.TabIndex = 9;
             this.idUsario_lbl.Text = "Id Usuario:";
             // 
@@ -359,9 +386,10 @@ namespace Control_Bibliotecario.UI
             // 
             this.nombreLibro_tbx.Enabled = false;
             this.nombreLibro_tbx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombreLibro_tbx.Location = new System.Drawing.Point(134, 355);
+            this.nombreLibro_tbx.Location = new System.Drawing.Point(201, 546);
+            this.nombreLibro_tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nombreLibro_tbx.Name = "nombreLibro_tbx";
-            this.nombreLibro_tbx.Size = new System.Drawing.Size(323, 26);
+            this.nombreLibro_tbx.Size = new System.Drawing.Size(482, 35);
             this.nombreLibro_tbx.TabIndex = 17;
             // 
             // nombreLibro_lbl
@@ -369,9 +397,10 @@ namespace Control_Bibliotecario.UI
             this.nombreLibro_lbl.AutoSize = true;
             this.nombreLibro_lbl.Enabled = false;
             this.nombreLibro_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombreLibro_lbl.Location = new System.Drawing.Point(12, 358);
+            this.nombreLibro_lbl.Location = new System.Drawing.Point(18, 551);
+            this.nombreLibro_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nombreLibro_lbl.Name = "nombreLibro_lbl";
-            this.nombreLibro_lbl.Size = new System.Drawing.Size(116, 19);
+            this.nombreLibro_lbl.Size = new System.Drawing.Size(181, 27);
             this.nombreLibro_lbl.TabIndex = 16;
             this.nombreLibro_lbl.Text = "Nombre del libro:";
             // 
@@ -379,9 +408,10 @@ namespace Control_Bibliotecario.UI
             // 
             this.autor_tbx.Enabled = false;
             this.autor_tbx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autor_tbx.Location = new System.Drawing.Point(134, 421);
+            this.autor_tbx.Location = new System.Drawing.Point(201, 648);
+            this.autor_tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.autor_tbx.Name = "autor_tbx";
-            this.autor_tbx.Size = new System.Drawing.Size(323, 26);
+            this.autor_tbx.Size = new System.Drawing.Size(482, 35);
             this.autor_tbx.TabIndex = 19;
             // 
             // autor_lbl
@@ -389,17 +419,18 @@ namespace Control_Bibliotecario.UI
             this.autor_lbl.AutoSize = true;
             this.autor_lbl.Enabled = false;
             this.autor_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autor_lbl.Location = new System.Drawing.Point(12, 428);
+            this.autor_lbl.Location = new System.Drawing.Point(18, 658);
+            this.autor_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.autor_lbl.Name = "autor_lbl";
-            this.autor_lbl.Size = new System.Drawing.Size(47, 19);
+            this.autor_lbl.Size = new System.Drawing.Size(74, 27);
             this.autor_lbl.TabIndex = 18;
             this.autor_lbl.Text = "Autor:";
             // 
             // RealizarPrestamoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 509);
+            this.ClientSize = new System.Drawing.Size(1282, 783);
             this.Controls.Add(this.autor_tbx);
             this.Controls.Add(this.autor_lbl);
             this.Controls.Add(this.nombreLibro_tbx);
@@ -413,6 +444,7 @@ namespace Control_Bibliotecario.UI
             this.Controls.Add(this.idUsario_lbl);
             this.Controls.Add(this.librosDataGridView);
             this.Controls.Add(this.librosBindingNavigator);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "RealizarPrestamoForm";
             this.Text = "RealizarPrestamoForm";
             this.Load += new System.EventHandler(this.RealizarPrestamoForm_Load);

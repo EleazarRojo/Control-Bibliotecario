@@ -65,7 +65,7 @@ namespace Control_Bibliotecario.UI
 
                 if (!(dt.Rows.Count > 0))
                 {
-                    string lineComando = "INSERT INTO Usuarios (RFC, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno, FechaDeNacimiento, Edad, Genero, DireccionParticular, Contrasenia) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    string lineComando = "INSERT INTO Usuarios (RFC, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno, FechaDeNacimiento, Edad, Genero, DireccionParticular, Contrasenia, Prestamo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                     System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(lineComando, conexion);
 
                     cmd.Parameters.AddWithValue("RFC", usuario.RFC);
@@ -78,6 +78,7 @@ namespace Control_Bibliotecario.UI
                     cmd.Parameters.AddWithValue("Genero", usuario.Genero);
                     cmd.Parameters.AddWithValue("DireccionParticular", usuario.DireccionParticular);
                     cmd.Parameters.AddWithValue("Contrasenia", contrasenia_tbx.Text);
+                    cmd.Parameters.AddWithValue("Prestamo", 0);
                     cmd.ExecuteNonQuery();
 
                     string consultaUsuario = "SELECT IdUsuario FROM Usuarios WHERE RFC = " + "'" + usuario.RFC + "'";
