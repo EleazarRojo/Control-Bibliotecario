@@ -136,6 +136,18 @@ namespace Control_Bibliotecario.UI
 
         }
 
+        public void ActulizarUsuario()
+        {
+            string direccion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\BD\\Biblioteca.mdb";
+            string actualizar = "UPDATE Usuarios SET Prestamo = " + 1 + " WHERE IdUsuario = " + idUsuario_tbx.Text;
+            OleDbConnection conexion = new OleDbConnection();
+            OleDbCommand actualizarLibro = new OleDbCommand(actualizar, conexion);
+            conexion.ConnectionString = direccion;
+            conexion.Open();
+            actualizarLibro.ExecuteNonQuery();
+            conexion.Close();
+        }
+
         public void RealizarPrestamo()
         {
             if (idCopia_Cbx.SelectedIndex >= 0)
@@ -153,9 +165,9 @@ namespace Control_Bibliotecario.UI
 
                     if (dt.Rows.Count > 0)
                     {
-                        if (int.Parse(dt.Rows[0].ItemArray[10].ToString()) < 1)
+                        if (int.Parse(dt.Rows[0].ItemArray[10].ToString())  == 0)
                         {
-                            string insertarPrestamo = "INSERT INTO Prestamos (IdUsuario, ISBN, Titulo, Autor, FechaInicial, FechaDevolucion, Estatus) VALUES (?,?,?,?,?,?,?)";
+                            string insertarPrestamo = "INSERT INTO Prestamos (IdUsuario, ISBN, Titulo, Autor, FechaInicial, FechaDevolucion, Estatus, IdCopia) VALUES (?,?,?,?,?,?,?,?)";
                             OleDbCommand cmd = new OleDbCommand(insertarPrestamo, conexion);
                             cmd.Parameters.AddWithValue("IdUsuario", idUsuario_tbx.Text);
                             cmd.Parameters.AddWithValue("ISBN", iSBN_tbx.Text);
@@ -164,10 +176,12 @@ namespace Control_Bibliotecario.UI
                             cmd.Parameters.AddWithValue("FechaInicial", DateTime.Today);
                             cmd.Parameters.AddWithValue("FechaDevolucion", DateTime.Today.AddDays(7));
                             cmd.Parameters.AddWithValue("Estatus", "Activo");
+                            cmd.Parameters.AddWithValue("IdCopia", idCopia_Cbx.Text);
 
                             cmd.ExecuteNonQuery();
 
                             ActualizarLibro();
+                            ActulizarUsuario();
                             dispawn();
                             conexion.Close();
                             this.DialogResult = DialogResult.OK;
@@ -177,6 +191,7 @@ namespace Control_Bibliotecario.UI
                         else
                         {
                             MessageBox.Show("El Usuario cuenta con un prestamo Activo", "Prestamo no procede", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            dispawn();
                         }
                     }
                     else

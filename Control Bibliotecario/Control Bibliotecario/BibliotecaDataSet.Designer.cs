@@ -1663,6 +1663,8 @@ namespace Control_Bibliotecario {
             
             private global::System.Data.DataColumn columnFolio;
             
+            private global::System.Data.DataColumn columnIdCopia;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PrestamosDataTable() {
@@ -1762,6 +1764,14 @@ namespace Control_Bibliotecario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IdCopiaColumn {
+                get {
+                    return this.columnIdCopia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1797,7 +1807,7 @@ namespace Control_Bibliotecario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PrestamosRow AddPrestamosRow(string IdUsuario, string ISBN, string Titulo, string Autor, System.DateTime FechaInicial, System.DateTime FechaDevolucion, string Estatus) {
+            public PrestamosRow AddPrestamosRow(string IdUsuario, string ISBN, string Titulo, string Autor, System.DateTime FechaInicial, System.DateTime FechaDevolucion, string Estatus, int IdCopia) {
                 PrestamosRow rowPrestamosRow = ((PrestamosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         IdUsuario,
@@ -1807,17 +1817,11 @@ namespace Control_Bibliotecario {
                         FechaInicial,
                         FechaDevolucion,
                         Estatus,
-                        null};
+                        null,
+                        IdCopia};
                 rowPrestamosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPrestamosRow);
                 return rowPrestamosRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PrestamosRow FindByIdUsuario(string IdUsuario) {
-                return ((PrestamosRow)(this.Rows.Find(new object[] {
-                            IdUsuario})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1845,6 +1849,7 @@ namespace Control_Bibliotecario {
                 this.columnFechaDevolucion = base.Columns["FechaDevolucion"];
                 this.columnEstatus = base.Columns["Estatus"];
                 this.columnFolio = base.Columns["Folio"];
+                this.columnIdCopia = base.Columns["IdCopia"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1866,10 +1871,9 @@ namespace Control_Bibliotecario {
                 base.Columns.Add(this.columnEstatus);
                 this.columnFolio = new global::System.Data.DataColumn("Folio", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFolio);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnIdUsuario}, true));
+                this.columnIdCopia = new global::System.Data.DataColumn("IdCopia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdCopia);
                 this.columnIdUsuario.AllowDBNull = false;
-                this.columnIdUsuario.Unique = true;
                 this.columnIdUsuario.MaxLength = 255;
                 this.columnISBN.MaxLength = 255;
                 this.columnTitulo.MaxLength = 255;
@@ -2979,6 +2983,22 @@ namespace Control_Bibliotecario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int IdCopia {
+                get {
+                    try {
+                        return ((int)(this[this.tablePrestamos.IdCopiaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'IdCopia\' de la tabla \'Prestamos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePrestamos.IdCopiaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsISBNNull() {
                 return this.IsNull(this.tablePrestamos.ISBNColumn);
             }
@@ -3059,6 +3079,18 @@ namespace Control_Bibliotecario {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetFolioNull() {
                 this[this.tablePrestamos.FolioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsIdCopiaNull() {
+                return this.IsNull(this.tablePrestamos.IdCopiaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetIdCopiaNull() {
+                this[this.tablePrestamos.IdCopiaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5661,6 +5693,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("FechaDevolucion", "FechaDevolucion");
             tableMapping.ColumnMappings.Add("Estatus", "Estatus");
             tableMapping.ColumnMappings.Add("Folio", "Folio");
+            tableMapping.ColumnMappings.Add("IdCopia", "IdCopia");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -5684,7 +5717,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `Prestamos` (`IdUsuario`, `ISBN`, `Autor`, `Estatus`, `FechaDevolucio" +
-                "n`, `FechaInicial`, `Titulo`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                "n`, `FechaInicial`, `Titulo`, `IdCopia`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IdUsuario", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IdUsuario", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ISBN", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ISBN", global::System.Data.DataRowVersion.Current, false, null));
@@ -5693,6 +5726,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FechaDevolucion", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FechaDevolucion", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FechaInicial", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FechaInicial", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Titulo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Titulo", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IdCopia", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IdCopia", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE `Prestamos` SET `IdUsuario` = ?, `ISBN` = ?, `Autor` = ?, `Estatus` = ?, `FechaDevolucion` = ?, `FechaInicial` = ?, `Titulo` = ? WHERE ((`IdUsuario` = ?) AND ((? = 1 AND `ISBN` IS NULL) OR (`ISBN` = ?)) AND ((? = 1 AND `Autor` IS NULL) OR (`Autor` = ?)) AND ((? = 1 AND `Estatus` IS NULL) OR (`Estatus` = ?)) AND ((? = 1 AND `FechaDevolucion` IS NULL) OR (`FechaDevolucion` = ?)) AND ((? = 1 AND `FechaInicial` IS NULL) OR (`FechaInicial` = ?)) AND ((? = 1 AND `Titulo` IS NULL) OR (`Titulo` = ?)) AND ((? = 1 AND `Folio` IS NULL) OR (`Folio` = ?)))";
@@ -5731,18 +5765,31 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IdUsuario, ISBN, Autor, Estatus, FechaDevolucion, FechaInicial, Titulo, Fo" +
-                "lio FROM Prestamos";
+                "lio, IdCopia FROM Prestamos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT ISBN, Autor, Estatus, FechaDevolucion, FechaInicial, Titulo, Folio, IdUsua" +
-                "rio\r\nFROM   Prestamos\r\nWHERE (IdUsuario = ?)";
+                "rio, IdCopia FROM Prestamos WHERE (IdUsuario = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IdUsuario", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IdUsuario", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        IdUsuario, ISBN, Autor, Estatus, FechaDevolucion, FechaInicial, Tit" +
+                "ulo, Folio, IdCopia\r\nFROM            Prestamos\r\nWHERE        (Estatus = \'Activo\'" +
+                ")";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        IdUsuario, ISBN, Autor, Estatus, FechaDevolucion, FechaInicial, Tit" +
+                "ulo, Folio, IdCopia\r\nFROM            Prestamos\r\nWHERE        (IdUsuario = ?) AND" +
+                " (Estatus = \'Activo\' OR\r\n                         Estatus = \'Vencido\')";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IdUsuario", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IdUsuario", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5775,6 +5822,38 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int ObtenerHistorialPrestamos(BibliotecaDataSet.PrestamosDataTable dataTable, string IdUsuario) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((IdUsuario == null)) {
+                throw new global::System.ArgumentNullException("IdUsuario");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(IdUsuario));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int OrdenarPorActivo(BibliotecaDataSet.PrestamosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int OrdenarPrestamoEspecifico(BibliotecaDataSet.PrestamosDataTable dataTable, string IdUsuario) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((IdUsuario == null)) {
                 throw new global::System.ArgumentNullException("IdUsuario");
             }
@@ -5898,7 +5977,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string IdUsuario, string ISBN, string Autor, string Estatus, global::System.Nullable<global::System.DateTime> FechaDevolucion, global::System.Nullable<global::System.DateTime> FechaInicial, string Titulo) {
+        public virtual int Insert(string IdUsuario, string ISBN, string Autor, string Estatus, global::System.Nullable<global::System.DateTime> FechaDevolucion, global::System.Nullable<global::System.DateTime> FechaInicial, string Titulo, global::System.Nullable<int> IdCopia) {
             if ((IdUsuario == null)) {
                 throw new global::System.ArgumentNullException("IdUsuario");
             }
@@ -5940,6 +6019,12 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Titulo));
+            }
+            if ((IdCopia.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(IdCopia.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6074,14 +6159,6 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ISBN, string Autor, string Estatus, global::System.Nullable<global::System.DateTime> FechaDevolucion, global::System.Nullable<global::System.DateTime> FechaInicial, string Titulo, string Original_IdUsuario, string Original_ISBN, string Original_Autor, string Original_Estatus, global::System.Nullable<global::System.DateTime> Original_FechaDevolucion, global::System.Nullable<global::System.DateTime> Original_FechaInicial, string Original_Titulo, int Original_Folio) {
-            return this.Update(Original_IdUsuario, ISBN, Autor, Estatus, FechaDevolucion, FechaInicial, Titulo, Original_IdUsuario, Original_ISBN, Original_Autor, Original_Estatus, Original_FechaDevolucion, Original_FechaInicial, Original_Titulo, Original_Folio);
         }
     }
     

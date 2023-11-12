@@ -30,7 +30,7 @@ namespace Control_Bibliotecario.UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.folioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,19 +71,20 @@ namespace Control_Bibliotecario.UI
             this.fechaInicialDataGridViewTextBoxColumn,
             this.fechaDevolucionDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.prestamosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 40);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 26);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1346, 658);
+            this.dataGridView1.Size = new System.Drawing.Size(897, 428);
             this.dataGridView1.TabIndex = 0;
             // 
             // folioDataGridViewTextBoxColumn
             // 
             this.folioDataGridViewTextBoxColumn.DataPropertyName = "Folio";
-            dataGridViewCellStyle2.Format = "0000000000";
-            dataGridViewCellStyle2.NullValue = null;
-            this.folioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "0000000000";
+            dataGridViewCellStyle1.NullValue = null;
+            this.folioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.folioDataGridViewTextBoxColumn.HeaderText = "Folio";
             this.folioDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.folioDataGridViewTextBoxColumn.Name = "folioDataGridViewTextBoxColumn";
@@ -172,9 +173,10 @@ namespace Control_Bibliotecario.UI
             // 
             // buscar_Btn
             // 
-            this.buscar_Btn.Location = new System.Drawing.Point(1119, 763);
+            this.buscar_Btn.Location = new System.Drawing.Point(746, 496);
+            this.buscar_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buscar_Btn.Name = "buscar_Btn";
-            this.buscar_Btn.Size = new System.Drawing.Size(112, 35);
+            this.buscar_Btn.Size = new System.Drawing.Size(75, 23);
             this.buscar_Btn.TabIndex = 7;
             this.buscar_Btn.Text = "Buscar";
             this.buscar_Btn.UseVisualStyleBackColor = true;
@@ -182,28 +184,28 @@ namespace Control_Bibliotecario.UI
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.relizarPrestamoToolStripMenuItem,
             this.devolverPrestamoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1346, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(908, 24);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // relizarPrestamoToolStripMenuItem
             // 
             this.relizarPrestamoToolStripMenuItem.Name = "relizarPrestamoToolStripMenuItem";
-            this.relizarPrestamoToolStripMenuItem.Size = new System.Drawing.Size(158, 29);
+            this.relizarPrestamoToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.relizarPrestamoToolStripMenuItem.Text = "Relizar Prestamo";
             this.relizarPrestamoToolStripMenuItem.Click += new System.EventHandler(this.relizarPrestamoToolStripMenuItem_Click);
             // 
             // devolverPrestamoToolStripMenuItem
             // 
             this.devolverPrestamoToolStripMenuItem.Name = "devolverPrestamoToolStripMenuItem";
-            this.devolverPrestamoToolStripMenuItem.Size = new System.Drawing.Size(178, 29);
+            this.devolverPrestamoToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.devolverPrestamoToolStripMenuItem.Text = "Devolver Prestamo";
             this.devolverPrestamoToolStripMenuItem.Click += new System.EventHandler(this.devolverPrestamoToolStripMenuItem_Click);
             // 
@@ -211,18 +213,20 @@ namespace Control_Bibliotecario.UI
             // 
             this.buscar_lbl.AutoSize = true;
             this.buscar_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscar_lbl.Location = new System.Drawing.Point(58, 765);
+            this.buscar_lbl.Location = new System.Drawing.Point(39, 497);
+            this.buscar_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.buscar_lbl.Name = "buscar_lbl";
-            this.buscar_lbl.Size = new System.Drawing.Size(85, 27);
+            this.buscar_lbl.Size = new System.Drawing.Size(54, 19);
             this.buscar_lbl.TabIndex = 2;
             this.buscar_lbl.Text = "Buscar:";
             // 
             // IdUsuario_Tbx
             // 
             this.IdUsuario_Tbx.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IdUsuario_Tbx.Location = new System.Drawing.Point(494, 763);
+            this.IdUsuario_Tbx.Location = new System.Drawing.Point(329, 496);
+            this.IdUsuario_Tbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.IdUsuario_Tbx.Name = "IdUsuario_Tbx";
-            this.IdUsuario_Tbx.Size = new System.Drawing.Size(618, 30);
+            this.IdUsuario_Tbx.Size = new System.Drawing.Size(413, 23);
             this.IdUsuario_Tbx.TabIndex = 3;
             this.IdUsuario_Tbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IdUsuario_Tbx_KeyPress);
             // 
@@ -235,17 +239,16 @@ namespace Control_Bibliotecario.UI
             "ISBN",
             "ID Usario",
             "ESTATUS"});
-            this.tipoBusqueda_CB.Location = new System.Drawing.Point(144, 763);
-            this.tipoBusqueda_CB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tipoBusqueda_CB.Location = new System.Drawing.Point(96, 496);
             this.tipoBusqueda_CB.Name = "tipoBusqueda_CB";
-            this.tipoBusqueda_CB.Size = new System.Drawing.Size(340, 30);
+            this.tipoBusqueda_CB.Size = new System.Drawing.Size(228, 23);
             this.tipoBusqueda_CB.TabIndex = 15;
             // 
             // ControlDePrestamos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1346, 871);
+            this.ClientSize = new System.Drawing.Size(908, 566);
             this.Controls.Add(this.buscar_Btn);
             this.Controls.Add(this.tipoBusqueda_CB);
             this.Controls.Add(this.IdUsuario_Tbx);
@@ -253,6 +256,7 @@ namespace Control_Bibliotecario.UI
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ControlDePrestamos";
             this.Text = "ControlDePrestamos";
             this.Load += new System.EventHandler(this.ControlDePrestamos_Load);

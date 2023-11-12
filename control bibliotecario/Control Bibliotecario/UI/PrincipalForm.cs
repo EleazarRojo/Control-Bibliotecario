@@ -2,6 +2,9 @@
 using System.Windows.Forms;
 using System.Drawing;
 using Control_Bibliotecario.UI;
+using System.Data;
+using System.Data.OleDb;
+
 
 namespace Control_Bibliotecario
 {
@@ -33,34 +36,36 @@ namespace Control_Bibliotecario
             {
                 if (FormaIngreso.IdNivel == "003")
                 {
+                    /*
                     Label bienvenido_Lbl = new Label();
                     bienvenido_Lbl.AutoSize = true;
                     bienvenido_Lbl.Location = new Point(557, 49);
                     bienvenido_Lbl.Text = "Bienvenido " + FormaIngreso.Nombre;
+                    */
                     usuarioToolStripMenuItem.Text = FormaIngreso.Nombre;
                     usuarioToolStripMenuItem.Visible = true;
                     ingresoToolStripMenuItem.Visible = false;
                     registrarseToolStripMenuItem.Visible = false;
-                    this.Controls.Add(bienvenido_Lbl);
+                    //this.Controls.Add(bienvenido_Lbl);
                 }
                 else
                 {
-                    if(FormaIngreso.IdNivel == "010")
+                    if (FormaIngreso.IdNivel == "010")
                     {
                         ingresoToolStripMenuItem.Visible = false;
                         registrarseToolStripMenuItem.Visible = false;
-                         prestamosToolStripMenuItem.Visible = false;
+                        prestamosToolStripMenuItem.Visible = false;
                         usuarioToolStripMenuItem.Text = FormaIngreso.Nombre;
                         usuarioToolStripMenuItem.Visible = true;
                         controlDeUsuariosToolStripMenuItem.Visible = true;
                         controlDePrestamosToolStripMenuItem.Visible = true;
                         inventarioDeLibrosToolStripMenuItem.Visible = true;
-                       
+
 
                     }
                     else
                     {
-                        if(FormaIngreso.IdNivel == "020")
+                        if (FormaIngreso.IdNivel == "020")
                         {
                             ingresoToolStripMenuItem.Visible = false;
                             registrarseToolStripMenuItem.Visible = false;
@@ -71,15 +76,15 @@ namespace Control_Bibliotecario
                             inventarioDeLibrosToolStripMenuItem.Visible = true;
                         }
                     }
-                        
+
                 }
-                
+
 
 
                 IdUsuario = FormaIngreso.IdUsuario;
 
 
-                
+
             }
         }
 
@@ -110,6 +115,7 @@ namespace Control_Bibliotecario
         {
             // TODO: This line of code loads data into the 'bibliotecaDataSet.Libros' table. You can move, or remove it, as needed.
             this.librosTableAdapter.Fill(this.bibliotecaDataSet.Libros);
+            ActualizarPrestamos();
 
         }
 
@@ -181,6 +187,41 @@ namespace Control_Bibliotecario
 
             IdUsuario = "";
 
+
+        }
+
+        public void ActualizarPrestamos()
+        {
+            string direccion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\BD\\Biblioteca.mdb";
+
+            string consulta = "SELECT * FROM Prestamos WHERE Estatus = 'Activo'";
+            OleDbConnection conexion = new OleDbConnection();
+            conexion.ConnectionString = direccion;
+            conexion.Open();
+            OleDbDataAdapter ada = new OleDbDataAdapter(consulta, conexion);
+            DataTable dt = new DataTable();
+            ada.Fill(dt);
+
+
+            if (dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    if (DateTime.Parse(dt.Rows[i].ItemArray[6].ToString()) < DateTime.Today)
+                    {
+
+                        string actualizar = "UPDATE Prestamos SET Estatus = 'Vencido' WHERE Folio = " + dt.Rows[i].ItemArray[1];
+
+                        OleDbCommand actualizarLibro = new OleDbCommand(actualizar, conexion);
+                       
+
+                        actualizarLibro.ExecuteNonQuery();
+                    }
+
+                }
+            }
+
+            conexion.Close();
 
         }
 
