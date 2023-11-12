@@ -31,20 +31,20 @@ namespace Control_Bibliotecario.UI
         {
             this.components = new System.ComponentModel.Container();
             this.historialPrestamos_DatagridView = new System.Windows.Forms.DataGridView();
-            this.bibliotecaDataSet = new Control_Bibliotecario.BibliotecaDataSet();
             this.prestamosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bibliotecaDataSet = new Control_Bibliotecario.BibliotecaDataSet();
             this.prestamosTableAdapter = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.PrestamosTableAdapter();
             this.tableAdapterManager = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager();
+            this.folioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.autorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaInicialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDevolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.folioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.historialPrestamos_DatagridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // historialPrestamos_DatagridView
@@ -52,13 +52,13 @@ namespace Control_Bibliotecario.UI
             this.historialPrestamos_DatagridView.AutoGenerateColumns = false;
             this.historialPrestamos_DatagridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.historialPrestamos_DatagridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.folioDataGridViewTextBoxColumn,
+            this.estatusDataGridViewTextBoxColumn,
             this.iSBNDataGridViewTextBoxColumn,
             this.tituloDataGridViewTextBoxColumn,
             this.autorDataGridViewTextBoxColumn,
             this.fechaInicialDataGridViewTextBoxColumn,
-            this.fechaDevolucionDataGridViewTextBoxColumn,
-            this.estatusDataGridViewTextBoxColumn,
-            this.folioDataGridViewTextBoxColumn});
+            this.fechaDevolucionDataGridViewTextBoxColumn});
             this.historialPrestamos_DatagridView.DataSource = this.prestamosBindingSource;
             this.historialPrestamos_DatagridView.Location = new System.Drawing.Point(30, 37);
             this.historialPrestamos_DatagridView.Name = "historialPrestamos_DatagridView";
@@ -67,15 +67,15 @@ namespace Control_Bibliotecario.UI
             this.historialPrestamos_DatagridView.Size = new System.Drawing.Size(1123, 605);
             this.historialPrestamos_DatagridView.TabIndex = 0;
             // 
-            // bibliotecaDataSet
-            // 
-            this.bibliotecaDataSet.DataSetName = "BibliotecaDataSet";
-            this.bibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // prestamosBindingSource
             // 
             this.prestamosBindingSource.DataMember = "Prestamos";
             this.prestamosBindingSource.DataSource = this.bibliotecaDataSet;
+            // 
+            // bibliotecaDataSet
+            // 
+            this.bibliotecaDataSet.DataSetName = "BibliotecaDataSet";
+            this.bibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // prestamosTableAdapter
             // 
@@ -91,6 +91,22 @@ namespace Control_Bibliotecario.UI
             this.tableAdapterManager.PrestamosTableAdapter = this.prestamosTableAdapter;
             this.tableAdapterManager.UpdateOrder = Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuariosTableAdapter = null;
+            // 
+            // folioDataGridViewTextBoxColumn
+            // 
+            this.folioDataGridViewTextBoxColumn.DataPropertyName = "Folio";
+            this.folioDataGridViewTextBoxColumn.HeaderText = "Folio";
+            this.folioDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.folioDataGridViewTextBoxColumn.Name = "folioDataGridViewTextBoxColumn";
+            this.folioDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // estatusDataGridViewTextBoxColumn
+            // 
+            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
+            this.estatusDataGridViewTextBoxColumn.Width = 150;
             // 
             // iSBNDataGridViewTextBoxColumn
             // 
@@ -132,22 +148,6 @@ namespace Control_Bibliotecario.UI
             this.fechaDevolucionDataGridViewTextBoxColumn.Name = "fechaDevolucionDataGridViewTextBoxColumn";
             this.fechaDevolucionDataGridViewTextBoxColumn.Width = 150;
             // 
-            // estatusDataGridViewTextBoxColumn
-            // 
-            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "Estatus";
-            this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
-            this.estatusDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
-            this.estatusDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // folioDataGridViewTextBoxColumn
-            // 
-            this.folioDataGridViewTextBoxColumn.DataPropertyName = "Folio";
-            this.folioDataGridViewTextBoxColumn.HeaderText = "Folio";
-            this.folioDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.folioDataGridViewTextBoxColumn.Name = "folioDataGridViewTextBoxColumn";
-            this.folioDataGridViewTextBoxColumn.Width = 150;
-            // 
             // HistorialDePrestamosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -158,8 +158,8 @@ namespace Control_Bibliotecario.UI
             this.Text = "HistorialDePrestamosForm";
             this.Load += new System.EventHandler(this.HistorialDePrestamosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.historialPrestamos_DatagridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -171,12 +171,12 @@ namespace Control_Bibliotecario.UI
         private System.Windows.Forms.BindingSource prestamosBindingSource;
         private BibliotecaDataSetTableAdapters.PrestamosTableAdapter prestamosTableAdapter;
         private BibliotecaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridViewTextBoxColumn folioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iSBNDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tituloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn autorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicialDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDevolucionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn folioDataGridViewTextBoxColumn;
     }
 }
