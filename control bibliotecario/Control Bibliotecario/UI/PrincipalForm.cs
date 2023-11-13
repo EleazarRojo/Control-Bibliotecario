@@ -54,13 +54,13 @@ namespace Control_Bibliotecario
                     {
                         ingresoToolStripMenuItem.Visible = false;
                         registrarseToolStripMenuItem.Visible = false;
-                        prestamosToolStripMenuItem.Visible = false;
+                 
                         usuarioToolStripMenuItem.Text = FormaIngreso.Nombre;
                         usuarioToolStripMenuItem.Visible = true;
                         controlDeUsuariosToolStripMenuItem.Visible = true;
                         controlDePrestamosToolStripMenuItem.Visible = true;
                         inventarioDeLibrosToolStripMenuItem.Visible = true;
-
+                        prestamosToolStripMenuItem.Visible = true;
 
                     }
                     else
@@ -69,7 +69,7 @@ namespace Control_Bibliotecario
                         {
                             ingresoToolStripMenuItem.Visible = false;
                             registrarseToolStripMenuItem.Visible = false;
-                            prestamosToolStripMenuItem.Visible = false;
+                       
                             usuarioToolStripMenuItem.Text = FormaIngreso.Nombre;
                             usuarioToolStripMenuItem.Visible = true;
                             controlDePrestamosToolStripMenuItem.Visible = true;

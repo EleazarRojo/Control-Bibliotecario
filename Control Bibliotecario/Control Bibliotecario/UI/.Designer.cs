@@ -107,6 +107,7 @@ namespace Control_Bibliotecario
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
             this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(59, 22);
             this.usuarioToolStripMenuItem.Text = "Usuario";
+            this.usuarioToolStripMenuItem.Visible = false;
             // 
             // prestamosToolStripMenuItem
             // 
@@ -127,6 +128,7 @@ namespace Control_Bibliotecario
             this.controlDeUsuariosToolStripMenuItem.Name = "controlDeUsuariosToolStripMenuItem";
             this.controlDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.controlDeUsuariosToolStripMenuItem.Text = "Control de Usuarios";
+            this.controlDeUsuariosToolStripMenuItem.Visible = false;
             this.controlDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.controlDeUsuariosToolStripMenuItem_Click);
             // 
             // controlDePrestamosToolStripMenuItem
@@ -134,6 +136,7 @@ namespace Control_Bibliotecario
             this.controlDePrestamosToolStripMenuItem.Name = "controlDePrestamosToolStripMenuItem";
             this.controlDePrestamosToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.controlDePrestamosToolStripMenuItem.Text = "Control de Prestamos";
+            this.controlDePrestamosToolStripMenuItem.Visible = false;
             this.controlDePrestamosToolStripMenuItem.Click += new System.EventHandler(this.controlDePrestamosToolStripMenuItem_Click);
             // 
             // inventarioDeLibrosToolStripMenuItem
@@ -141,6 +144,7 @@ namespace Control_Bibliotecario
             this.inventarioDeLibrosToolStripMenuItem.Name = "inventarioDeLibrosToolStripMenuItem";
             this.inventarioDeLibrosToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.inventarioDeLibrosToolStripMenuItem.Text = "Inventario de Libros";
+            this.inventarioDeLibrosToolStripMenuItem.Visible = false;
             this.inventarioDeLibrosToolStripMenuItem.Click += new System.EventHandler(this.inventarioDeLibrosToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
