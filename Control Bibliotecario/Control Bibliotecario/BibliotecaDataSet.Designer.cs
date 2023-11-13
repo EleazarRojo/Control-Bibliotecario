@@ -6386,7 +6386,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[5];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[7];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT RFC, IdUsuario, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno, Fecha" +
@@ -6395,30 +6395,54 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        RFC, IdUsuario, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno" +
-                ", FechaDeNacimiento, Edad, Genero, DireccionParticular, Prestamo, Contrasenia\r\nF" +
-                "ROM            Usuarios\r\nORDER BY IdUsuario";
+            this._commandCollection[1].CommandText = "SELECT RFC, IdUsuario, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno, Fecha" +
+                "DeNacimiento, Edad, Genero, DireccionParticular, Prestamo, Contrasenia\r\nFROM   U" +
+                "suarios\r\nWHERE (IdUsuario = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IdUsuario", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IdUsuario", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        RFC, IdUsuario, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno" +
-                ", FechaDeNacimiento, Edad, Genero, DireccionParticular, Prestamo, Contrasenia\r\nF" +
-                "ROM            Usuarios\r\nWHERE        (IdUsuario = ?)\r\nORDER BY IdUsuario";
+            this._commandCollection[2].CommandText = "UPDATE Usuarios\r\nSET       RFC = ?, IdDeNivel = ?, Nombre = ?, ApellidoPaterno = " +
+                "?, ApellidoMaterno = ?, FechaDeNacimiento = ?, Edad = ?, Genero = ?, DireccionPa" +
+                "rticular = ?, Contrasenia = ?\r\nWHERE (IdUsuario = ?)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IdUsuario", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IdUsuario", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("RFC", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "RFC", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IdDeNivel", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IdDeNivel", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Nombre", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Nombre", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ApellidoPaterno", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ApellidoPaterno", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ApellidoMaterno", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ApellidoMaterno", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FechaDeNacimiento", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FechaDeNacimiento", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Edad", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Edad", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Genero", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Genero", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DireccionParticular", global::System.Data.OleDb.OleDbType.WChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DireccionParticular", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Contrasenia", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Contrasenia", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_IdUsuario", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IdUsuario", global::System.Data.DataRowVersion.Original, false, null));
             this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT        RFC, IdUsuario, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno" +
                 ", FechaDeNacimiento, Edad, Genero, DireccionParticular, Prestamo, Contrasenia\r\nF" +
-                "ROM            Usuarios\r\nORDER BY RFC";
+                "ROM            Usuarios\r\nORDER BY IdUsuario";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "SELECT        RFC, IdUsuario, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno" +
                 ", FechaDeNacimiento, Edad, Genero, DireccionParticular, Prestamo, Contrasenia\r\nF" +
-                "ROM            Usuarios\r\nWHERE        (RFC = ?)\r\nORDER BY RFC";
+                "ROM            Usuarios\r\nWHERE        (IdUsuario = ?)\r\nORDER BY IdUsuario";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("RFC", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "RFC", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IdUsuario", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IdUsuario", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT        RFC, IdUsuario, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno" +
+                ", FechaDeNacimiento, Edad, Genero, DireccionParticular, Prestamo, Contrasenia\r\nF" +
+                "ROM            Usuarios\r\nORDER BY RFC";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT        RFC, IdUsuario, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno" +
+                ", FechaDeNacimiento, Edad, Genero, DireccionParticular, Prestamo, Contrasenia\r\nF" +
+                "ROM            Usuarios\r\nWHERE        (RFC = ?)\r\nORDER BY RFC";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("RFC", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "RFC", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6449,8 +6473,34 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int OrdenarPorIdUsuario(BibliotecaDataSet.UsuariosDataTable dataTable) {
+        public virtual int BusquedaPorIdUsuario(BibliotecaDataSet.UsuariosDataTable dataTable, int IdUsuario) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IdUsuario));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual BibliotecaDataSet.UsuariosDataTable GetDataBy1(int IdUsuario) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IdUsuario));
+            BibliotecaDataSet.UsuariosDataTable dataTable = new BibliotecaDataSet.UsuariosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int OrdenarPorIdUsuario(BibliotecaDataSet.UsuariosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -6463,7 +6513,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual BibliotecaDataSet.UsuariosDataTable ObtenerPorIdUsuario() {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             BibliotecaDataSet.UsuariosDataTable dataTable = new BibliotecaDataSet.UsuariosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6474,7 +6524,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int OrdenarPorIdUsuarioEspecifico(BibliotecaDataSet.UsuariosDataTable dataTable, int IdUsuario) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IdUsuario));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6488,7 +6538,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual BibliotecaDataSet.UsuariosDataTable ObtenerPorIdUsuarioEspecifico(int IdUsuario) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IdUsuario));
             BibliotecaDataSet.UsuariosDataTable dataTable = new BibliotecaDataSet.UsuariosDataTable();
             this.Adapter.Fill(dataTable);
@@ -6500,7 +6550,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int OrdenarPorRFC(BibliotecaDataSet.UsuariosDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -6513,7 +6563,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual BibliotecaDataSet.UsuariosDataTable ObtenerPorRFC() {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             BibliotecaDataSet.UsuariosDataTable dataTable = new BibliotecaDataSet.UsuariosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6524,7 +6574,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int OrdenarPorRFCEspecifico(BibliotecaDataSet.UsuariosDataTable dataTable, string RFC) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             if ((RFC == null)) {
                 throw new global::System.ArgumentNullException("RFC");
             }
@@ -6543,7 +6593,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual BibliotecaDataSet.UsuariosDataTable ObtenerPorRFCEspecifico(string RFC) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             if ((RFC == null)) {
                 throw new global::System.ArgumentNullException("RFC");
             }
@@ -6959,6 +7009,90 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int modificarUsuario(string RFC, string IdDeNivel, string Nombre, string ApellidoPaterno, string ApellidoMaterno, global::System.Nullable<global::System.DateTime> FechaDeNacimiento, global::System.Nullable<int> Edad, string Genero, string DireccionParticular, string Contrasenia, int Original_IdUsuario) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[2];
+            if ((RFC == null)) {
+                throw new global::System.ArgumentNullException("RFC");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(RFC));
+            }
+            if ((IdDeNivel == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(IdDeNivel));
+            }
+            if ((Nombre == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(Nombre));
+            }
+            if ((ApellidoPaterno == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(ApellidoPaterno));
+            }
+            if ((ApellidoMaterno == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(ApellidoMaterno));
+            }
+            if ((FechaDeNacimiento.HasValue == true)) {
+                command.Parameters[5].Value = ((System.DateTime)(FechaDeNacimiento.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Edad.HasValue == true)) {
+                command.Parameters[6].Value = ((int)(Edad.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Genero == null)) {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[7].Value = ((string)(Genero));
+            }
+            if ((DireccionParticular == null)) {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[8].Value = ((string)(DireccionParticular));
+            }
+            if ((Contrasenia == null)) {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[9].Value = ((string)(Contrasenia));
+            }
+            command.Parameters[10].Value = ((int)(Original_IdUsuario));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
