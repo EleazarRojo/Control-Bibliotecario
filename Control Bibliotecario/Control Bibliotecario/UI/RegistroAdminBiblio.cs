@@ -108,7 +108,7 @@ namespace Control_Bibliotecario.UI
             }
             else
             {
-                MessageBox.Show("LLene todos los campos correspondientes", "Informacion faltante", MessageBoxButtons.OK);
+                MessageBox.Show("LLene todos los campos correspondientes", "Información faltante", MessageBoxButtons.OK);
             }
         }
     }

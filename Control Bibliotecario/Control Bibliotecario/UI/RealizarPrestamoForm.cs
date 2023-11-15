@@ -77,12 +77,12 @@ namespace Control_Bibliotecario.UI
                 }
                 else
                 {
-                    MessageBox.Show("No se a encontrado el libro solicitado", "Busqueda de Libro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("No se ha encontrado el libro solicitado", "Búsqueda de Libro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Favor de llenar el campo de ISBN Para buscar un libro", "Busqueda de Libro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Favor de llenar el campo de ISBN Para buscar un libro", "Búsqueda de Libro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public void spawn()
@@ -186,24 +186,24 @@ namespace Control_Bibliotecario.UI
                             conexion.Close();
                             this.DialogResult = DialogResult.OK;
 
-                            MessageBox.Show("Prestamo realizado con exito", "Prestamo exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Prestamo realizado con éxito", "Prestamo exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("El Usuario cuenta con un prestamo Activo", "Prestamo no procede", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("El Usuario cuenta con un prestamo Activo", "Prestamo Activo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             dispawn();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese un usuario valido", "Usuario no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Ingrese un Usuario válido", "Usuario no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }
                 else
 
-                {
-                    MessageBox.Show("Favor de ingresar un Id de Usuario", "IdUsuario Faltante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                { 
+                    MessageBox.Show("Favor de ingresar un Id de Usuario", "Id de Usuario Faltante", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
 

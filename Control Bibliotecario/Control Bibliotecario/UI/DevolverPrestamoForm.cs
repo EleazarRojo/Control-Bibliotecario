@@ -124,7 +124,8 @@ namespace Control_Bibliotecario.UI
                 ActualizarLibro();
                 ActualizarPrestamo();
                 ActulizarUsuario();
-
+                this.DialogResult = DialogResult.OK;
+                this.Close();
                
             }
             else

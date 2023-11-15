@@ -83,6 +83,7 @@ namespace Control_Bibliotecario.UI
             this.dataGridView1.Location = new System.Drawing.Point(18, 49);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(1350, 698);
             this.dataGridView1.TabIndex = 0;
@@ -93,6 +94,7 @@ namespace Control_Bibliotecario.UI
             this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
             this.iSBNDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
+            this.iSBNDataGridViewTextBoxColumn.ReadOnly = true;
             this.iSBNDataGridViewTextBoxColumn.Width = 150;
             // 
             // tituloDataGridViewTextBoxColumn
@@ -101,6 +103,7 @@ namespace Control_Bibliotecario.UI
             this.tituloDataGridViewTextBoxColumn.HeaderText = "Titulo";
             this.tituloDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.tituloDataGridViewTextBoxColumn.Name = "tituloDataGridViewTextBoxColumn";
+            this.tituloDataGridViewTextBoxColumn.ReadOnly = true;
             this.tituloDataGridViewTextBoxColumn.Width = 150;
             // 
             // autorDataGridViewTextBoxColumn
@@ -109,6 +112,7 @@ namespace Control_Bibliotecario.UI
             this.autorDataGridViewTextBoxColumn.HeaderText = "Autor";
             this.autorDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.autorDataGridViewTextBoxColumn.Name = "autorDataGridViewTextBoxColumn";
+            this.autorDataGridViewTextBoxColumn.ReadOnly = true;
             this.autorDataGridViewTextBoxColumn.Width = 150;
             // 
             // numeroEdicionDataGridViewTextBoxColumn
@@ -117,6 +121,7 @@ namespace Control_Bibliotecario.UI
             this.numeroEdicionDataGridViewTextBoxColumn.HeaderText = "NumeroEdicion";
             this.numeroEdicionDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.numeroEdicionDataGridViewTextBoxColumn.Name = "numeroEdicionDataGridViewTextBoxColumn";
+            this.numeroEdicionDataGridViewTextBoxColumn.ReadOnly = true;
             this.numeroEdicionDataGridViewTextBoxColumn.Width = 150;
             // 
             // añoDataGridViewTextBoxColumn
@@ -125,6 +130,7 @@ namespace Control_Bibliotecario.UI
             this.añoDataGridViewTextBoxColumn.HeaderText = "Año";
             this.añoDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.añoDataGridViewTextBoxColumn.Name = "añoDataGridViewTextBoxColumn";
+            this.añoDataGridViewTextBoxColumn.ReadOnly = true;
             this.añoDataGridViewTextBoxColumn.Width = 150;
             // 
             // temaDataGridViewTextBoxColumn
@@ -133,6 +139,7 @@ namespace Control_Bibliotecario.UI
             this.temaDataGridViewTextBoxColumn.HeaderText = "Tema";
             this.temaDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.temaDataGridViewTextBoxColumn.Name = "temaDataGridViewTextBoxColumn";
+            this.temaDataGridViewTextBoxColumn.ReadOnly = true;
             this.temaDataGridViewTextBoxColumn.Width = 150;
             // 
             // idCopiaDataGridViewTextBoxColumn
@@ -141,6 +148,7 @@ namespace Control_Bibliotecario.UI
             this.idCopiaDataGridViewTextBoxColumn.HeaderText = "IdCopia";
             this.idCopiaDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.idCopiaDataGridViewTextBoxColumn.Name = "idCopiaDataGridViewTextBoxColumn";
+            this.idCopiaDataGridViewTextBoxColumn.ReadOnly = true;
             this.idCopiaDataGridViewTextBoxColumn.Width = 150;
             // 
             // estadoPrestamoDataGridViewTextBoxColumn
@@ -149,6 +157,7 @@ namespace Control_Bibliotecario.UI
             this.estadoPrestamoDataGridViewTextBoxColumn.HeaderText = "EstadoPrestamo";
             this.estadoPrestamoDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.estadoPrestamoDataGridViewTextBoxColumn.Name = "estadoPrestamoDataGridViewTextBoxColumn";
+            this.estadoPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
             this.estadoPrestamoDataGridViewTextBoxColumn.Width = 150;
             // 
             // librosBindingSource
@@ -397,6 +406,7 @@ namespace Control_Bibliotecario.UI
             this.Controls.Add(this.tipoBusqueda_CB);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "InventarioLibrosForm";
             this.Text = "Inventario";
             this.Load += new System.EventHandler(this.InventarioLibrosForm_Load);

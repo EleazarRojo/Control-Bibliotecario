@@ -56,8 +56,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BibliotecaDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Modelos\Administrador.cs" />
-    <Compile Include="Modelos\Bibliotecario.cs" />
     <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="UI\ControlDePrestamos.cs">
       <SubType>Form</SubType>

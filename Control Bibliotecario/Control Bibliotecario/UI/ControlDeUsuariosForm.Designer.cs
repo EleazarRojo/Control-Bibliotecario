@@ -30,8 +30,21 @@ namespace Control_Bibliotecario.UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rFCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDeNivelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoPaternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoMaternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDeNacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.generoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionParticularDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contrasenia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bibliotecaDataSet = new Control_Bibliotecario.BibliotecaDataSet();
             this.buscar_Btn = new System.Windows.Forms.Button();
             this.eliminar_Btn = new System.Windows.Forms.Button();
             this.buscar_Tbx = new System.Windows.Forms.TextBox();
@@ -60,8 +73,6 @@ namespace Control_Bibliotecario.UI
             this.genero_tbx = new System.Windows.Forms.TextBox();
             this.aceptarModificacion_btn = new System.Windows.Forms.Button();
             this.regresar_btn = new System.Windows.Forms.Button();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bibliotecaDataSet = new Control_Bibliotecario.BibliotecaDataSet();
             this.usuariosTableAdapter = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.UsuariosTableAdapter();
             this.tableAdapterManager = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager();
             this.direccion_tbx = new System.Windows.Forms.TextBox();
@@ -69,21 +80,10 @@ namespace Control_Bibliotecario.UI
             this.idNivel_Cbx = new System.Windows.Forms.ComboBox();
             this.contraseña_tbx = new System.Windows.Forms.TextBox();
             this.contraseña_lbl = new System.Windows.Forms.Label();
-            this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rFCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDeNivelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoPaternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoMaternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDeNacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.generoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccionParticularDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contrasenia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).BeginInit();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -103,12 +103,126 @@ namespace Control_Bibliotecario.UI
             this.direccionParticularDataGridViewTextBoxColumn,
             this.Contrasenia});
             this.dataGridView1.DataSource = this.usuariosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 32);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 54);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1466, 783);
+            this.dataGridView1.Size = new System.Drawing.Size(1466, 762);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // idUsuarioDataGridViewTextBoxColumn
+            // 
+            this.idUsuarioDataGridViewTextBoxColumn.DataPropertyName = "IdUsuario";
+            dataGridViewCellStyle5.Format = "000000";
+            dataGridViewCellStyle5.NullValue = null;
+            this.idUsuarioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.idUsuarioDataGridViewTextBoxColumn.Frozen = true;
+            this.idUsuarioDataGridViewTextBoxColumn.HeaderText = "IdUsuario";
+            this.idUsuarioDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.idUsuarioDataGridViewTextBoxColumn.Name = "idUsuarioDataGridViewTextBoxColumn";
+            this.idUsuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idUsuarioDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // rFCDataGridViewTextBoxColumn
+            // 
+            this.rFCDataGridViewTextBoxColumn.DataPropertyName = "RFC";
+            this.rFCDataGridViewTextBoxColumn.HeaderText = "RFC";
+            this.rFCDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.rFCDataGridViewTextBoxColumn.Name = "rFCDataGridViewTextBoxColumn";
+            this.rFCDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rFCDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // idDeNivelDataGridViewTextBoxColumn
+            // 
+            this.idDeNivelDataGridViewTextBoxColumn.DataPropertyName = "IdDeNivel";
+            this.idDeNivelDataGridViewTextBoxColumn.HeaderText = "IdDeNivel";
+            this.idDeNivelDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.idDeNivelDataGridViewTextBoxColumn.Name = "idDeNivelDataGridViewTextBoxColumn";
+            this.idDeNivelDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDeNivelDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // apellidoPaternoDataGridViewTextBoxColumn
+            // 
+            this.apellidoPaternoDataGridViewTextBoxColumn.DataPropertyName = "ApellidoPaterno";
+            this.apellidoPaternoDataGridViewTextBoxColumn.HeaderText = "ApellidoPaterno";
+            this.apellidoPaternoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.apellidoPaternoDataGridViewTextBoxColumn.Name = "apellidoPaternoDataGridViewTextBoxColumn";
+            this.apellidoPaternoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.apellidoPaternoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // apellidoMaternoDataGridViewTextBoxColumn
+            // 
+            this.apellidoMaternoDataGridViewTextBoxColumn.DataPropertyName = "ApellidoMaterno";
+            this.apellidoMaternoDataGridViewTextBoxColumn.HeaderText = "ApellidoMaterno";
+            this.apellidoMaternoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.apellidoMaternoDataGridViewTextBoxColumn.Name = "apellidoMaternoDataGridViewTextBoxColumn";
+            this.apellidoMaternoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.apellidoMaternoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // fechaDeNacimientoDataGridViewTextBoxColumn
+            // 
+            this.fechaDeNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaDeNacimiento";
+            this.fechaDeNacimientoDataGridViewTextBoxColumn.HeaderText = "FechaDeNacimiento";
+            this.fechaDeNacimientoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.fechaDeNacimientoDataGridViewTextBoxColumn.Name = "fechaDeNacimientoDataGridViewTextBoxColumn";
+            this.fechaDeNacimientoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaDeNacimientoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // edadDataGridViewTextBoxColumn
+            // 
+            this.edadDataGridViewTextBoxColumn.DataPropertyName = "Edad";
+            this.edadDataGridViewTextBoxColumn.HeaderText = "Edad";
+            this.edadDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
+            this.edadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.edadDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // generoDataGridViewTextBoxColumn
+            // 
+            this.generoDataGridViewTextBoxColumn.DataPropertyName = "Genero";
+            this.generoDataGridViewTextBoxColumn.HeaderText = "Genero";
+            this.generoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.generoDataGridViewTextBoxColumn.Name = "generoDataGridViewTextBoxColumn";
+            this.generoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.generoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // direccionParticularDataGridViewTextBoxColumn
+            // 
+            this.direccionParticularDataGridViewTextBoxColumn.DataPropertyName = "DireccionParticular";
+            this.direccionParticularDataGridViewTextBoxColumn.HeaderText = "DireccionParticular";
+            this.direccionParticularDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.direccionParticularDataGridViewTextBoxColumn.Name = "direccionParticularDataGridViewTextBoxColumn";
+            this.direccionParticularDataGridViewTextBoxColumn.ReadOnly = true;
+            this.direccionParticularDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // Contrasenia
+            // 
+            this.Contrasenia.DataPropertyName = "Contrasenia";
+            this.Contrasenia.HeaderText = "Contraseña";
+            this.Contrasenia.MinimumWidth = 8;
+            this.Contrasenia.Name = "Contrasenia";
+            this.Contrasenia.ReadOnly = true;
+            this.Contrasenia.Width = 150;
+            // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "Usuarios";
+            this.usuariosBindingSource.DataSource = this.bibliotecaDataSet;
+            // 
+            // bibliotecaDataSet
+            // 
+            this.bibliotecaDataSet.DataSetName = "BibliotecaDataSet";
+            this.bibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // buscar_Btn
             // 
@@ -143,9 +257,9 @@ namespace Control_Bibliotecario.UI
             // 
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 33);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 81);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1478, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(2310, 54);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -158,7 +272,7 @@ namespace Control_Bibliotecario.UI
             this.registrarColaboradorToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1478, 33);
+            this.menuStrip2.Size = new System.Drawing.Size(2310, 54);
             this.menuStrip2.TabIndex = 7;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -376,16 +490,6 @@ namespace Control_Bibliotecario.UI
             this.regresar_btn.UseVisualStyleBackColor = true;
             this.regresar_btn.Click += new System.EventHandler(this.regresar_btn_Click);
             // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "Usuarios";
-            this.usuariosBindingSource.DataSource = this.bibliotecaDataSet;
-            // 
-            // bibliotecaDataSet
-            // 
-            this.bibliotecaDataSet.DataSetName = "BibliotecaDataSet";
-            this.bibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // usuariosTableAdapter
             // 
             this.usuariosTableAdapter.ClearBeforeFill = true;
@@ -452,104 +556,11 @@ namespace Control_Bibliotecario.UI
             this.contraseña_lbl.Text = "Contraseña:";
             this.contraseña_lbl.Visible = false;
             // 
-            // idUsuarioDataGridViewTextBoxColumn
-            // 
-            this.idUsuarioDataGridViewTextBoxColumn.DataPropertyName = "IdUsuario";
-            dataGridViewCellStyle1.Format = "000000";
-            dataGridViewCellStyle1.NullValue = null;
-            this.idUsuarioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.idUsuarioDataGridViewTextBoxColumn.Frozen = true;
-            this.idUsuarioDataGridViewTextBoxColumn.HeaderText = "IdUsuario";
-            this.idUsuarioDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.idUsuarioDataGridViewTextBoxColumn.Name = "idUsuarioDataGridViewTextBoxColumn";
-            this.idUsuarioDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // rFCDataGridViewTextBoxColumn
-            // 
-            this.rFCDataGridViewTextBoxColumn.DataPropertyName = "RFC";
-            this.rFCDataGridViewTextBoxColumn.HeaderText = "RFC";
-            this.rFCDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.rFCDataGridViewTextBoxColumn.Name = "rFCDataGridViewTextBoxColumn";
-            this.rFCDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // idDeNivelDataGridViewTextBoxColumn
-            // 
-            this.idDeNivelDataGridViewTextBoxColumn.DataPropertyName = "IdDeNivel";
-            this.idDeNivelDataGridViewTextBoxColumn.HeaderText = "IdDeNivel";
-            this.idDeNivelDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.idDeNivelDataGridViewTextBoxColumn.Name = "idDeNivelDataGridViewTextBoxColumn";
-            this.idDeNivelDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // apellidoPaternoDataGridViewTextBoxColumn
-            // 
-            this.apellidoPaternoDataGridViewTextBoxColumn.DataPropertyName = "ApellidoPaterno";
-            this.apellidoPaternoDataGridViewTextBoxColumn.HeaderText = "ApellidoPaterno";
-            this.apellidoPaternoDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.apellidoPaternoDataGridViewTextBoxColumn.Name = "apellidoPaternoDataGridViewTextBoxColumn";
-            this.apellidoPaternoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // apellidoMaternoDataGridViewTextBoxColumn
-            // 
-            this.apellidoMaternoDataGridViewTextBoxColumn.DataPropertyName = "ApellidoMaterno";
-            this.apellidoMaternoDataGridViewTextBoxColumn.HeaderText = "ApellidoMaterno";
-            this.apellidoMaternoDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.apellidoMaternoDataGridViewTextBoxColumn.Name = "apellidoMaternoDataGridViewTextBoxColumn";
-            this.apellidoMaternoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // fechaDeNacimientoDataGridViewTextBoxColumn
-            // 
-            this.fechaDeNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaDeNacimiento";
-            this.fechaDeNacimientoDataGridViewTextBoxColumn.HeaderText = "FechaDeNacimiento";
-            this.fechaDeNacimientoDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.fechaDeNacimientoDataGridViewTextBoxColumn.Name = "fechaDeNacimientoDataGridViewTextBoxColumn";
-            this.fechaDeNacimientoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // edadDataGridViewTextBoxColumn
-            // 
-            this.edadDataGridViewTextBoxColumn.DataPropertyName = "Edad";
-            this.edadDataGridViewTextBoxColumn.HeaderText = "Edad";
-            this.edadDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
-            this.edadDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // generoDataGridViewTextBoxColumn
-            // 
-            this.generoDataGridViewTextBoxColumn.DataPropertyName = "Genero";
-            this.generoDataGridViewTextBoxColumn.HeaderText = "Genero";
-            this.generoDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.generoDataGridViewTextBoxColumn.Name = "generoDataGridViewTextBoxColumn";
-            this.generoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // direccionParticularDataGridViewTextBoxColumn
-            // 
-            this.direccionParticularDataGridViewTextBoxColumn.DataPropertyName = "DireccionParticular";
-            this.direccionParticularDataGridViewTextBoxColumn.HeaderText = "DireccionParticular";
-            this.direccionParticularDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.direccionParticularDataGridViewTextBoxColumn.Name = "direccionParticularDataGridViewTextBoxColumn";
-            this.direccionParticularDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // Contrasenia
-            // 
-            this.Contrasenia.DataPropertyName = "Contrasenia";
-            this.Contrasenia.HeaderText = "Contraseña";
-            this.Contrasenia.MinimumWidth = 8;
-            this.Contrasenia.Name = "Contrasenia";
-            this.Contrasenia.ReadOnly = true;
-            this.Contrasenia.Width = 150;
-            // 
             // ControlDeUsuariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1478, 1244);
+            this.ClientSize = new System.Drawing.Size(1540, 1244);
             this.Controls.Add(this.contraseña_tbx);
             this.Controls.Add(this.contraseña_lbl);
             this.Controls.Add(this.idNivel_Cbx);
@@ -584,14 +595,14 @@ namespace Control_Bibliotecario.UI
             this.Controls.Add(this.menuStrip2);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ControlDeUsuariosForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Control de Usuarios";
             this.Load += new System.EventHandler(this.VistaUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).EndInit();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

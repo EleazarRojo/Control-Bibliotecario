@@ -92,7 +92,7 @@ namespace Control_Bibliotecario
             }
             else
             {
-                MessageBox.Show("LLene todos los campos correspondientes", "Informacion faltante", MessageBoxButtons.OK);
+                MessageBox.Show("LLene todos los campos correspondientes", "Información faltante", MessageBoxButtons.OK);
             }
 
         }

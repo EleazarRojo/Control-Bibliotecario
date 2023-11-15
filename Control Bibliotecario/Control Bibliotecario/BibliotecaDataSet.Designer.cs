@@ -5765,7 +5765,7 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[9];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IdUsuario, ISBN, Autor, Estatus, FechaDevolucion, FechaInicial, Titulo, Fo" +
@@ -5785,11 +5785,37 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        IdUsuario, ISBN, Autor, Estatus, FechaDevolucion, FechaInicial, Tit" +
+            this._commandCollection[3].CommandText = "SELECT IdUsuario, ISBN, Autor, Estatus, FechaDevolucion, FechaInicial, Titulo, Fo" +
+                "lio, IdCopia\r\nFROM   Prestamos\r\nWHERE (Estatus = \'Devuelto\')";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT IdUsuario, ISBN, Autor, Estatus, FechaDevolucion, FechaInicial, Titulo, Fo" +
+                "lio, IdCopia\r\nFROM   Prestamos\r\nORDER BY ISBN";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT IdUsuario, ISBN, Autor, Estatus, FechaDevolucion, FechaInicial, Titulo, Fo" +
+                "lio, IdCopia\r\nFROM   Prestamos\r\nWHERE (ISBN = ?)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ISBN", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ISBN", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT IdUsuario, ISBN, Autor, Estatus, FechaDevolucion, FechaInicial, Titulo, Fo" +
+                "lio, IdCopia\r\nFROM   Prestamos\r\nORDER BY IdUsuario DESC";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "SELECT IdUsuario, ISBN, Autor, Estatus, FechaDevolucion, FechaInicial, Titulo, Fo" +
+                "lio, IdCopia\r\nFROM   Prestamos\r\nWHERE (Estatus = \'Vencido\')";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = "SELECT        IdUsuario, ISBN, Autor, Estatus, FechaDevolucion, FechaInicial, Tit" +
                 "ulo, Folio, IdCopia\r\nFROM            Prestamos\r\nWHERE        (IdUsuario = ?) AND" +
                 " (Estatus = \'Activo\' OR\r\n                         Estatus = \'Vencido\')";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IdUsuario", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IdUsuario", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IdUsuario", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IdUsuario", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5852,8 +5878,79 @@ namespace Control_Bibliotecario.BibliotecaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int OrdenarPrestamoEspecifico(BibliotecaDataSet.PrestamosDataTable dataTable, string IdUsuario) {
+        public virtual int OrdenarPorDevuelto(BibliotecaDataSet.PrestamosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int OrdenarPorISBN(BibliotecaDataSet.PrestamosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int OrdenarPorISBNEspecifico(BibliotecaDataSet.PrestamosDataTable dataTable, string ISBN) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((ISBN == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ISBN));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int OrdenarPorUsuario(BibliotecaDataSet.PrestamosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int OrdenarPorVencido(BibliotecaDataSet.PrestamosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[7];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int OrdenarPrestamoEspecifico(BibliotecaDataSet.PrestamosDataTable dataTable, string IdUsuario) {
+            this.Adapter.SelectCommand = this.CommandCollection[8];
             if ((IdUsuario == null)) {
                 throw new global::System.ArgumentNullException("IdUsuario");
             }

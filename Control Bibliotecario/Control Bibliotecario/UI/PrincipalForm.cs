@@ -34,23 +34,18 @@ namespace Control_Bibliotecario
 
             if (FormaIngreso.ShowDialog() == DialogResult.OK)
             {
-                if (FormaIngreso.IdNivel == "003")
+                if (FormaIngreso.IdNivel == "003") //Usuario
                 {
-                    /*
-                    Label bienvenido_Lbl = new Label();
-                    bienvenido_Lbl.AutoSize = true;
-                    bienvenido_Lbl.Location = new Point(557, 49);
-                    bienvenido_Lbl.Text = "Bienvenido " + FormaIngreso.Nombre;
-                    */
+                   
                     usuarioToolStripMenuItem.Text = FormaIngreso.Nombre;
                     usuarioToolStripMenuItem.Visible = true;
                     ingresoToolStripMenuItem.Visible = false;
                     registrarseToolStripMenuItem.Visible = false;
-                    //this.Controls.Add(bienvenido_Lbl);
+            
                 }
                 else
                 {
-                    if (FormaIngreso.IdNivel == "010")
+                    if (FormaIngreso.IdNivel == "010") // Administración
                     {
                         ingresoToolStripMenuItem.Visible = false;
                         registrarseToolStripMenuItem.Visible = false;
@@ -65,7 +60,7 @@ namespace Control_Bibliotecario
                     }
                     else
                     {
-                        if (FormaIngreso.IdNivel == "020")
+                        if (FormaIngreso.IdNivel == "020") // Bibliotecarios
                         {
                             ingresoToolStripMenuItem.Visible = false;
                             registrarseToolStripMenuItem.Visible = false;
@@ -144,7 +139,7 @@ namespace Control_Bibliotecario
             }
             else
             {
-                MessageBox.Show("Favor de Seleccionar un Tipo de Busqueda");
+                MessageBox.Show("Favor de Seleccionar un Tipo de Búsqueda");
             }
         }
 

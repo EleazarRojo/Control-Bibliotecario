@@ -24,7 +24,7 @@ namespace Control_Bibliotecario.UI
         private void VistaUsuarios_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'bibliotecaDataSet.Usuarios' Puede moverla o quitarla según sea necesario.
-            this.usuariosTableAdapter.Fill(this.bibliotecaDataSet.Usuarios);
+            this.usuariosTableAdapter.OrdenarPorIdUsuario(this.bibliotecaDataSet.Usuarios);
 
         }
 
@@ -32,7 +32,7 @@ namespace Control_Bibliotecario.UI
         {
             if (buscar_Tbx.Text == "" || tipoDeBusqueda_Cbx.Text == "Seleccione tipo de búsqueda")
             {
-                MessageBox.Show("Favor de llenar todos los partados correctamente", "Busqueda de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Favor de llenar todos los apartados correctamente", "Busqueda de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             switch (tipoDeBusqueda_Cbx.SelectedIndex)
@@ -40,7 +40,7 @@ namespace Control_Bibliotecario.UI
                 case 0:
                     if (buscar_Tbx.Text == "")
                     {
-                        MessageBox.Show("Favor de llenar todos los partados correctamente", "Busqueda de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Favor de llenar todos los apartados correctamente", "Busqueda de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
 
@@ -51,7 +51,7 @@ namespace Control_Bibliotecario.UI
                 case 1:
                     if (buscar_Tbx.Text == "")
                     {
-                        MessageBox.Show("Favor de llenar todos los partados correctamente", "Busqueda de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Favor de llenar todos los apartados correctamente", "Busqueda de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     usuariosTableAdapter.OrdenarPorRFCEspecifico(bibliotecaDataSet.Usuarios, buscar_Tbx.Text);
@@ -61,7 +61,7 @@ namespace Control_Bibliotecario.UI
                 case 2:
                     if (buscar_Tbx.Text == "")
                     {
-                        MessageBox.Show("Favor de llenar todos los partados correctamente", "Busqueda de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Favor de llenar todos los apartados correctamente", "Busqueda de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     usuariosTableAdapter.OrdenarPorIdUsuarioEspecifico(bibliotecaDataSet.Usuarios, int.Parse(buscar_Tbx.Text));
@@ -72,7 +72,7 @@ namespace Control_Bibliotecario.UI
                 case 3:
                     if (buscar_Tbx.Text == "" || tipoDeBusqueda_Cbx.Text == "Seleccione tipo de búsqueda")
                     {
-                        MessageBox.Show("Favor de llenar todos los partados correctamente", "Busqueda de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Favor de llenar todos los apartados correctamente", "Busqueda de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     string direccion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\BD\\Biblioteca.mdb";
@@ -103,7 +103,7 @@ namespace Control_Bibliotecario.UI
                     }
                     else
                     {
-                        MessageBox.Show("No se a encontrado el usuario buscado", "Busqueda de Libro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("No se ha encontrado el usuario buscado", "Busqueda de Libro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                     break;
@@ -250,11 +250,7 @@ namespace Control_Bibliotecario.UI
 
         }
 
-        private void modificar_btn_Click(object sender, EventArgs e)
-        {
-            spawn();
-
-        }
+    
 
         private void aceptarModificacion_btn_Click(object sender, EventArgs e)
         {
@@ -262,7 +258,7 @@ namespace Control_Bibliotecario.UI
                 apellidoMaterno_tbx.Text, Convert.ToDateTime(fechaDeNacimiento_tbx.Text.ToString()), Convert.ToInt32(edad_tbx.Text), genero_tbx.Text,
                 direccion_tbx.Text,contraseña_tbx.Text, Convert.ToInt32(idUsuario_tbx.Text));
             this.usuariosTableAdapter.Fill(bibliotecaDataSet.Usuarios);
-            MessageBox.Show("¡Modificacion exitosa!", "Control de usuraios", MessageBoxButtons.OK);
+            MessageBox.Show("¡Modificaciónn exitosa!", "Control de Usuarios", MessageBoxButtons.OK);
             disspawn();
         }
 

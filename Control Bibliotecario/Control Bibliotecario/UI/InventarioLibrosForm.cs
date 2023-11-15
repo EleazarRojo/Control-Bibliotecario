@@ -18,13 +18,6 @@ namespace Control_Bibliotecario.UI
             InitializeComponent();
         }
 
-        private void librosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.librosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bibliotecaDataSet);
-
-        }
 
         private void InventarioLibrosForm_Load(object sender, EventArgs e)
         {
@@ -174,12 +167,12 @@ namespace Control_Bibliotecario.UI
                 }
                 else
                 {
-                    MessageBox.Show("No se a encontrado el libro buscado", "Busqueda de Libro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("No se ha encontrado el libro buscado", "Búsqueda de Libro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Favor de llenar el cambo de Busqueda", "Busqueda de Libro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Favor de llenar el cambo de Búsqueda", "Búsqueda de Libro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -204,7 +197,7 @@ namespace Control_Bibliotecario.UI
 
                 ins.ExecuteNonQuery();
 
-                MessageBox.Show("El libro a sido agregado exitosamente", "Libro Agregado");
+                MessageBox.Show("El libro ha sido agregado exitosamente", "Libro Agregado");
 
                 conexion.Close();
                 this.librosTableAdapter.Fill(this.bibliotecaDataSet.Libros);
@@ -233,6 +226,7 @@ namespace Control_Bibliotecario.UI
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Se ha eliminado el Libro Exitosamente", "Eliminación de Libro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.librosTableAdapter.Fill(this.bibliotecaDataSet.Libros);
+                tipoBusqueda_CB.Text = "Tipo de Búsqueda";
             }
             else
             {

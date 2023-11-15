@@ -178,7 +178,7 @@ namespace Control_Bibliotecario.UI
             this.titulo_Lbl.Location = new System.Drawing.Point(345, 18);
             this.titulo_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titulo_Lbl.Name = "titulo_Lbl";
-            this.titulo_Lbl.Size = new System.Drawing.Size(671, 77);
+            this.titulo_Lbl.Size = new System.Drawing.Size(447, 51);
             this.titulo_Lbl.TabIndex = 14;
             this.titulo_Lbl.Text = "Registro de Colaborador";
             // 
@@ -201,7 +201,7 @@ namespace Control_Bibliotecario.UI
             this.tipoUsuario_Lbl.Location = new System.Drawing.Point(42, 400);
             this.tipoUsuario_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tipoUsuario_Lbl.Name = "tipoUsuario_Lbl";
-            this.tipoUsuario_Lbl.Size = new System.Drawing.Size(224, 33);
+            this.tipoUsuario_Lbl.Size = new System.Drawing.Size(149, 22);
             this.tipoUsuario_Lbl.TabIndex = 28;
             this.tipoUsuario_Lbl.Text = "Tipo de Usuario: ";
             // 
@@ -218,7 +218,7 @@ namespace Control_Bibliotecario.UI
             this.contrasenia_lbl.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contrasenia_lbl.Location = new System.Drawing.Point(42, 542);
             this.contrasenia_lbl.Name = "contrasenia_lbl";
-            this.contrasenia_lbl.Size = new System.Drawing.Size(165, 33);
+            this.contrasenia_lbl.Size = new System.Drawing.Size(110, 22);
             this.contrasenia_lbl.TabIndex = 30;
             this.contrasenia_lbl.Text = "Contraseña: ";
             // 
@@ -245,7 +245,9 @@ namespace Control_Bibliotecario.UI
             this.Controls.Add(this.apellidoPaterno_Lbl);
             this.Controls.Add(this.nombre_Lbl);
             this.Controls.Add(this.titulo_Lbl);
+            this.MaximizeBox = false;
             this.Name = "RegistroAdminBiblio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Registro de Administradores y Bilbiotecarios";
             this.ResumeLayout(false);
             this.PerformLayout();

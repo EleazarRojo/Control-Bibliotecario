@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
- namespace Control_Bibliotecario.UI
+namespace Control_Bibliotecario.UI
 {
     public partial class ControlDePrestamos : Form
     {
         public ControlDePrestamos()
         {
             InitializeComponent();
-            
+
 
         }
 
@@ -25,23 +25,33 @@ using System.Data.OleDb;
             ActualizarPrestamos();
             // TODO: esta línea de código carga datos en la tabla 'bibliotecaDataSet.Prestamos' Puede moverla o quitarla según sea necesario.
             this.prestamosTableAdapter.Fill(this.bibliotecaDataSet.Prestamos);
-            
+
 
         }
 
         private void buscar_Btn_Click(object sender, EventArgs e)
         {
-            if (tipoBusqueda_CB.Text == "")
+            if (tipoBusqueda_CB.SelectedIndex >= 0)
             {
-                MessageBox.Show("Ingrese un tipo de vusqueda antes de realizar una busqueda");
-                return;
+                switch (tipoBusqueda_CB.SelectedIndex)
+                {
+                    case 0:
+                        buscar_Tbx.Enabled = true;
+                        prestamosTableAdapter.OrdenarPorISBNEspecifico(this.bibliotecaDataSet.Prestamos, buscar_Tbx.Text);
+                        break;
+                    case 1:
+                        buscar_Tbx.Enabled = true;
+                        prestamosTableAdapter.ObtenerHistorialPrestamos(this.bibliotecaDataSet.Prestamos, buscar_Tbx.Text);
+                        break;
+
+                }
+
             }
-            if (IdUsuario_Tbx.Text ==""||Convert.ToInt32(IdUsuario_Tbx.Text)==0)
+            else
             {
-                MessageBox.Show("Favor de ingres un id de usuario Valido");
-                return;
+                MessageBox.Show("Favor de Seleccionar un Tipo de Busqueda");
             }
-           
+
         }
 
         private void IdUsuario_Tbx_KeyPress(object sender, KeyPressEventArgs e)
@@ -56,7 +66,7 @@ using System.Data.OleDb;
         private void relizarPrestamoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RealizarPrestamoForm RealizarPrestamoForm = new RealizarPrestamoForm();
-            if(RealizarPrestamoForm.ShowDialog() == DialogResult.OK)
+            if (RealizarPrestamoForm.ShowDialog() == DialogResult.OK)
             {
                 this.prestamosTableAdapter.Fill(this.bibliotecaDataSet.Prestamos);
             }
@@ -65,7 +75,10 @@ using System.Data.OleDb;
         private void devolverPrestamoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DevolverPrestamoForm DevolverPrestamoForm = new DevolverPrestamoForm();
-            DevolverPrestamoForm.Show();
+            if (DevolverPrestamoForm.ShowDialog() == DialogResult.OK)
+            {
+                this.prestamosTableAdapter.Fill(this.bibliotecaDataSet.Prestamos);
+            }
         }
 
         public void ActualizarPrestamos()
@@ -100,6 +113,36 @@ using System.Data.OleDb;
             }
 
 
+
+        }
+
+        private void tipoBusqueda_CB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            switch (tipoBusqueda_CB.SelectedIndex)
+            {
+                case 0:
+                    buscar_Tbx.Enabled = true;
+                    prestamosTableAdapter.OrdenarPorISBN(this.bibliotecaDataSet.Prestamos);
+                    break;
+                case 1:
+                    buscar_Tbx.Enabled = true;
+                    prestamosTableAdapter.OrdenarPorUsuario(this.bibliotecaDataSet.Prestamos);
+                    break;
+
+                case 2:
+                    buscar_Tbx.Enabled = false;
+                    prestamosTableAdapter.OrdenarPorActivo(this.bibliotecaDataSet.Prestamos);
+                    break;
+                case 3:
+                    buscar_Tbx.Enabled = false;
+                    prestamosTableAdapter.OrdenarPorVencido(this.bibliotecaDataSet.Prestamos);
+                    break;
+                case 4:
+                    buscar_Tbx.Enabled = false;
+                    prestamosTableAdapter.OrdenarPorDevuelto(this.bibliotecaDataSet.Prestamos);
+                    break;
+            }
 
         }
     }
