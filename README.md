@@ -55,8 +55,19 @@ la búsqueda por los siguientes criterios:
 * Año
 
 En la parte superior del Menú Principal se encuentra 3 Módulos: **Ingresar, Registrarse y Ayuda** 
+<p align="center">
+  <img src = "https://user-images.githubusercontent.com/134666855/283604804-e6a09a0e-44c3-4a92-97e5-4af7046ef917.png">
+</p>
 
+* Ingresar
 
+  Es la primera opción del Menú. Es necesario de realizar un solo click sobre la opción para que se despliegue una nueva ventana donde el usuario iniciara sesión.
+
+<p align="center">
+  <img src = "https://user-images.githubusercontent.com/134666855/283602550-6ce511de-99e5-45ce-a399-b7a0c43754ed.png">
+</p>
+* Registrarse
+* Ayuda
 
 
 
