@@ -72,7 +72,7 @@ En la parte superior del Menú Principal se encuentra 3 Módulos: **Ingresar, Re
 </p>
 
   Para iniciar sesión se requiere de el ID de Usuario, el cual fue proporcianado al momento de registrarse. Existen dos casos de Inicio de Sesión: **Usuarios** y **Empleados: Administrador o Bibliotecario**
-
+### Usuarios
   + **Usuarios**: Los usuarios solo requieren de su ID de Usuario para ingresar a su perfil. 
 
 <p align="center">
@@ -81,13 +81,21 @@ En la parte superior del Menú Principal se encuentra 3 Módulos: **Ingresar, Re
 </p>
 
   Al haber ingresado exitosamente, el usuario sera devuelto al Menú principal pero ahora el Menú desplegará el nombre del Usuario y le dará acceso a su historial de prestamos.
-  
+#### Historial de Prestamos
+En el historial de prestamos se despliagan todos los prestamos realizados por el Usuario ingresado, en el se le da a conocer la información sobre los datos generales del libro
+que se prestó, así como el estado en el que se encuentra dicho prestamo. Los estados que un prestamo puede tomar son: **Activo, Devuelto y Vencido**
+
+
 <p align="center">
   <b>Modulos de Usuarios</b>
-  <img src = "">
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/90274181/ebebbac8-98aa-43ff-b7d0-85fa79f2bd57">
 </p>
+
+
+
+  ### Bibliotecarios
   
-  + **Bibliotecario**: Los usuarios de nivel Bibliotecario tendran que ingresar su ID de Usuario de la misma manera. Despues de presionar el boton ingresar, se iniciara otra ventana donde se le pidira la contraseña al usuario para poder Iniciar su Sesión.
+  + **Bibliotecario**: Los usuarios de nivel Bibliotecario tendran que ingresar su ID de Usuario de la misma manera. Despues de presionar el boton ingresar, se iniciara otra ventana donde se le pidira la contraseña al usuario para poder iniciar sesión.
 
 <p align="center">
   <b>Perfil de Bibliotecario</b>
@@ -97,13 +105,40 @@ En la parte superior del Menú Principal se encuentra 3 Módulos: **Ingresar, Re
   <br><br>
 </p>
 
+#### Control de Prestamos
+En el control de Prestamos nos podemos encontrar con un historial de todos los prestamos que se han realizado por todos los usuarios, desplegando la información sobre cada uno de ellos,
+de esta forma el bibliotecario puede tener un control del estatus de cada prestamo, ya sea activo, devuelto o vencido y actuar correspondidamente dependiendo del estatus. Además podemos encontrar en el 
+menú de la parte superior dos módulos: **Realizar Prestamo y Devolver Prestamo**
+
+##### Realizar Prestamo
+En el módulo de relizar prestamo se le presenta al bibliotecario un lista de todos los libros actualmente disponibles los cuáles pueden ser prestados a los usuarios. La forma de realizar un prestamo es atreaves de una búsqueda previa del libro por su ISBN, donde se desplegaran las copias disponibles del libro encontrado, seguido se selecciona la copia del libro a ser prestado y el Id del Usuario quien está solicitado el Libro, para finalizar se útiliza el botón de **Realizar Prestamo** y si los datos están correctos el prestamo será realizado con exito actualizando el despliegue de los libros disponibles. 
+
+##### Devolver Prestamo
+En el módulo de devolver prestamo se le presenta al bibliotecario el despligue de todos los prestamos activos o vencidos de los usuarios los cuáles pueden ser devueltos. EL bibliotecario buscará el prestamo 
+activo con el Id de usuario del usuario quien solicita la devolución del prestamo, con el botón de **Buscar Prestamo** si se encunetra un prestamo válido para su devolución con el Id de usuario ingresado se 
+desplegará la información general del prestamo y con el botón de **Devolver Prestamo** el prestamó será devuelto y el estatus pasará de *Activo o Vencido* a **Devuelto**
+
+#### Inventario de Libros
+
   (Explicar los Modulos de Bibliotecario)
 <p align="center">
   <b>Modulos de Bibliotecario</b>
   <img src = "">
 </p>
-  
-  + **Administrador**
+
+  ### Administradores 
+  + **Administrador**: Los usuarios de nivel Administradorn tendran que ingresar su ID de Usuario en el apartado de Ingresas. Despues de presionar el bontón ingresar, se iniciara otra ventana de ingreso de empleados donde se le pedira la contraseña al usuario para poder iniciar sesión
+
+#### Control de Usuarios
+
+##### Registrar Usuario
+
+##### Registrar Colaborador
+
+##### Modificar Usuario
+
+##### Eliminar Usuario
+
 
 * Registrarse
 * Ayuda
