@@ -81,7 +81,6 @@ namespace Control_Bibliotecario
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1851, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
@@ -89,14 +88,14 @@ namespace Control_Bibliotecario
             // ingresoToolStripMenuItem
             // 
             this.ingresoToolStripMenuItem.Name = "ingresoToolStripMenuItem";
-            this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(92, 29);
+            this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(92, 32);
             this.ingresoToolStripMenuItem.Text = "&Ingresar";
             this.ingresoToolStripMenuItem.Click += new System.EventHandler(this.ingresoToolStripMenuItem_Click);
             // 
             // registrarseToolStripMenuItem
             // 
             this.registrarseToolStripMenuItem.Name = "registrarseToolStripMenuItem";
-            this.registrarseToolStripMenuItem.Size = new System.Drawing.Size(114, 29);
+            this.registrarseToolStripMenuItem.Size = new System.Drawing.Size(114, 32);
             this.registrarseToolStripMenuItem.Text = "&Registrarse";
             this.registrarseToolStripMenuItem.Click += new System.EventHandler(this.registrarseToolStripMenuItem_Click);
             // 
@@ -151,7 +150,7 @@ namespace Control_Bibliotecario
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(79, 29);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(79, 32);
             this.ayudaToolStripMenuItem.Text = "&Ayuda";
             // 
             // titulo_Lbl
@@ -163,7 +162,7 @@ namespace Control_Bibliotecario
             this.titulo_Lbl.Name = "titulo_Lbl";
             this.titulo_Lbl.Size = new System.Drawing.Size(1851, 122);
             this.titulo_Lbl.TabIndex = 2;
-            this.titulo_Lbl.Text = "Busqueda de Libros";
+            this.titulo_Lbl.Text = "Búsqueda de Libros";
             this.titulo_Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tipoBusqueda_Lbl
@@ -174,7 +173,7 @@ namespace Control_Bibliotecario
             this.tipoBusqueda_Lbl.Name = "tipoBusqueda_Lbl";
             this.tipoBusqueda_Lbl.Size = new System.Drawing.Size(142, 20);
             this.tipoBusqueda_Lbl.TabIndex = 5;
-            this.tipoBusqueda_Lbl.Text = "Tipo de Busqueda:";
+            this.tipoBusqueda_Lbl.Text = "Tipo de Búsqueda:";
             // 
             // busqueda_Tbx
             // 
@@ -377,7 +376,7 @@ namespace Control_Bibliotecario
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PrincipalForm";
-            this.Text = "Busqueda";
+            this.Text = "Búsqueda";
             this.Load += new System.EventHandler(this.PrincipalForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
