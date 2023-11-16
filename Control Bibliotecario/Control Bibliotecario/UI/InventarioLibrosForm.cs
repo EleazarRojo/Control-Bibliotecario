@@ -94,6 +94,7 @@ namespace Control_Bibliotecario.UI
                     break;
                 case 7:
                     librosTableAdapter.OrdenarPorIdCopiaEspecifico(bibliotecaDataSet.Libros, int.Parse(buscar_Tbx.Text));
+                    buscar_Tbx.Enabled = false;
                     eliminar_Btn.Enabled = true;
                     break;
             }
@@ -104,6 +105,7 @@ namespace Control_Bibliotecario.UI
             modificar_Btn.Visible = false;
             buscar_Tbx.Enabled = true;
             buscar_Btn.Enabled = true;
+            buscar_Tbx.Clear();
             this.Size = new Size(941, 590);
             ISBN_Lbl.Visible = false;
             ISBN_Tbx.Visible = false;
@@ -118,6 +120,7 @@ namespace Control_Bibliotecario.UI
             tema_Lbl.Visible = false;
             tema_Tbx.Visible = false;
             agregar_Btn.Visible = false;
+            eliminar_Btn.Enabled = false;
         }
 
         public void spawn()
