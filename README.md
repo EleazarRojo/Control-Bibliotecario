@@ -44,6 +44,20 @@ Podemos encontrar los siguientes Tipos de Usuarios y los **módulos** a los que 
   + Historial de Presamos
 
 ## Menú Principal 
+En este módulo podemos encontrar principalmente la funcionalidad de Búsqueda de libros, En el se despliegan una lista de libros previamente cargados en la base
+de datos como titulos de prueba. La principal funcionalidad es poder realizar consultas sobre la existencia y disponibilidad de los libros dando la opción de realizar
+la búsqueda por los siguientes criterios: 
+
+* ISBN
+* Título
+* Autor
+* Tema
+* Año
+
+En la parte superior del Menú Principal se encuentra 3 Módulos: **Ingresar, Registrarse y Ayuda** 
+
+
+
 
 
 
