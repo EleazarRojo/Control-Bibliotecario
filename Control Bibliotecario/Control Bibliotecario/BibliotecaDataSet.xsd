@@ -227,6 +227,16 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
+              <DbSource ConnectionRef="BibliotecaConnectionString (Settings)" DbObjectName="Libros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="OrdenarPorDisponible" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="ObtenerPorDisponible" GeneratorSourceName="OrdenarPorDisponible" GetMethodModifier="Public" GetMethodName="ObtenerPorDisponible" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="ObtenerPorDisponible" UserSourceName="OrdenarPorDisponible">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ISBN, Titulo, Autor, NumeroEdicion, Año, Tema, EstadoPrestamo, IdCopia
+FROM            Libros
+WHERE        (EstadoPrestamo = 'Disponible')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="BibliotecaConnectionString (Settings)" DbObjectName="Libros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="OrdenarPorIdCopia" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="ObtenerPorIdCopia" GeneratorSourceName="OrdenarPorIdCopia" GetMethodModifier="Public" GetMethodName="ObtenerPorIdCopia" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="ObtenerPorIdCopia" UserSourceName="OrdenarPorIdCopia">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">

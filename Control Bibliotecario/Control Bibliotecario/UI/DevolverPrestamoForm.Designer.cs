@@ -64,31 +64,28 @@ namespace Control_Bibliotecario.UI
             // 
             this.idUsario_lbl.AutoSize = true;
             this.idUsario_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idUsario_lbl.Location = new System.Drawing.Point(18, 426);
-            this.idUsario_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.idUsario_lbl.Location = new System.Drawing.Point(12, 253);
             this.idUsario_lbl.Name = "idUsario_lbl";
-            this.idUsario_lbl.Size = new System.Drawing.Size(118, 27);
+            this.idUsario_lbl.Size = new System.Drawing.Size(76, 19);
             this.idUsario_lbl.TabIndex = 0;
             this.idUsario_lbl.Text = "Id Usuario:";
             // 
             // idUsuario_tbx
             // 
             this.idUsuario_tbx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idUsuario_tbx.Location = new System.Drawing.Point(141, 422);
-            this.idUsuario_tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.idUsuario_tbx.Location = new System.Drawing.Point(94, 250);
             this.idUsuario_tbx.Name = "idUsuario_tbx";
-            this.idUsuario_tbx.Size = new System.Drawing.Size(204, 35);
+            this.idUsuario_tbx.Size = new System.Drawing.Size(137, 26);
             this.idUsuario_tbx.TabIndex = 1;
             // 
             // iSBN_tbx
             // 
             this.iSBN_tbx.Enabled = false;
             this.iSBN_tbx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iSBN_tbx.Location = new System.Drawing.Point(201, 602);
-            this.iSBN_tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.iSBN_tbx.Location = new System.Drawing.Point(135, 318);
             this.iSBN_tbx.Name = "iSBN_tbx";
             this.iSBN_tbx.ReadOnly = true;
-            this.iSBN_tbx.Size = new System.Drawing.Size(482, 35);
+            this.iSBN_tbx.Size = new System.Drawing.Size(323, 26);
             this.iSBN_tbx.TabIndex = 3;
             this.iSBN_tbx.Visible = false;
             // 
@@ -96,10 +93,9 @@ namespace Control_Bibliotecario.UI
             // 
             this.iSBN_lbl.AutoSize = true;
             this.iSBN_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iSBN_lbl.Location = new System.Drawing.Point(16, 612);
-            this.iSBN_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.iSBN_lbl.Location = new System.Drawing.Point(12, 325);
             this.iSBN_lbl.Name = "iSBN_lbl";
-            this.iSBN_lbl.Size = new System.Drawing.Size(71, 27);
+            this.iSBN_lbl.Size = new System.Drawing.Size(48, 19);
             this.iSBN_lbl.TabIndex = 2;
             this.iSBN_lbl.Text = "ISBN:";
             this.iSBN_lbl.Visible = false;
@@ -108,11 +104,10 @@ namespace Control_Bibliotecario.UI
             // 
             this.idCopia_tbx.Enabled = false;
             this.idCopia_tbx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idCopia_tbx.Location = new System.Drawing.Point(201, 660);
-            this.idCopia_tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.idCopia_tbx.Location = new System.Drawing.Point(135, 356);
             this.idCopia_tbx.Name = "idCopia_tbx";
             this.idCopia_tbx.ReadOnly = true;
-            this.idCopia_tbx.Size = new System.Drawing.Size(482, 35);
+            this.idCopia_tbx.Size = new System.Drawing.Size(323, 26);
             this.idCopia_tbx.TabIndex = 7;
             this.idCopia_tbx.Visible = false;
             // 
@@ -120,10 +115,9 @@ namespace Control_Bibliotecario.UI
             // 
             this.idCopia_lbl.AutoSize = true;
             this.idCopia_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idCopia_lbl.Location = new System.Drawing.Point(18, 665);
-            this.idCopia_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.idCopia_lbl.Location = new System.Drawing.Point(13, 359);
             this.idCopia_lbl.Name = "idCopia_lbl";
-            this.idCopia_lbl.Size = new System.Drawing.Size(101, 27);
+            this.idCopia_lbl.Size = new System.Drawing.Size(66, 19);
             this.idCopia_lbl.TabIndex = 6;
             this.idCopia_lbl.Text = "Id Copia:";
             this.idCopia_lbl.Visible = false;
@@ -131,10 +125,9 @@ namespace Control_Bibliotecario.UI
             // devolver_btn
             // 
             this.devolver_btn.Enabled = false;
-            this.devolver_btn.Location = new System.Drawing.Point(1004, 494);
-            this.devolver_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.devolver_btn.Location = new System.Drawing.Point(745, 320);
             this.devolver_btn.Name = "devolver_btn";
-            this.devolver_btn.Size = new System.Drawing.Size(160, 35);
+            this.devolver_btn.Size = new System.Drawing.Size(107, 23);
             this.devolver_btn.TabIndex = 8;
             this.devolver_btn.Text = "Devolver Prestamo";
             this.devolver_btn.UseVisualStyleBackColor = true;
@@ -144,11 +137,10 @@ namespace Control_Bibliotecario.UI
             // 
             this.autor_tbx.Enabled = false;
             this.autor_tbx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autor_tbx.Location = new System.Drawing.Point(201, 803);
-            this.autor_tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.autor_tbx.Location = new System.Drawing.Point(135, 449);
             this.autor_tbx.Name = "autor_tbx";
             this.autor_tbx.ReadOnly = true;
-            this.autor_tbx.Size = new System.Drawing.Size(482, 35);
+            this.autor_tbx.Size = new System.Drawing.Size(323, 26);
             this.autor_tbx.TabIndex = 23;
             this.autor_tbx.Visible = false;
             // 
@@ -157,10 +149,9 @@ namespace Control_Bibliotecario.UI
             this.autor_lbl.AutoSize = true;
             this.autor_lbl.Enabled = false;
             this.autor_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autor_lbl.Location = new System.Drawing.Point(18, 808);
-            this.autor_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.autor_lbl.Location = new System.Drawing.Point(13, 452);
             this.autor_lbl.Name = "autor_lbl";
-            this.autor_lbl.Size = new System.Drawing.Size(74, 27);
+            this.autor_lbl.Size = new System.Drawing.Size(47, 19);
             this.autor_lbl.TabIndex = 22;
             this.autor_lbl.Text = "Autor:";
             this.autor_lbl.Visible = false;
@@ -169,11 +160,10 @@ namespace Control_Bibliotecario.UI
             // 
             this.nombreLibro_tbx.Enabled = false;
             this.nombreLibro_tbx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombreLibro_tbx.Location = new System.Drawing.Point(201, 731);
-            this.nombreLibro_tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nombreLibro_tbx.Location = new System.Drawing.Point(135, 402);
             this.nombreLibro_tbx.Name = "nombreLibro_tbx";
             this.nombreLibro_tbx.ReadOnly = true;
-            this.nombreLibro_tbx.Size = new System.Drawing.Size(482, 35);
+            this.nombreLibro_tbx.Size = new System.Drawing.Size(323, 26);
             this.nombreLibro_tbx.TabIndex = 21;
             this.nombreLibro_tbx.Visible = false;
             // 
@@ -182,20 +172,18 @@ namespace Control_Bibliotecario.UI
             this.nombreLibro_lbl.AutoSize = true;
             this.nombreLibro_lbl.Enabled = false;
             this.nombreLibro_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombreLibro_lbl.Location = new System.Drawing.Point(18, 735);
-            this.nombreLibro_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nombreLibro_lbl.Location = new System.Drawing.Point(13, 405);
             this.nombreLibro_lbl.Name = "nombreLibro_lbl";
-            this.nombreLibro_lbl.Size = new System.Drawing.Size(181, 27);
+            this.nombreLibro_lbl.Size = new System.Drawing.Size(116, 19);
             this.nombreLibro_lbl.TabIndex = 20;
             this.nombreLibro_lbl.Text = "Nombre del libro:";
             this.nombreLibro_lbl.Visible = false;
             // 
             // buscarPrestamo_btn
             // 
-            this.buscarPrestamo_btn.Location = new System.Drawing.Point(1004, 425);
-            this.buscarPrestamo_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buscarPrestamo_btn.Location = new System.Drawing.Point(745, 252);
             this.buscarPrestamo_btn.Name = "buscarPrestamo_btn";
-            this.buscarPrestamo_btn.Size = new System.Drawing.Size(160, 35);
+            this.buscarPrestamo_btn.Size = new System.Drawing.Size(107, 23);
             this.buscarPrestamo_btn.TabIndex = 24;
             this.buscarPrestamo_btn.Text = "Buscar Prestamo";
             this.buscarPrestamo_btn.UseVisualStyleBackColor = true;
@@ -216,12 +204,11 @@ namespace Control_Bibliotecario.UI
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.prestamosDataGridView.DataSource = this.prestamosBindingSource;
-            this.prestamosDataGridView.Location = new System.Drawing.Point(0, 18);
-            this.prestamosDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.prestamosDataGridView.Location = new System.Drawing.Point(12, 12);
             this.prestamosDataGridView.Name = "prestamosDataGridView";
             this.prestamosDataGridView.ReadOnly = true;
             this.prestamosDataGridView.RowHeadersWidth = 62;
-            this.prestamosDataGridView.Size = new System.Drawing.Size(1146, 338);
+            this.prestamosDataGridView.Size = new System.Drawing.Size(840, 220);
             this.prestamosDataGridView.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn8
@@ -321,9 +308,9 @@ namespace Control_Bibliotecario.UI
             // 
             // DevolverPrestamoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1246, 543);
+            this.ClientSize = new System.Drawing.Size(864, 291);
             this.Controls.Add(this.buscarPrestamo_btn);
             this.Controls.Add(this.autor_tbx);
             this.Controls.Add(this.autor_lbl);
@@ -337,7 +324,6 @@ namespace Control_Bibliotecario.UI
             this.Controls.Add(this.iSBN_lbl);
             this.Controls.Add(this.idUsuario_tbx);
             this.Controls.Add(this.idUsario_lbl);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "DevolverPrestamoForm";
             this.Text = "Devolver Prestamo";

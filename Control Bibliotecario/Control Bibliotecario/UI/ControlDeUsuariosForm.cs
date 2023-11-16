@@ -66,7 +66,7 @@ namespace Control_Bibliotecario.UI
                     }
                     usuariosTableAdapter.OrdenarPorIdUsuarioEspecifico(bibliotecaDataSet.Usuarios, int.Parse(buscar_Tbx.Text));
                     eliminar_Btn.Enabled = true;
-
+                    buscar_Tbx.Enabled = false;
                     break;
 
                 case 3:
@@ -135,7 +135,8 @@ namespace Control_Bibliotecario.UI
 
         public void disspawn()
         {
-            this.Size = new Size(999, 710);
+            buscar_Tbx.Clear();
+            this.Size = new Size(1010, 660);
             IdUsuario_lbl.Visible = false;
             idUsuario_tbx.Visible = false;
             rFC_lbl.Visible = false;
@@ -161,7 +162,7 @@ namespace Control_Bibliotecario.UI
         }
         public void spawn()
         {
-            this.Size = new Size(999, 850);
+            this.Size = new Size(1010, 850);
             IdUsuario_lbl.Visible = true;
             idUsuario_tbx.Visible = true;
             rFC_lbl.Visible = true;

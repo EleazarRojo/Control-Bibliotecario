@@ -29,7 +29,7 @@ namespace Control_Bibliotecario.UI
         private void RealizarPrestamoForm_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'bibliotecaDataSet.Libros' Puede moverla o quitarla según sea necesario.
-            this.librosTableAdapter.Fill(this.bibliotecaDataSet.Libros);
+            this.librosTableAdapter.OrdenarPorDisponible(this.bibliotecaDataSet.Libros);
 
         }
 
@@ -41,8 +41,8 @@ namespace Control_Bibliotecario.UI
         private void realizarPresatamo_btn_Click(object sender, EventArgs e)
         {
             RealizarPrestamo();
-            this.librosTableAdapter.Fill(this.bibliotecaDataSet.Libros);
-            
+            this.librosTableAdapter.OrdenarPorDisponible(this.bibliotecaDataSet.Libros);
+
         }
 
         public void busqueda()
@@ -87,7 +87,7 @@ namespace Control_Bibliotecario.UI
         }
         public void spawn()
         {
-            this.Size = new Size(1304, 875);
+            this.Size = new Size(880, 530);
             idUsario_lbl.Visible = true;
             idUsuario_tbx.Visible = true;
             idUsuario_tbx.Enabled = true;
@@ -103,7 +103,7 @@ namespace Control_Bibliotecario.UI
 
         public void dispawn()
         {
-            this.Size = new Size(1304, 583);
+            this.Size = new Size(880, 350);
             idUsario_lbl.Visible = false;
             idUsuario_tbx.Clear();
             idUsuario_tbx.Visible = false;

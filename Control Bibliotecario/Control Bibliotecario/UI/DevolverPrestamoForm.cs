@@ -71,7 +71,7 @@ namespace Control_Bibliotecario.UI
         }
         public void spawn()
         {
-            this.Size = new Size(847, 611);
+            this.Size = new Size(880, 540);
           
             idCopia_lbl.Visible = true;
             idCopia_tbx.Visible = true;
@@ -86,7 +86,7 @@ namespace Control_Bibliotecario.UI
 
         public void dispawn()
         {
-            this.Size = new Size(847, 397);
+            this.Size = new Size(880, 330);
       
             idUsuario_tbx.Clear();
             idCopia_lbl.Visible = false;
