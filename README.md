@@ -43,5 +43,9 @@ Podemos encontrar los siguientes Tipos de Usuarios y los **módulos** a los que 
   + Devolución de Prestamos
   + Historial de Presamos
 
+## Menú Principal 
+![FomormaPrincipal](https://github.com/EleazarRojo/Control-Bibliotecario/assets/90274181/8ee79ee0-bdf6-430f-ba4f-7a2ebabf26c9)
+
+
 
 
