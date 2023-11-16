@@ -80,12 +80,11 @@ namespace Control_Bibliotecario.UI
             this.idCopiaDataGridViewTextBoxColumn,
             this.estadoPrestamoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.librosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 49);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 32);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(1350, 698);
+            this.dataGridView1.Size = new System.Drawing.Size(900, 454);
             this.dataGridView1.TabIndex = 0;
             // 
             // iSBNDataGridViewTextBoxColumn
@@ -182,28 +181,25 @@ namespace Control_Bibliotecario.UI
             "Agregar Libro",
             "Editar Libro",
             "Eliminar Libro"});
-            this.tipoBusqueda_CB.Location = new System.Drawing.Point(18, 788);
-            this.tipoBusqueda_CB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tipoBusqueda_CB.Location = new System.Drawing.Point(12, 512);
             this.tipoBusqueda_CB.Name = "tipoBusqueda_CB";
-            this.tipoBusqueda_CB.Size = new System.Drawing.Size(211, 28);
+            this.tipoBusqueda_CB.Size = new System.Drawing.Size(142, 21);
             this.tipoBusqueda_CB.TabIndex = 1;
             this.tipoBusqueda_CB.Text = "Tipo de Busqueda";
             this.tipoBusqueda_CB.SelectedIndexChanged += new System.EventHandler(this.tipoBusqueda_CB_SelectedIndexChanged);
             // 
             // buscar_Tbx
             // 
-            this.buscar_Tbx.Location = new System.Drawing.Point(242, 788);
-            this.buscar_Tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buscar_Tbx.Location = new System.Drawing.Point(161, 512);
             this.buscar_Tbx.Name = "buscar_Tbx";
-            this.buscar_Tbx.Size = new System.Drawing.Size(386, 26);
+            this.buscar_Tbx.Size = new System.Drawing.Size(259, 20);
             this.buscar_Tbx.TabIndex = 2;
             // 
             // buscar_Btn
             // 
-            this.buscar_Btn.Location = new System.Drawing.Point(639, 788);
-            this.buscar_Btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buscar_Btn.Location = new System.Drawing.Point(426, 512);
             this.buscar_Btn.Name = "buscar_Btn";
-            this.buscar_Btn.Size = new System.Drawing.Size(112, 35);
+            this.buscar_Btn.Size = new System.Drawing.Size(75, 23);
             this.buscar_Btn.TabIndex = 3;
             this.buscar_Btn.Text = "Buscar";
             this.buscar_Btn.UseVisualStyleBackColor = true;
@@ -227,10 +223,9 @@ namespace Control_Bibliotecario.UI
             // eliminar_Btn
             // 
             this.eliminar_Btn.Enabled = false;
-            this.eliminar_Btn.Location = new System.Drawing.Point(760, 788);
-            this.eliminar_Btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.eliminar_Btn.Location = new System.Drawing.Point(507, 512);
             this.eliminar_Btn.Name = "eliminar_Btn";
-            this.eliminar_Btn.Size = new System.Drawing.Size(144, 35);
+            this.eliminar_Btn.Size = new System.Drawing.Size(96, 23);
             this.eliminar_Btn.TabIndex = 4;
             this.eliminar_Btn.Text = "Eliminar Libro";
             this.eliminar_Btn.UseVisualStyleBackColor = true;
@@ -239,10 +234,9 @@ namespace Control_Bibliotecario.UI
             // ISBN_Lbl
             // 
             this.ISBN_Lbl.AutoSize = true;
-            this.ISBN_Lbl.Location = new System.Drawing.Point(18, 892);
-            this.ISBN_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ISBN_Lbl.Location = new System.Drawing.Point(12, 580);
             this.ISBN_Lbl.Name = "ISBN_Lbl";
-            this.ISBN_Lbl.Size = new System.Drawing.Size(51, 20);
+            this.ISBN_Lbl.Size = new System.Drawing.Size(35, 13);
             this.ISBN_Lbl.TabIndex = 5;
             this.ISBN_Lbl.Text = "ISBN:";
             this.ISBN_Lbl.Visible = false;
@@ -250,10 +244,9 @@ namespace Control_Bibliotecario.UI
             // titulo_Lbl
             // 
             this.titulo_Lbl.AutoSize = true;
-            this.titulo_Lbl.Location = new System.Drawing.Point(18, 938);
-            this.titulo_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.titulo_Lbl.Location = new System.Drawing.Point(12, 610);
             this.titulo_Lbl.Name = "titulo_Lbl";
-            this.titulo_Lbl.Size = new System.Drawing.Size(51, 20);
+            this.titulo_Lbl.Size = new System.Drawing.Size(36, 13);
             this.titulo_Lbl.TabIndex = 6;
             this.titulo_Lbl.Text = "Titulo:";
             this.titulo_Lbl.Visible = false;
@@ -261,10 +254,9 @@ namespace Control_Bibliotecario.UI
             // autor_Lbl
             // 
             this.autor_Lbl.AutoSize = true;
-            this.autor_Lbl.Location = new System.Drawing.Point(18, 985);
-            this.autor_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.autor_Lbl.Location = new System.Drawing.Point(12, 640);
             this.autor_Lbl.Name = "autor_Lbl";
-            this.autor_Lbl.Size = new System.Drawing.Size(52, 20);
+            this.autor_Lbl.Size = new System.Drawing.Size(35, 13);
             this.autor_Lbl.TabIndex = 7;
             this.autor_Lbl.Text = "Autor:";
             this.autor_Lbl.Visible = false;
@@ -272,10 +264,9 @@ namespace Control_Bibliotecario.UI
             // numEdicion_Lbl
             // 
             this.numEdicion_Lbl.AutoSize = true;
-            this.numEdicion_Lbl.Location = new System.Drawing.Point(420, 892);
-            this.numEdicion_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.numEdicion_Lbl.Location = new System.Drawing.Point(280, 580);
             this.numEdicion_Lbl.Name = "numEdicion_Lbl";
-            this.numEdicion_Lbl.Size = new System.Drawing.Size(111, 20);
+            this.numEdicion_Lbl.Size = new System.Drawing.Size(77, 13);
             this.numEdicion_Lbl.TabIndex = 8;
             this.numEdicion_Lbl.Text = "No de Edición:";
             this.numEdicion_Lbl.Visible = false;
@@ -283,10 +274,9 @@ namespace Control_Bibliotecario.UI
             // year_Lbl
             // 
             this.year_Lbl.AutoSize = true;
-            this.year_Lbl.Location = new System.Drawing.Point(492, 938);
-            this.year_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.year_Lbl.Location = new System.Drawing.Point(328, 610);
             this.year_Lbl.Name = "year_Lbl";
-            this.year_Lbl.Size = new System.Drawing.Size(42, 20);
+            this.year_Lbl.Size = new System.Drawing.Size(29, 13);
             this.year_Lbl.TabIndex = 9;
             this.year_Lbl.Text = "Año:";
             this.year_Lbl.Visible = false;
@@ -294,74 +284,66 @@ namespace Control_Bibliotecario.UI
             // tema_Lbl
             // 
             this.tema_Lbl.AutoSize = true;
-            this.tema_Lbl.Location = new System.Drawing.Point(480, 985);
-            this.tema_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tema_Lbl.Location = new System.Drawing.Point(320, 640);
             this.tema_Lbl.Name = "tema_Lbl";
-            this.tema_Lbl.Size = new System.Drawing.Size(53, 20);
+            this.tema_Lbl.Size = new System.Drawing.Size(37, 13);
             this.tema_Lbl.TabIndex = 10;
             this.tema_Lbl.Text = "Tema:";
             this.tema_Lbl.Visible = false;
             // 
             // ISBN_Tbx
             // 
-            this.ISBN_Tbx.Location = new System.Drawing.Point(80, 888);
-            this.ISBN_Tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ISBN_Tbx.Location = new System.Drawing.Point(53, 577);
             this.ISBN_Tbx.Name = "ISBN_Tbx";
-            this.ISBN_Tbx.Size = new System.Drawing.Size(314, 26);
+            this.ISBN_Tbx.Size = new System.Drawing.Size(211, 20);
             this.ISBN_Tbx.TabIndex = 11;
             this.ISBN_Tbx.Visible = false;
             // 
             // titulo_Tbx
             // 
-            this.titulo_Tbx.Location = new System.Drawing.Point(80, 934);
-            this.titulo_Tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.titulo_Tbx.Location = new System.Drawing.Point(53, 607);
             this.titulo_Tbx.Name = "titulo_Tbx";
-            this.titulo_Tbx.Size = new System.Drawing.Size(314, 26);
+            this.titulo_Tbx.Size = new System.Drawing.Size(211, 20);
             this.titulo_Tbx.TabIndex = 12;
             this.titulo_Tbx.Visible = false;
             // 
             // autor_Tbx
             // 
-            this.autor_Tbx.Location = new System.Drawing.Point(80, 980);
-            this.autor_Tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.autor_Tbx.Location = new System.Drawing.Point(53, 637);
             this.autor_Tbx.Name = "autor_Tbx";
-            this.autor_Tbx.Size = new System.Drawing.Size(314, 26);
+            this.autor_Tbx.Size = new System.Drawing.Size(211, 20);
             this.autor_Tbx.TabIndex = 13;
             this.autor_Tbx.Visible = false;
             // 
             // tema_Tbx
             // 
-            this.tema_Tbx.Location = new System.Drawing.Point(544, 980);
-            this.tema_Tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tema_Tbx.Location = new System.Drawing.Point(363, 637);
             this.tema_Tbx.Name = "tema_Tbx";
-            this.tema_Tbx.Size = new System.Drawing.Size(314, 26);
+            this.tema_Tbx.Size = new System.Drawing.Size(211, 20);
             this.tema_Tbx.TabIndex = 16;
             this.tema_Tbx.Visible = false;
             // 
             // year_Tbx
             // 
-            this.year_Tbx.Location = new System.Drawing.Point(544, 934);
-            this.year_Tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.year_Tbx.Location = new System.Drawing.Point(363, 607);
             this.year_Tbx.Name = "year_Tbx";
-            this.year_Tbx.Size = new System.Drawing.Size(314, 26);
+            this.year_Tbx.Size = new System.Drawing.Size(211, 20);
             this.year_Tbx.TabIndex = 15;
             this.year_Tbx.Visible = false;
             // 
             // numEdicion_Tbx
             // 
-            this.numEdicion_Tbx.Location = new System.Drawing.Point(544, 888);
-            this.numEdicion_Tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.numEdicion_Tbx.Location = new System.Drawing.Point(363, 577);
             this.numEdicion_Tbx.Name = "numEdicion_Tbx";
-            this.numEdicion_Tbx.Size = new System.Drawing.Size(314, 26);
+            this.numEdicion_Tbx.Size = new System.Drawing.Size(211, 20);
             this.numEdicion_Tbx.TabIndex = 14;
             this.numEdicion_Tbx.Visible = false;
             // 
             // agregar_Btn
             // 
-            this.agregar_Btn.Location = new System.Drawing.Point(924, 885);
-            this.agregar_Btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.agregar_Btn.Location = new System.Drawing.Point(616, 575);
             this.agregar_Btn.Name = "agregar_Btn";
-            this.agregar_Btn.Size = new System.Drawing.Size(140, 35);
+            this.agregar_Btn.Size = new System.Drawing.Size(93, 23);
             this.agregar_Btn.TabIndex = 17;
             this.agregar_Btn.Text = "Añadir Libro";
             this.agregar_Btn.UseVisualStyleBackColor = true;
@@ -371,10 +353,9 @@ namespace Control_Bibliotecario.UI
             // modificar_Btn
             // 
             this.modificar_Btn.Enabled = false;
-            this.modificar_Btn.Location = new System.Drawing.Point(924, 938);
-            this.modificar_Btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.modificar_Btn.Location = new System.Drawing.Point(616, 610);
             this.modificar_Btn.Name = "modificar_Btn";
-            this.modificar_Btn.Size = new System.Drawing.Size(140, 35);
+            this.modificar_Btn.Size = new System.Drawing.Size(93, 23);
             this.modificar_Btn.TabIndex = 18;
             this.modificar_Btn.Text = "Modificar Libro";
             this.modificar_Btn.UseVisualStyleBackColor = true;
@@ -383,9 +364,9 @@ namespace Control_Bibliotecario.UI
             // 
             // InventarioLibrosForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1388, 1115);
+            this.ClientSize = new System.Drawing.Size(925, 551);
             this.Controls.Add(this.modificar_Btn);
             this.Controls.Add(this.agregar_Btn);
             this.Controls.Add(this.tema_Tbx);
@@ -406,6 +387,7 @@ namespace Control_Bibliotecario.UI
             this.Controls.Add(this.tipoBusqueda_CB);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "InventarioLibrosForm";
             this.Text = "Inventario de Libros";
