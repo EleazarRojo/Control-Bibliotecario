@@ -134,7 +134,7 @@ namespace Control_Bibliotecario.UI
             this.MinimizeBox = false;
             this.Name = "IngresoAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "IngresoAdmin";
+            this.Text = "Ingreso de Administrador";
             this.ResumeLayout(false);
             this.PerformLayout();
 

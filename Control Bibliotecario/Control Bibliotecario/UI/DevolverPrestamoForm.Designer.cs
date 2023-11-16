@@ -340,7 +340,7 @@ namespace Control_Bibliotecario.UI
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "DevolverPrestamoForm";
-            this.Text = "DevolverPrestamoForm";
+            this.Text = "Devolver Prestamo";
             this.Load += new System.EventHandler(this.DevolverPrestamoForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).EndInit();

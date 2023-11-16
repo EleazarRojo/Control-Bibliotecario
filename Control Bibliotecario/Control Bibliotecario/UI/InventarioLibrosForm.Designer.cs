@@ -408,7 +408,7 @@ namespace Control_Bibliotecario.UI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "InventarioLibrosForm";
-            this.Text = "Inventario";
+            this.Text = "Inventario de Libros";
             this.Load += new System.EventHandler(this.InventarioLibrosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).EndInit();

@@ -376,7 +376,7 @@ namespace Control_Bibliotecario
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PrincipalForm";
-            this.Text = "Búsqueda";
+            this.Text = "Menú Principal";
             this.Load += new System.EventHandler(this.PrincipalForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

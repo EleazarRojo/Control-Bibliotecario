@@ -177,7 +177,7 @@ namespace Control_Bibliotecario.UI
             this.MaximizeBox = false;
             this.Name = "HistorialDePrestamosForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "HistorialDePrestamosForm";
+            this.Text = "Historial De Prestamos";
             this.Load += new System.EventHandler(this.HistorialDePrestamosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.historialPrestamos_DatagridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).EndInit();

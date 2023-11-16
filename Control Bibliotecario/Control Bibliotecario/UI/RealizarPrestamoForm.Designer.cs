@@ -342,7 +342,7 @@ namespace Control_Bibliotecario.UI
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "RealizarPrestamoForm";
-            this.Text = "RealizarPrestamoForm";
+            this.Text = "Realizar Prestamo";
             this.Load += new System.EventHandler(this.RealizarPrestamoForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).EndInit();

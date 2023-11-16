@@ -117,14 +117,89 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="folioDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Folio</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="folioDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="folioDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="estatusDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Estatus</value>
+  </data>
+  <data name="estatusDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="estatusDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="idUsuarioDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>IdUsuario</value>
+  </data>
+  <data name="idUsuarioDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="idUsuarioDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="iSBNDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>ISBN</value>
+  </data>
+  <data name="iSBNDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="iSBNDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="tituloDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Titulo</value>
+  </data>
+  <data name="tituloDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="tituloDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="autorDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Autor</value>
+  </data>
+  <data name="autorDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="autorDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="fechaInicialDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>FechaInicial</value>
+  </data>
+  <data name="fechaInicialDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="fechaInicialDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="fechaDevolucionDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>FechaDevolucion</value>
+  </data>
+  <data name="fechaDevolucionDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="fechaDevolucionDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
   <metadata name="prestamosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>223, 17</value>
+  </metadata>
+  <metadata name="bibliotecaDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 40</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dataGridView1.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>62</value>
   </data>
@@ -177,11 +252,23 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>916, 17</value>
   </metadata>
+  <data name="relizarPrestamoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 29</value>
+  </data>
+  <data name="relizarPrestamoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Relizar Prestamo</value>
+  </data>
+  <data name="devolverPrestamoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 29</value>
+  </data>
+  <data name="devolverPrestamoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Devolver Prestamo</value>
+  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1362, 36</value>
+    <value>1362, 33</value>
   </data>
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -200,18 +287,6 @@
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="relizarPrestamoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 32</value>
-  </data>
-  <data name="relizarPrestamoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Relizar Prestamo</value>
-  </data>
-  <data name="devolverPrestamoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 32</value>
-  </data>
-  <data name="devolverPrestamoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Devolver Prestamo</value>
   </data>
   <data name="buscar_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -315,87 +390,6 @@
   <data name="&gt;&gt;tipoBusqueda_CB.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="folioDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Folio</value>
-  </data>
-  <data name="folioDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="folioDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
-  <data name="estatusDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Estatus</value>
-  </data>
-  <data name="estatusDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="estatusDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
-  <data name="idUsuarioDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>IdUsuario</value>
-  </data>
-  <data name="idUsuarioDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="idUsuarioDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
-  <data name="iSBNDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>ISBN</value>
-  </data>
-  <data name="iSBNDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="iSBNDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
-  <data name="tituloDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Titulo</value>
-  </data>
-  <data name="tituloDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="tituloDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
-  <data name="autorDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Autor</value>
-  </data>
-  <data name="autorDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="autorDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
-  <data name="fechaInicialDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>FechaInicial</value>
-  </data>
-  <data name="fechaInicialDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="fechaInicialDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
-  <data name="fechaDevolucionDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>FechaDevolucion</value>
-  </data>
-  <data name="fechaDevolucionDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="fechaDevolucionDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
-  <metadata name="prestamosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>223, 17</value>
-  </metadata>
-  <metadata name="bibliotecaDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="bibliotecaDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="prestamosTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>488, 17</value>
   </metadata>
@@ -411,26 +405,11 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1362, 871</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ControlDePrestamos</value>
-  </data>
-  <data name="&gt;&gt;relizarPrestamoToolStripMenuItem.Name" xml:space="preserve">
-    <value>relizarPrestamoToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;relizarPrestamoToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;devolverPrestamoToolStripMenuItem.Name" xml:space="preserve">
-    <value>devolverPrestamoToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;devolverPrestamoToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Control De Prestamos</value>
   </data>
   <data name="&gt;&gt;folioDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>folioDataGridViewTextBoxColumn</value>
@@ -491,6 +470,18 @@
   </data>
   <data name="&gt;&gt;bibliotecaDataSet.Type" xml:space="preserve">
     <value>Control_Bibliotecario.BibliotecaDataSet, BibliotecaDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;relizarPrestamoToolStripMenuItem.Name" xml:space="preserve">
+    <value>relizarPrestamoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;relizarPrestamoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;devolverPrestamoToolStripMenuItem.Name" xml:space="preserve">
+    <value>devolverPrestamoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;devolverPrestamoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;prestamosTableAdapter.Name" xml:space="preserve">
     <value>prestamosTableAdapter</value>

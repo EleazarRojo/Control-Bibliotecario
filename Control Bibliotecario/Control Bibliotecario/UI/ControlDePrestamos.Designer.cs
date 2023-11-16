@@ -30,16 +30,9 @@ namespace Control_Bibliotecario.UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlDePrestamos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buscar_Btn = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.relizarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.devolverPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscar_lbl = new System.Windows.Forms.Label();
-            this.buscar_Tbx = new System.Windows.Forms.TextBox();
-            this.tipoBusqueda_CB = new System.Windows.Forms.ComboBox();
             this.folioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,12 +43,19 @@ namespace Control_Bibliotecario.UI
             this.fechaDevolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prestamosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bibliotecaDataSet = new Control_Bibliotecario.BibliotecaDataSet();
+            this.buscar_Btn = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.relizarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.devolverPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscar_lbl = new System.Windows.Forms.Label();
+            this.buscar_Tbx = new System.Windows.Forms.TextBox();
+            this.tipoBusqueda_CB = new System.Windows.Forms.ComboBox();
             this.prestamosTableAdapter = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.PrestamosTableAdapter();
             this.tableAdapterManager = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -77,65 +77,12 @@ namespace Control_Bibliotecario.UI
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 28;
             // 
-            // buscar_Btn
-            // 
-            resources.ApplyResources(this.buscar_Btn, "buscar_Btn");
-            this.buscar_Btn.Name = "buscar_Btn";
-            this.buscar_Btn.UseVisualStyleBackColor = true;
-            this.buscar_Btn.Click += new System.EventHandler(this.buscar_Btn_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.relizarPrestamoToolStripMenuItem,
-            this.devolverPrestamoToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
-            this.menuStrip1.Name = "menuStrip1";
-            // 
-            // relizarPrestamoToolStripMenuItem
-            // 
-            this.relizarPrestamoToolStripMenuItem.Name = "relizarPrestamoToolStripMenuItem";
-            resources.ApplyResources(this.relizarPrestamoToolStripMenuItem, "relizarPrestamoToolStripMenuItem");
-            this.relizarPrestamoToolStripMenuItem.Click += new System.EventHandler(this.relizarPrestamoToolStripMenuItem_Click);
-            // 
-            // devolverPrestamoToolStripMenuItem
-            // 
-            this.devolverPrestamoToolStripMenuItem.Name = "devolverPrestamoToolStripMenuItem";
-            resources.ApplyResources(this.devolverPrestamoToolStripMenuItem, "devolverPrestamoToolStripMenuItem");
-            this.devolverPrestamoToolStripMenuItem.Click += new System.EventHandler(this.devolverPrestamoToolStripMenuItem_Click);
-            // 
-            // buscar_lbl
-            // 
-            resources.ApplyResources(this.buscar_lbl, "buscar_lbl");
-            this.buscar_lbl.Name = "buscar_lbl";
-            // 
-            // buscar_Tbx
-            // 
-            resources.ApplyResources(this.buscar_Tbx, "buscar_Tbx");
-            this.buscar_Tbx.Name = "buscar_Tbx";
-            this.buscar_Tbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IdUsuario_Tbx_KeyPress);
-            // 
-            // tipoBusqueda_CB
-            // 
-            resources.ApplyResources(this.tipoBusqueda_CB, "tipoBusqueda_CB");
-            this.tipoBusqueda_CB.FormattingEnabled = true;
-            this.tipoBusqueda_CB.Items.AddRange(new object[] {
-            resources.GetString("tipoBusqueda_CB.Items"),
-            resources.GetString("tipoBusqueda_CB.Items1"),
-            resources.GetString("tipoBusqueda_CB.Items2"),
-            resources.GetString("tipoBusqueda_CB.Items3"),
-            resources.GetString("tipoBusqueda_CB.Items4")});
-            this.tipoBusqueda_CB.Name = "tipoBusqueda_CB";
-            this.tipoBusqueda_CB.SelectedIndexChanged += new System.EventHandler(this.tipoBusqueda_CB_SelectedIndexChanged);
-            // 
             // folioDataGridViewTextBoxColumn
             // 
             this.folioDataGridViewTextBoxColumn.DataPropertyName = "Folio";
-            dataGridViewCellStyle3.Format = "0000000000";
-            dataGridViewCellStyle3.NullValue = null;
-            this.folioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "0000000000";
+            dataGridViewCellStyle1.NullValue = null;
+            this.folioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             resources.ApplyResources(this.folioDataGridViewTextBoxColumn, "folioDataGridViewTextBoxColumn");
             this.folioDataGridViewTextBoxColumn.Name = "folioDataGridViewTextBoxColumn";
             this.folioDataGridViewTextBoxColumn.ReadOnly = true;
@@ -199,6 +146,59 @@ namespace Control_Bibliotecario.UI
             this.bibliotecaDataSet.DataSetName = "BibliotecaDataSet";
             this.bibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // buscar_Btn
+            // 
+            resources.ApplyResources(this.buscar_Btn, "buscar_Btn");
+            this.buscar_Btn.Name = "buscar_Btn";
+            this.buscar_Btn.UseVisualStyleBackColor = true;
+            this.buscar_Btn.Click += new System.EventHandler(this.buscar_Btn_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.relizarPrestamoToolStripMenuItem,
+            this.devolverPrestamoToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.Name = "menuStrip1";
+            // 
+            // relizarPrestamoToolStripMenuItem
+            // 
+            this.relizarPrestamoToolStripMenuItem.Name = "relizarPrestamoToolStripMenuItem";
+            resources.ApplyResources(this.relizarPrestamoToolStripMenuItem, "relizarPrestamoToolStripMenuItem");
+            this.relizarPrestamoToolStripMenuItem.Click += new System.EventHandler(this.relizarPrestamoToolStripMenuItem_Click);
+            // 
+            // devolverPrestamoToolStripMenuItem
+            // 
+            this.devolverPrestamoToolStripMenuItem.Name = "devolverPrestamoToolStripMenuItem";
+            resources.ApplyResources(this.devolverPrestamoToolStripMenuItem, "devolverPrestamoToolStripMenuItem");
+            this.devolverPrestamoToolStripMenuItem.Click += new System.EventHandler(this.devolverPrestamoToolStripMenuItem_Click);
+            // 
+            // buscar_lbl
+            // 
+            resources.ApplyResources(this.buscar_lbl, "buscar_lbl");
+            this.buscar_lbl.Name = "buscar_lbl";
+            // 
+            // buscar_Tbx
+            // 
+            resources.ApplyResources(this.buscar_Tbx, "buscar_Tbx");
+            this.buscar_Tbx.Name = "buscar_Tbx";
+            this.buscar_Tbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IdUsuario_Tbx_KeyPress);
+            // 
+            // tipoBusqueda_CB
+            // 
+            resources.ApplyResources(this.tipoBusqueda_CB, "tipoBusqueda_CB");
+            this.tipoBusqueda_CB.FormattingEnabled = true;
+            this.tipoBusqueda_CB.Items.AddRange(new object[] {
+            resources.GetString("tipoBusqueda_CB.Items"),
+            resources.GetString("tipoBusqueda_CB.Items1"),
+            resources.GetString("tipoBusqueda_CB.Items2"),
+            resources.GetString("tipoBusqueda_CB.Items3"),
+            resources.GetString("tipoBusqueda_CB.Items4")});
+            this.tipoBusqueda_CB.Name = "tipoBusqueda_CB";
+            this.tipoBusqueda_CB.SelectedIndexChanged += new System.EventHandler(this.tipoBusqueda_CB_SelectedIndexChanged);
+            // 
             // prestamosTableAdapter
             // 
             this.prestamosTableAdapter.ClearBeforeFill = true;
@@ -229,10 +229,10 @@ namespace Control_Bibliotecario.UI
             this.Name = "ControlDePrestamos";
             this.Load += new System.EventHandler(this.ControlDePrestamos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

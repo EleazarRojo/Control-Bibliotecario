@@ -201,7 +201,7 @@ namespace Control_Bibliotecario
             this.MaximizeBox = false;
             this.Name = "RegistroForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegistroForm";
+            this.Text = "Registro de Usuarios";
             this.ResumeLayout(false);
             this.PerformLayout();
 
