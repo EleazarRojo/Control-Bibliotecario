@@ -33,7 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,19 +48,124 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrador.cs" />
-    <Compile Include="PrincipalForm.cs">
+    <Compile Include="BibliotecaDataSet.cs">
+      <DependentUpon>BibliotecaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BibliotecaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BibliotecaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Usuario.cs" />
+    <Compile Include="UI\Ayuda2Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include=".Designer.cs">
+    <Compile Include="UI\Ayuda2Form.Designer.cs">
+      <DependentUpon>Ayuda2Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AyudaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AyudaForm.Designer.cs">
+      <DependentUpon>AyudaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControlDePrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ControlDePrestamos.Designer.cs">
+      <DependentUpon>ControlDePrestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DevolverPrestamoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DevolverPrestamoForm.Designer.cs">
+      <DependentUpon>DevolverPrestamoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HistorialDePrestamosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\HistorialDePrestamosForm.Designer.cs">
+      <DependentUpon>HistorialDePrestamosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IngresarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\IngresarForm.Designer.cs">
+      <DependentUpon>IngresarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IngresoAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\IngresoAdmin.Designer.cs">
+      <DependentUpon>IngresoAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InventarioLibrosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\InventarioLibrosForm.Designer.cs">
+      <DependentUpon>InventarioLibrosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PrincipalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\.Designer.cs">
       <DependentUpon>PrincipalForm.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usuario.cs" />
-    <EmbeddedResource Include="PrincipalForm.resx">
+    <Compile Include="UI\RegistroAdminBiblio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RegistroAdminBiblio.Designer.cs">
+      <DependentUpon>RegistroAdminBiblio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RealizarPrestamoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RealizarPrestamoForm.Designer.cs">
+      <DependentUpon>RealizarPrestamoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RegistroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RegistroForm.Designer.cs">
+      <DependentUpon>RegistroForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Persona.cs" />
+    <Compile Include="UI\ControlDeUsuariosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ControlDeUsuariosForm.Designer.cs">
+      <DependentUpon>ControlDeUsuariosForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\Ayuda2Form.resx">
+      <DependentUpon>Ayuda2Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AyudaForm.resx">
+      <DependentUpon>AyudaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlDePrestamos.resx">
+      <DependentUpon>ControlDePrestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DevolverPrestamoForm.resx">
+      <DependentUpon>DevolverPrestamoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HistorialDePrestamosForm.resx">
+      <DependentUpon>HistorialDePrestamosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\IngresarForm.resx">
+      <DependentUpon>IngresarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\IngresoAdmin.resx">
+      <DependentUpon>IngresoAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\InventarioLibrosForm.resx">
+      <DependentUpon>InventarioLibrosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PrincipalForm.resx">
       <DependentUpon>PrincipalForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -69,6 +176,29 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\RegistroAdminBiblio.resx">
+      <DependentUpon>RegistroAdminBiblio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RealizarPrestamoForm.resx">
+      <DependentUpon>RealizarPrestamoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RegistroForm.resx">
+      <DependentUpon>RegistroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlDeUsuariosForm.resx">
+      <DependentUpon>ControlDeUsuariosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="BibliotecaDataSet.xsc">
+      <DependentUpon>BibliotecaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BibliotecaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BibliotecaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BibliotecaDataSet.xss">
+      <DependentUpon>BibliotecaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,6 +211,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BD\Biblioteca.mdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
