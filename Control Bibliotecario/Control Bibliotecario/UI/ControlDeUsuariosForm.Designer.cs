@@ -30,7 +30,7 @@ namespace Control_Bibliotecario.UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rFCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,7 +104,7 @@ namespace Control_Bibliotecario.UI
             this.Contrasenia});
             this.dataGridView1.DataSource = this.usuariosBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(8, 35);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
@@ -115,9 +115,9 @@ namespace Control_Bibliotecario.UI
             // idUsuarioDataGridViewTextBoxColumn
             // 
             this.idUsuarioDataGridViewTextBoxColumn.DataPropertyName = "IdUsuario";
-            dataGridViewCellStyle3.Format = "000000";
-            dataGridViewCellStyle3.NullValue = null;
-            this.idUsuarioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "000000";
+            dataGridViewCellStyle1.NullValue = null;
+            this.idUsuarioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.idUsuarioDataGridViewTextBoxColumn.Frozen = true;
             this.idUsuarioDataGridViewTextBoxColumn.HeaderText = "IdUsuario";
             this.idUsuarioDataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -228,7 +228,7 @@ namespace Control_Bibliotecario.UI
             // buscar_Btn
             // 
             this.buscar_Btn.Location = new System.Drawing.Point(39, 575);
-            this.buscar_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buscar_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.buscar_Btn.Name = "buscar_Btn";
             this.buscar_Btn.Size = new System.Drawing.Size(76, 32);
             this.buscar_Btn.TabIndex = 1;
@@ -240,7 +240,7 @@ namespace Control_Bibliotecario.UI
             // 
             this.eliminar_Btn.Enabled = false;
             this.eliminar_Btn.Location = new System.Drawing.Point(839, 575);
-            this.eliminar_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.eliminar_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.eliminar_Btn.Name = "eliminar_Btn";
             this.eliminar_Btn.Size = new System.Drawing.Size(116, 32);
             this.eliminar_Btn.TabIndex = 2;
@@ -252,7 +252,7 @@ namespace Control_Bibliotecario.UI
             // 
             this.buscar_Tbx.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscar_Tbx.Location = new System.Drawing.Point(119, 582);
-            this.buscar_Tbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buscar_Tbx.Margin = new System.Windows.Forms.Padding(2);
             this.buscar_Tbx.Name = "buscar_Tbx";
             this.buscar_Tbx.Size = new System.Drawing.Size(197, 23);
             this.buscar_Tbx.TabIndex = 4;
@@ -314,7 +314,7 @@ namespace Control_Bibliotecario.UI
             "Eliminación ",
             "Modificar Usuario"});
             this.tipoDeBusqueda_Cbx.Location = new System.Drawing.Point(161, 548);
-            this.tipoDeBusqueda_Cbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tipoDeBusqueda_Cbx.Margin = new System.Windows.Forms.Padding(2);
             this.tipoDeBusqueda_Cbx.Name = "tipoDeBusqueda_Cbx";
             this.tipoDeBusqueda_Cbx.Size = new System.Drawing.Size(161, 21);
             this.tipoDeBusqueda_Cbx.TabIndex = 9;
@@ -359,7 +359,7 @@ namespace Control_Bibliotecario.UI
             this.idUsuario_tbx.Enabled = false;
             this.idUsuario_tbx.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idUsuario_tbx.Location = new System.Drawing.Point(119, 633);
-            this.idUsuario_tbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.idUsuario_tbx.Margin = new System.Windows.Forms.Padding(2);
             this.idUsuario_tbx.Name = "idUsuario_tbx";
             this.idUsuario_tbx.Size = new System.Drawing.Size(197, 23);
             this.idUsuario_tbx.TabIndex = 13;
@@ -368,7 +368,7 @@ namespace Control_Bibliotecario.UI
             // 
             this.rFC_tbx.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rFC_tbx.Location = new System.Drawing.Point(119, 668);
-            this.rFC_tbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rFC_tbx.Margin = new System.Windows.Forms.Padding(2);
             this.rFC_tbx.Name = "rFC_tbx";
             this.rFC_tbx.Size = new System.Drawing.Size(197, 23);
             this.rFC_tbx.TabIndex = 14;
@@ -388,7 +388,7 @@ namespace Control_Bibliotecario.UI
             // 
             this.nombre_tbx.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombre_tbx.Location = new System.Drawing.Point(479, 633);
-            this.nombre_tbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nombre_tbx.Margin = new System.Windows.Forms.Padding(2);
             this.nombre_tbx.Name = "nombre_tbx";
             this.nombre_tbx.Size = new System.Drawing.Size(197, 23);
             this.nombre_tbx.TabIndex = 17;
@@ -408,7 +408,7 @@ namespace Control_Bibliotecario.UI
             // 
             this.apellidoPaterno_tbx.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.apellidoPaterno_tbx.Location = new System.Drawing.Point(479, 668);
-            this.apellidoPaterno_tbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.apellidoPaterno_tbx.Margin = new System.Windows.Forms.Padding(2);
             this.apellidoPaterno_tbx.Name = "apellidoPaterno_tbx";
             this.apellidoPaterno_tbx.Size = new System.Drawing.Size(197, 23);
             this.apellidoPaterno_tbx.TabIndex = 19;
@@ -417,7 +417,7 @@ namespace Control_Bibliotecario.UI
             // 
             this.apellidoMaterno_tbx.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.apellidoMaterno_tbx.Location = new System.Drawing.Point(479, 701);
-            this.apellidoMaterno_tbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.apellidoMaterno_tbx.Margin = new System.Windows.Forms.Padding(2);
             this.apellidoMaterno_tbx.Name = "apellidoMaterno_tbx";
             this.apellidoMaterno_tbx.Size = new System.Drawing.Size(197, 23);
             this.apellidoMaterno_tbx.TabIndex = 21;
@@ -470,7 +470,7 @@ namespace Control_Bibliotecario.UI
             // 
             this.fechaDeNacimiento_tbx.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechaDeNacimiento_tbx.Location = new System.Drawing.Point(870, 630);
-            this.fechaDeNacimiento_tbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechaDeNacimiento_tbx.Margin = new System.Windows.Forms.Padding(2);
             this.fechaDeNacimiento_tbx.Name = "fechaDeNacimiento_tbx";
             this.fechaDeNacimiento_tbx.Size = new System.Drawing.Size(86, 23);
             this.fechaDeNacimiento_tbx.TabIndex = 25;
@@ -479,7 +479,7 @@ namespace Control_Bibliotecario.UI
             // 
             this.edad_tbx.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edad_tbx.Location = new System.Drawing.Point(870, 670);
-            this.edad_tbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.edad_tbx.Margin = new System.Windows.Forms.Padding(2);
             this.edad_tbx.Name = "edad_tbx";
             this.edad_tbx.Size = new System.Drawing.Size(86, 23);
             this.edad_tbx.TabIndex = 26;
@@ -488,7 +488,7 @@ namespace Control_Bibliotecario.UI
             // 
             this.genero_tbx.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.genero_tbx.Location = new System.Drawing.Point(870, 705);
-            this.genero_tbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.genero_tbx.Margin = new System.Windows.Forms.Padding(2);
             this.genero_tbx.Name = "genero_tbx";
             this.genero_tbx.Size = new System.Drawing.Size(86, 23);
             this.genero_tbx.TabIndex = 27;
@@ -496,7 +496,7 @@ namespace Control_Bibliotecario.UI
             // aceptarModificacion_btn
             // 
             this.aceptarModificacion_btn.Location = new System.Drawing.Point(769, 761);
-            this.aceptarModificacion_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.aceptarModificacion_btn.Margin = new System.Windows.Forms.Padding(2);
             this.aceptarModificacion_btn.Name = "aceptarModificacion_btn";
             this.aceptarModificacion_btn.Size = new System.Drawing.Size(186, 32);
             this.aceptarModificacion_btn.TabIndex = 29;
@@ -507,7 +507,7 @@ namespace Control_Bibliotecario.UI
             // regresar_btn
             // 
             this.regresar_btn.Location = new System.Drawing.Point(649, 761);
-            this.regresar_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.regresar_btn.Margin = new System.Windows.Forms.Padding(2);
             this.regresar_btn.Name = "regresar_btn";
             this.regresar_btn.Size = new System.Drawing.Size(116, 32);
             this.regresar_btn.TabIndex = 30;
@@ -534,7 +534,7 @@ namespace Control_Bibliotecario.UI
             // 
             this.direccion_tbx.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.direccion_tbx.Location = new System.Drawing.Point(119, 731);
-            this.direccion_tbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.direccion_tbx.Margin = new System.Windows.Forms.Padding(2);
             this.direccion_tbx.Name = "direccion_tbx";
             this.direccion_tbx.Size = new System.Drawing.Size(197, 23);
             this.direccion_tbx.TabIndex = 32;
@@ -558,7 +558,7 @@ namespace Control_Bibliotecario.UI
             "020",
             "003"});
             this.idNivel_Cbx.Location = new System.Drawing.Point(119, 700);
-            this.idNivel_Cbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.idNivel_Cbx.Margin = new System.Windows.Forms.Padding(2);
             this.idNivel_Cbx.Name = "idNivel_Cbx";
             this.idNivel_Cbx.Size = new System.Drawing.Size(82, 21);
             this.idNivel_Cbx.TabIndex = 33;
@@ -568,7 +568,7 @@ namespace Control_Bibliotecario.UI
             // 
             this.contraseña_tbx.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contraseña_tbx.Location = new System.Drawing.Point(479, 731);
-            this.contraseña_tbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.contraseña_tbx.Margin = new System.Windows.Forms.Padding(2);
             this.contraseña_tbx.Name = "contraseña_tbx";
             this.contraseña_tbx.Size = new System.Drawing.Size(103, 23);
             this.contraseña_tbx.TabIndex = 35;
@@ -623,8 +623,9 @@ namespace Control_Bibliotecario.UI
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ControlDeUsuariosForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Control de Usuarios";

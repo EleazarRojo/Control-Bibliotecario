@@ -47,7 +47,6 @@ namespace Control_Bibliotecario
             this.busqueda_Tbx = new System.Windows.Forms.TextBox();
             this.buscar_Btn = new System.Windows.Forms.Button();
             this.tipoBusqueda_CB = new System.Windows.Forms.ComboBox();
-            this.detalles_Btn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,7 +70,6 @@ namespace Control_Bibliotecario
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ingresoToolStripMenuItem,
@@ -83,21 +81,22 @@ namespace Control_Bibliotecario
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1851, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(1234, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // ingresoToolStripMenuItem
             // 
             this.ingresoToolStripMenuItem.Name = "ingresoToolStripMenuItem";
-            this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(92, 29);
+            this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(61, 22);
             this.ingresoToolStripMenuItem.Text = "&Ingresar";
             this.ingresoToolStripMenuItem.Click += new System.EventHandler(this.ingresoToolStripMenuItem_Click);
             // 
             // registrarseToolStripMenuItem
             // 
             this.registrarseToolStripMenuItem.Name = "registrarseToolStripMenuItem";
-            this.registrarseToolStripMenuItem.Size = new System.Drawing.Size(114, 29);
+            this.registrarseToolStripMenuItem.Size = new System.Drawing.Size(76, 22);
             this.registrarseToolStripMenuItem.Text = "&Registrarse";
             this.registrarseToolStripMenuItem.Click += new System.EventHandler(this.registrarseToolStripMenuItem_Click);
             // 
@@ -107,28 +106,28 @@ namespace Control_Bibliotecario
             this.prestamosToolStripMenuItem,
             this.cerrarSesiónToolStripMenuItem});
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(59, 22);
             this.usuarioToolStripMenuItem.Text = "Usuario";
             this.usuarioToolStripMenuItem.Visible = false;
             // 
             // prestamosToolStripMenuItem
             // 
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
-            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(292, 34);
+            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.prestamosToolStripMenuItem.Text = "Historial de Prestamos";
             this.prestamosToolStripMenuItem.Click += new System.EventHandler(this.prestamosToolStripMenuItem_Click);
             // 
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(292, 34);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión ";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // controlDeUsuariosToolStripMenuItem
             // 
             this.controlDeUsuariosToolStripMenuItem.Name = "controlDeUsuariosToolStripMenuItem";
-            this.controlDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(185, 29);
+            this.controlDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.controlDeUsuariosToolStripMenuItem.Text = "Control de Usuarios";
             this.controlDeUsuariosToolStripMenuItem.Visible = false;
             this.controlDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.controlDeUsuariosToolStripMenuItem_Click);
@@ -136,7 +135,7 @@ namespace Control_Bibliotecario
             // controlDePrestamosToolStripMenuItem
             // 
             this.controlDePrestamosToolStripMenuItem.Name = "controlDePrestamosToolStripMenuItem";
-            this.controlDePrestamosToolStripMenuItem.Size = new System.Drawing.Size(200, 29);
+            this.controlDePrestamosToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.controlDePrestamosToolStripMenuItem.Text = "Control de Prestamos";
             this.controlDePrestamosToolStripMenuItem.Visible = false;
             this.controlDePrestamosToolStripMenuItem.Click += new System.EventHandler(this.controlDePrestamosToolStripMenuItem_Click);
@@ -144,7 +143,7 @@ namespace Control_Bibliotecario
             // inventarioDeLibrosToolStripMenuItem
             // 
             this.inventarioDeLibrosToolStripMenuItem.Name = "inventarioDeLibrosToolStripMenuItem";
-            this.inventarioDeLibrosToolStripMenuItem.Size = new System.Drawing.Size(185, 29);
+            this.inventarioDeLibrosToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.inventarioDeLibrosToolStripMenuItem.Text = "Inventario de Libros";
             this.inventarioDeLibrosToolStripMenuItem.Visible = false;
             this.inventarioDeLibrosToolStripMenuItem.Click += new System.EventHandler(this.inventarioDeLibrosToolStripMenuItem_Click);
@@ -152,7 +151,7 @@ namespace Control_Bibliotecario
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(79, 29);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 22);
             this.ayudaToolStripMenuItem.Text = "&Ayuda";
             this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click_1);
             // 
@@ -160,10 +159,9 @@ namespace Control_Bibliotecario
             // 
             this.titulo_Lbl.Dock = System.Windows.Forms.DockStyle.Top;
             this.titulo_Lbl.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titulo_Lbl.Location = new System.Drawing.Point(0, 33);
-            this.titulo_Lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.titulo_Lbl.Location = new System.Drawing.Point(0, 24);
             this.titulo_Lbl.Name = "titulo_Lbl";
-            this.titulo_Lbl.Size = new System.Drawing.Size(1851, 122);
+            this.titulo_Lbl.Size = new System.Drawing.Size(1234, 79);
             this.titulo_Lbl.TabIndex = 2;
             this.titulo_Lbl.Text = "Búsqueda de Libros";
             this.titulo_Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -171,27 +169,25 @@ namespace Control_Bibliotecario
             // tipoBusqueda_Lbl
             // 
             this.tipoBusqueda_Lbl.AutoSize = true;
-            this.tipoBusqueda_Lbl.Location = new System.Drawing.Point(4, 17);
-            this.tipoBusqueda_Lbl.Margin = new System.Windows.Forms.Padding(4, 9, 4, 0);
+            this.tipoBusqueda_Lbl.Location = new System.Drawing.Point(3, 11);
+            this.tipoBusqueda_Lbl.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.tipoBusqueda_Lbl.Name = "tipoBusqueda_Lbl";
-            this.tipoBusqueda_Lbl.Size = new System.Drawing.Size(142, 20);
+            this.tipoBusqueda_Lbl.Size = new System.Drawing.Size(97, 13);
             this.tipoBusqueda_Lbl.TabIndex = 5;
             this.tipoBusqueda_Lbl.Text = "Tipo de Búsqueda:";
             // 
             // busqueda_Tbx
             // 
-            this.busqueda_Tbx.Location = new System.Drawing.Point(468, 13);
-            this.busqueda_Tbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.busqueda_Tbx.Location = new System.Drawing.Point(317, 8);
             this.busqueda_Tbx.Name = "busqueda_Tbx";
-            this.busqueda_Tbx.Size = new System.Drawing.Size(922, 26);
+            this.busqueda_Tbx.Size = new System.Drawing.Size(708, 20);
             this.busqueda_Tbx.TabIndex = 9;
             // 
             // buscar_Btn
             // 
-            this.buscar_Btn.Location = new System.Drawing.Point(1398, 13);
-            this.buscar_Btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buscar_Btn.Location = new System.Drawing.Point(1031, 8);
             this.buscar_Btn.Name = "buscar_Btn";
-            this.buscar_Btn.Size = new System.Drawing.Size(112, 35);
+            this.buscar_Btn.Size = new System.Drawing.Size(75, 23);
             this.buscar_Btn.TabIndex = 13;
             this.buscar_Btn.Text = "Buscar";
             this.buscar_Btn.UseVisualStyleBackColor = true;
@@ -207,23 +203,11 @@ namespace Control_Bibliotecario
             "Autor",
             "Tema",
             "Año"});
-            this.tipoBusqueda_CB.Location = new System.Drawing.Point(154, 13);
-            this.tipoBusqueda_CB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tipoBusqueda_CB.Location = new System.Drawing.Point(106, 8);
             this.tipoBusqueda_CB.Name = "tipoBusqueda_CB";
-            this.tipoBusqueda_CB.Size = new System.Drawing.Size(306, 28);
+            this.tipoBusqueda_CB.Size = new System.Drawing.Size(205, 21);
             this.tipoBusqueda_CB.TabIndex = 14;
             this.tipoBusqueda_CB.SelectedIndexChanged += new System.EventHandler(this.tipoBusqueda_CB_SelectedIndexChanged);
-            // 
-            // detalles_Btn
-            // 
-            this.detalles_Btn.Enabled = false;
-            this.detalles_Btn.Location = new System.Drawing.Point(1518, 13);
-            this.detalles_Btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.detalles_Btn.Name = "detalles_Btn";
-            this.detalles_Btn.Size = new System.Drawing.Size(112, 35);
-            this.detalles_Btn.TabIndex = 15;
-            this.detalles_Btn.Text = "Detalles";
-            this.detalles_Btn.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -241,12 +225,13 @@ namespace Control_Bibliotecario
             this.añoDataGridViewTextBoxColumn,
             this.temaDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.librosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(92, 162);
+            this.dataGridView1.Location = new System.Drawing.Point(61, 105);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1671, 735);
+            this.dataGridView1.Size = new System.Drawing.Size(1114, 478);
             this.dataGridView1.TabIndex = 16;
             // 
             // iSBNDataGridViewTextBoxColumn
@@ -331,12 +316,10 @@ namespace Control_Bibliotecario
             this.flowLayoutPanel1.Controls.Add(this.tipoBusqueda_CB);
             this.flowLayoutPanel1.Controls.Add(this.busqueda_Tbx);
             this.flowLayoutPanel1.Controls.Add(this.buscar_Btn);
-            this.flowLayoutPanel1.Controls.Add(this.detalles_Btn);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(92, 969);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(61, 630);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1671, 63);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1114, 41);
             this.flowLayoutPanel1.TabIndex = 17;
             // 
             // panel1
@@ -345,8 +328,7 @@ namespace Control_Bibliotecario
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.Location = new System.Drawing.Point(92, 58);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(61, 38);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(0, 0);
             this.panel1.TabIndex = 18;
@@ -368,16 +350,15 @@ namespace Control_Bibliotecario
             // 
             // PrincipalForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1851, 1051);
+            this.ClientSize = new System.Drawing.Size(1234, 683);
             this.Controls.Add(this.titulo_Lbl);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PrincipalForm";
             this.Text = "Menú Principal";
             this.Load += new System.EventHandler(this.PrincipalForm_Load);
@@ -406,7 +387,6 @@ namespace Control_Bibliotecario
         private System.Windows.Forms.TextBox busqueda_Tbx;
         private System.Windows.Forms.Button buscar_Btn;
         private System.Windows.Forms.ComboBox tipoBusqueda_CB;
-        private System.Windows.Forms.Button detalles_Btn;
         private BibliotecaDataSet bibliotecaDataSet;
         private System.Windows.Forms.BindingSource librosBindingSource;
         private BibliotecaDataSetTableAdapters.LibrosTableAdapter librosTableAdapter;

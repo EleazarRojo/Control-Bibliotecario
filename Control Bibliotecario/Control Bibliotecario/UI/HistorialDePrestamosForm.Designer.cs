@@ -61,12 +61,13 @@ namespace Control_Bibliotecario.UI
             this.fechaInicialDataGridViewTextBoxColumn,
             this.fechaDevolucionDataGridViewTextBoxColumn});
             this.historialPrestamos_DatagridView.DataSource = this.prestamosBindingSource;
-            this.historialPrestamos_DatagridView.Location = new System.Drawing.Point(100, 140);
+            this.historialPrestamos_DatagridView.Location = new System.Drawing.Point(67, 91);
+            this.historialPrestamos_DatagridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.historialPrestamos_DatagridView.Name = "historialPrestamos_DatagridView";
             this.historialPrestamos_DatagridView.ReadOnly = true;
             this.historialPrestamos_DatagridView.RowHeadersWidth = 62;
             this.historialPrestamos_DatagridView.RowTemplate.Height = 28;
-            this.historialPrestamos_DatagridView.Size = new System.Drawing.Size(1123, 605);
+            this.historialPrestamos_DatagridView.Size = new System.Drawing.Size(749, 393);
             this.historialPrestamos_DatagridView.TabIndex = 0;
             // 
             // folioDataGridViewTextBoxColumn
@@ -161,19 +162,22 @@ namespace Control_Bibliotecario.UI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(497, 56);
+            this.label1.Location = new System.Drawing.Point(331, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 36);
+            this.label1.Size = new System.Drawing.Size(211, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Historial de Prestamos";
             // 
             // HistorialDePrestamosForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1322, 852);
+            this.ClientSize = new System.Drawing.Size(881, 554);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.historialPrestamos_DatagridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "HistorialDePrestamosForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

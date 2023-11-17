@@ -324,6 +324,7 @@ namespace Control_Bibliotecario.UI
             this.Controls.Add(this.iSBN_lbl);
             this.Controls.Add(this.idUsuario_tbx);
             this.Controls.Add(this.idUsario_lbl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "DevolverPrestamoForm";
             this.Text = "Devolver Prestamo";
