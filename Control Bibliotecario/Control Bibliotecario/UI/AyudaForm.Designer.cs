@@ -253,7 +253,7 @@ namespace Control_Bibliotecario.UI
             // siguiente_Btn
             // 
             this.siguiente_Btn.Location = new System.Drawing.Point(679, 455);
-            this.siguiente_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.siguiente_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.siguiente_Btn.Name = "siguiente_Btn";
             this.siguiente_Btn.Size = new System.Drawing.Size(76, 20);
             this.siguiente_Btn.TabIndex = 63;
@@ -384,7 +384,8 @@ namespace Control_Bibliotecario.UI
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AyudaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Ayuda";

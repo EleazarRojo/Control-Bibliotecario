@@ -30,7 +30,7 @@ namespace Control_Bibliotecario.UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bibliotecaDataSet = new Control_Bibliotecario.BibliotecaDataSet();
             this.librosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.librosTableAdapter = new Control_Bibliotecario.BibliotecaDataSetTableAdapters.LibrosTableAdapter();
@@ -110,8 +110,8 @@ namespace Control_Bibliotecario.UI
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ISBN";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn1.HeaderText = "ISBN";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -304,7 +304,7 @@ namespace Control_Bibliotecario.UI
             this.idCopia_Cbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idCopia_Cbx.FormattingEnabled = true;
             this.idCopia_Cbx.Location = new System.Drawing.Point(373, 266);
-            this.idCopia_Cbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.idCopia_Cbx.Margin = new System.Windows.Forms.Padding(2);
             this.idCopia_Cbx.Name = "idCopia_Cbx";
             this.idCopia_Cbx.Size = new System.Drawing.Size(128, 21);
             this.idCopia_Cbx.TabIndex = 21;
@@ -328,6 +328,7 @@ namespace Control_Bibliotecario.UI
             this.Controls.Add(this.idUsuario_tbx);
             this.Controls.Add(this.idUsario_lbl);
             this.Controls.Add(this.librosDataGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "RealizarPrestamoForm";
             this.Text = "Realizar Prestamo";

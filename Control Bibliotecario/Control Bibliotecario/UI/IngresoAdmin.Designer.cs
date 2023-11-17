@@ -104,7 +104,7 @@ namespace Control_Bibliotecario.UI
             // 
             this.mostrar_checkBox.AutoSize = true;
             this.mostrar_checkBox.Location = new System.Drawing.Point(346, 176);
-            this.mostrar_checkBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mostrar_checkBox.Margin = new System.Windows.Forms.Padding(2);
             this.mostrar_checkBox.Name = "mostrar_checkBox";
             this.mostrar_checkBox.Size = new System.Drawing.Size(118, 17);
             this.mostrar_checkBox.TabIndex = 6;
@@ -124,6 +124,7 @@ namespace Control_Bibliotecario.UI
             this.Controls.Add(this.usuario_Lbl);
             this.Controls.Add(this.usuario_Tbx);
             this.Controls.Add(this.bienvenido_Lbl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "IngresoAdmin";

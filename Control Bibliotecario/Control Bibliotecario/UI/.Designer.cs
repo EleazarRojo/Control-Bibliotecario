@@ -226,7 +226,7 @@ namespace Control_Bibliotecario
             this.temaDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.librosBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(61, 105);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;

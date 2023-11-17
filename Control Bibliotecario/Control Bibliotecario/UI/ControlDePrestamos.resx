@@ -198,13 +198,17 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 40</value>
+    <value>0, 26</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dataGridView1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="dataGridView1.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>62</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1346, 658</value>
+    <value>897, 428</value>
   </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -221,15 +225,17 @@
   <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buscar_Btn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="buscar_Btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1119, 763</value>
+    <value>746, 496</value>
+  </data>
+  <data name="buscar_Btn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="buscar_Btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 35</value>
+    <value>75, 23</value>
   </data>
   <data name="buscar_Btn.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -253,13 +259,13 @@
     <value>916, 17</value>
   </metadata>
   <data name="relizarPrestamoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 29</value>
+    <value>106, 22</value>
   </data>
   <data name="relizarPrestamoToolStripMenuItem.Text" xml:space="preserve">
     <value>Relizar Prestamo</value>
   </data>
   <data name="devolverPrestamoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 29</value>
+    <value>118, 22</value>
   </data>
   <data name="devolverPrestamoToolStripMenuItem.Text" xml:space="preserve">
     <value>Devolver Prestamo</value>
@@ -267,8 +273,11 @@
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="menuStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 1, 0, 1</value>
+  </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1362, 33</value>
+    <value>908, 24</value>
   </data>
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -298,10 +307,13 @@
     <value>NoControl</value>
   </data>
   <data name="buscar_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 765</value>
+    <value>39, 497</value>
+  </data>
+  <data name="buscar_lbl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="buscar_lbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 27</value>
+    <value>54, 19</value>
   </data>
   <data name="buscar_lbl.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -325,10 +337,13 @@
     <value>Times New Roman, 10pt</value>
   </data>
   <data name="buscar_Tbx.Location" type="System.Drawing.Point, System.Drawing">
-    <value>494, 763</value>
+    <value>329, 496</value>
+  </data>
+  <data name="buscar_Tbx.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="buscar_Tbx.Size" type="System.Drawing.Size, System.Drawing">
-    <value>618, 30</value>
+    <value>413, 23</value>
   </data>
   <data name="buscar_Tbx.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -364,13 +379,10 @@
     <value>Devuelto</value>
   </data>
   <data name="tipoBusqueda_CB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 763</value>
-  </data>
-  <data name="tipoBusqueda_CB.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+    <value>96, 496</value>
   </data>
   <data name="tipoBusqueda_CB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>340, 30</value>
+    <value>228, 23</value>
   </data>
   <data name="tipoBusqueda_CB.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -400,10 +412,13 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>9, 20</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1362, 871</value>
+    <value>908, 566</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
