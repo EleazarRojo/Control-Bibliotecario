@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -57,6 +57,18 @@
       <DependentUpon>BibliotecaDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Usuario.cs" />
+    <Compile Include="UI\Ayuda2Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Ayuda2Form.Designer.cs">
+      <DependentUpon>Ayuda2Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AyudaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AyudaForm.Designer.cs">
+      <DependentUpon>AyudaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ControlDePrestamos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +139,12 @@
     <Compile Include="UI\ControlDeUsuariosForm.Designer.cs">
       <DependentUpon>ControlDeUsuariosForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Ayuda2Form.resx">
+      <DependentUpon>Ayuda2Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AyudaForm.resx">
+      <DependentUpon>AyudaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\ControlDePrestamos.resx">
       <DependentUpon>ControlDePrestamos.cs</DependentUpon>
     </EmbeddedResource>
