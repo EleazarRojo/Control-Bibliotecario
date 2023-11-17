@@ -59,9 +59,6 @@ En la parte superior del Menú Principal se encuentra 3 Módulos: **Ingresar, Re
   <img src = "https://user-images.githubusercontent.com/134666855/283604804-e6a09a0e-44c3-4a92-97e5-4af7046ef917.png">
 </p>
 
-### Ayuda
-No hay Ayuda
-
 ### Registrar 
 Si un usuario de la aplicación no cuenta con un Id de Usuario para utilizar las funciones que brinda el Sistema de Control Bibliotecario este podrá realizar un auto registro a través del Módulo de registrarse el cuál solicita Datos generales de la persona que desea incorporarse al sistema bibliotecario, después de llenar los campos correspondientes con el uso del botón **Registrar** se completará el proceso de registró y obtendrá su Id de Usuario con éxito.
 
