@@ -220,10 +220,10 @@ namespace Control_Bibliotecario
 
         }
 
-        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ayudaToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             AyudaForm ayuda = new AyudaForm();
-            ayuda.Show();
+                ayuda.Show();
         }
 
         /*
