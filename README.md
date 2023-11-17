@@ -65,6 +65,11 @@ No hay Ayuda
 ### Registrar 
 Si un usuario de la aplicación no cuenta con un Id de Usuario para utilizar las funciones que brinda el Sistema de Control Bibliotecario este podrá realizar un auto registro a través del Módulo de registrarse el cuál solicita Datos generales de la persona que desea incorporarse al sistema bibliotecario, después de llenar los campos correspondientes con el uso del botón **Registrar** se completará el proceso de registró y obtendrá su Id de Usuario con éxito.
 
+<p align="center">
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/9fe0b650-b8a7-446f-9f5e-2658c194bcd6">
+  <br>
+</p>
+
 ### Ingresar
 
 <p align="center">
@@ -80,13 +85,20 @@ Si un usuario de la aplicación no cuenta con un Id de Usuario para utilizar las
   Para iniciar sesión se requiere de el ID de Usuario, el cual fue proporcianado al momento de registrarse. Existen dos casos de Inicio de Sesión: **Usuarios** y **Empleados: Administrador o Bibliotecario**
 ### Usuarios
   + **Usuarios**: Los usuarios solo requieren de su ID de Usuario para ingresar a su perfil. 
-
 <p align="center">
-  <b>Perfil de Usuario</b>
-  <img src = "">
+  <b>Verificación de Usuario</b><br>
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/e066bb3c-b00c-4fe9-af64-a4fc7d539e4d">
+  <br><br>
 </p>
 
   Al haber ingresado exitosamente, el usuario sera devuelto al Menú principal pero ahora el Menú desplegará el nombre del Usuario y le dará acceso a su historial de prestamos.
+
+<p align="center">
+  <b>Perfil de Usuario</b><br>
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/644c0cd3-5b74-4c3c-a17e-1b2772e44eb3">
+  <br><br>
+</p>
+
 #### Historial de Prestamos
 En el historial de prestamos se despliagan todos los prestamos realizados por el Usuario ingresado, en el se le da a conocer la información sobre los datos generales del libro
 que se prestó, así como el estado en el que se encuentra dicho prestamo. Los estados que un prestamo puede tomar son: **Activo, Devuelto y Vencido**
@@ -106,8 +118,11 @@ que se prestó, así como el estado en el que se encuentra dicho prestamo. Los e
 <p align="center">
   <b>Perfil de Bibliotecario</b>
   <br>
-  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/6d448699-653b-405d-ac17-14ba29a8a563">
-  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/9b9cd7ca-3924-48c3-aacf-0ff8d2b65992">
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/6d448699-653b-405d-ac17-14ba29a8a563"><br>
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/9f6f02c4-36f9-42ef-904a-523a9abe3583">
+  <br><br>
+  <b>Modulos de Bibliotecario</b><br>
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/f713fd47-18c4-4340-9d9e-d4cb27a4d75e">
   <br><br>
 </p>
 
@@ -116,17 +131,47 @@ En el control de Prestamos nos podemos encontrar con un historial de todos los p
 de esta forma el bibliotecario puede tener un control del estatus de cada prestamo, ya sea activo, devuelto o vencido y actuar correspondidamente dependiendo del estatus. Además podemos encontrar en el 
 menú de la parte superior dos módulos: **Realizar Prestamo y Devolver Prestamo**
 
+<p align="center">
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/25b49537-d12a-40a6-978b-37d4865547a1"><br>
+  <br>
+  <b>Tipos de Busqueda</b><br>
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/2015dd58-3ea0-41d9-b382-7b734d2b89b0">
+  <br><br>
+</p>
+
 ##### Realizar Prestamo
 En el módulo de relizar prestamo se le presenta al bibliotecario un lista de todos los libros actualmente disponibles los cuáles pueden ser prestados a los usuarios. La forma de realizar un prestamo es atreaves de una búsqueda previa del libro por su ISBN, donde se desplegaran las copias disponibles del libro encontrado, seguido se selecciona la copia del libro a ser prestado y el Id del Usuario quien está solicitado el Libro, para finalizar se útiliza el botón de **Realizar Prestamo** y si los datos están correctos el prestamo será realizado con exito actualizando el despliegue de los libros disponibles. 
+
+<p align="center">
+  <b>Ventana</b><br>
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/8c6a71ac-7add-41bb-be72-f8fc0b4c0191"><br>
+  <br>
+  <b>Proceso de Prestamo</b><br>
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/bba8786e-dec3-4bb3-91e7-ffa1bd16e5e9">
+  <br><br>
+</p>
 
 ##### Devolver Prestamo
 En el módulo de devolver prestamo se le presenta al bibliotecario el despligue de todos los prestamos activos o vencidos de los usuarios los cuáles pueden ser devueltos. EL bibliotecario buscará el prestamo 
 activo con el Id de usuario del usuario quien solicita la devolución del prestamo, con el botón de **Buscar Prestamo** si se encunetra un prestamo válido para su devolución con el Id de usuario ingresado se 
 desplegará la información general del prestamo y con el botón de **Devolver Prestamo** el prestamó será devuelto y el estatus pasará de *Activo o Vencido* a **Devuelto**
 
+<p align="center">
+  <b>Ventana</b><br>
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/5b98c6bb-4167-43d2-86b8-15f410c32936"><br>
+  <br>
+  <b>Proceso de Devolución</b><br>
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/bf704aa4-1c40-4318-b2b5-feceed450506">
+  <br><br>
+</p>
+
 #### Inventario de Libros
 En el inventario de Libros se le muestra al Bibliotecario un despliegue de todos los libros que se encuentran actualmente en la Biblioteca, en cada registro de los libros se muestra la información revelante
 sobre cada libro, como titulo, autor, número de edición, año, tema y el estado de prestamo en el que se encuentra cada Libro.
+
+<p align="center">
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/bff56a0a-294a-4270-b8be-c6a7e28c02d2">
+</p>
 
 Dentro del inventario de libros el bibliotecario es capaz de buscar los libros por los siguientes citerios: 
 
@@ -138,19 +183,40 @@ Dentro del inventario de libros el bibliotecario es capaz de buscar los libros p
 
 Además en el apartado de Tipo de Búsqueda se agregan dos operaciones adicionales: **Modificación de Libros y Eliminación de Libros**
 
+<p align="center">
+  <b>Tipos de Busqueda</b><br>
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/64b517f9-3507-49af-95ce-03fbe7718e7b"><br>
+</p>
+
+(Agregado de libros)
+
 Para la **Modificiación** de libros es necesario primeramente buscar el libro que se deasea modificar por su ID de Copia, una vez encontrado el libro se despliegan los datos obtenidos del libro encontrado
 y se pueden editar para realizar las modificaciones correspondientes, después de haber terminado los cambios correspondientes se confirman los cambios con el boton de **Modificar Libro**.
 
+<p align="center">
+  <b>Modificación de Datos de un Libro</b><br>
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/f73e2d09-a006-4570-a34d-276236a8e742"><br>
+</p>
+
 Para la **Eliminación** de libros es necesario primeramente buscar el libro que sea desea eliminar por su ID de Copia, una vez encontrado el libro se habilitará el botón de **Eliminar Libro**  el cuál al presionarse se hará la eliminación correspondiente con el libro que se encontró en la búsqueda anteriormente realizada.
 
-  (Explicar los Modulos de Bibliotecario)
 <p align="center">
-  <b>Modulos de Bibliotecario</b>
-  <img src = "">
+  <b>Eliminación de un Libro</b><br>
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/aa95137b-7e2f-4aa3-aef3-dba6958a98fb"><br>
 </p>
 
   ### Administradores 
   + **Administrador**: Los usuarios de nivel Administradorn tendran que ingresar su ID de Usuario en el apartado de Ingresas. Despues de presionar el bontón ingresar, se iniciara otra ventana de ingreso de empleados donde se le pedira la contraseña al usuario para poder iniciar sesión
+
+<p align="center">
+  <b>Perfil de Administrador</b><br>
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/6d448699-653b-405d-ac17-14ba29a8a563"><br>
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/9e09e167-1e43-4123-9cff-3352abfe12de">
+  <br><br>
+  <b>Meodulos de Adminostrador</b><br>
+  <img src = "https://github.com/EleazarRojo/Control-Bibliotecario/assets/134666855/2372676c-26ed-421c-92c9-2a670634832d">
+  <br><br>
+</p>
 
 #### Control de Usuarios
 En el módulo de Control de Usuarios se le muestra a Administrador un registro de todos los usuarios actualmente registrados con sus datos generales y su ID de Usuario Correspondiente, en la parte inferior 
