@@ -32,17 +32,17 @@ namespace Control_Bibliotecario.UI
         private void ingresar_Btn_Click(object sender, EventArgs e)
         {
             string direccion = "Provider=Microsoft.Jet.OLEDB.4.0.;Data Source=|DataDirectory|\\BD\\Biblioteca.mdb";
-            string consulta = "SELECT * FROM Usuarios WHERE IdUsuario = " + usuario_Tbx.Text;
+            string consulta = "SELECT Contrasenia FROM Usuarios WHERE IdUsuario = " + usuario_Tbx.Text;
 
             System.Data.OleDb.OleDbConnection conexion = new OleDbConnection();
             conexion.ConnectionString = direccion;
             conexion.Open();
-            DataSet ds = new DataSet();
+            DataTable tablaDatos = new DataTable();
             OleDbDataAdapter adaptador = new OleDbDataAdapter(consulta, conexion);
-            adaptador.Fill(ds);
-            DataTable tablaDatos = ds.Tables[0];
+            adaptador.Fill(tablaDatos);
+            
 
-            if (contrasenia_tbx.Text == tablaDatos.Rows[0].ItemArray[11].ToString())
+            if (contrasenia_tbx.Text == tablaDatos.Rows[0].ItemArray[0].ToString())
             {
                 DialogResult = DialogResult.OK;
                 usuario_Tbx.Clear();
@@ -56,6 +56,18 @@ namespace Control_Bibliotecario.UI
                 MessageBox.Show("Ingrese una contraseña correcta", "Contraseña Erronea", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void mostrar_checkBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if(mostrar_checkBox.Checked == true)
+            {
+                contrasenia_tbx.PasswordChar = '\u0000';
+            }
+            else
+            {
+                contrasenia_tbx.PasswordChar = '*';
+            }
         }
     }
 }

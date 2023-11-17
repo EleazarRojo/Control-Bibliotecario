@@ -65,17 +65,17 @@ namespace Control_Bibliotecario
             // 
             this.Titulo_lbl.AutoSize = true;
             this.Titulo_lbl.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Titulo_lbl.Location = new System.Drawing.Point(222, 34);
+            this.Titulo_lbl.Location = new System.Drawing.Point(184, 45);
             this.Titulo_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Titulo_lbl.Name = "Titulo_lbl";
-            this.Titulo_lbl.Size = new System.Drawing.Size(262, 47);
+            this.Titulo_lbl.Size = new System.Drawing.Size(254, 47);
             this.Titulo_lbl.TabIndex = 3;
-            this.Titulo_lbl.Text = "Member Login";
+            this.Titulo_lbl.Text = "Iniciar Sesión ";
             // 
             // acceder_btn
             // 
             this.acceder_btn.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.acceder_btn.Location = new System.Drawing.Point(612, 420);
+            this.acceder_btn.Location = new System.Drawing.Point(493, 311);
             this.acceder_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.acceder_btn.Name = "acceder_btn";
             this.acceder_btn.Size = new System.Drawing.Size(112, 35);
@@ -154,7 +154,7 @@ namespace Control_Bibliotecario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 495);
+            this.ClientSize = new System.Drawing.Size(636, 376);
             this.Controls.Add(this.apellidoMaterno_tbx);
             this.Controls.Add(this.apellidoPaterno_tbx);
             this.Controls.Add(this.nombre_tbx);
@@ -166,7 +166,10 @@ namespace Control_Bibliotecario
             this.Controls.Add(this.idUsario_lbl);
             this.Controls.Add(this.Titulo_lbl);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "IngresarForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Ingresar";
             this.ResumeLayout(false);
             this.PerformLayout();

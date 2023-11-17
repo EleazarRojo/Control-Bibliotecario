@@ -1,18 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
-using System.Data.OleDb;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Control_Bibliotecario.Modelos;
-using Control_Bibliotecario.UI;
+using System.Data.OleDb;
 
-
-namespace Control_Bibliotecario
+namespace Control_Bibliotecario.UI
 {
-    public partial class RegistroForm : Form
+    public partial class RegistroAdminBiblio : Form
     {
-
-
-        public RegistroForm()
+        public RegistroAdminBiblio()
         {
             InitializeComponent();
         }
@@ -20,7 +22,7 @@ namespace Control_Bibliotecario
         private void registrar_Btn_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(nombre_Tbx.Text) && !string.IsNullOrEmpty(apellidoPaterno_Tbx.Text) && !string.IsNullOrEmpty(ApellidoMaterno_Tbx.Text) && genero_Cbx.SelectedIndex >= 0 &&
-                 !string.IsNullOrEmpty(direccion_Tbx.Text) && !string.IsNullOrEmpty(nombre_Tbx.Text) && fechaDeNacimiento_Calendar.SelectionStart != DateTime.Today)
+              !string.IsNullOrEmpty(direccion_Tbx.Text) && !string.IsNullOrEmpty(nombre_Tbx.Text) && fechaDeNacimiento_Calendar.SelectionStart != DateTime.Today && !string.IsNullOrEmpty(contrasenia_tbx.Text))
             {
                 Usuario usuario = new Usuario();
                 usuario.Nombre = nombre_Tbx.Text.ToUpper();
@@ -29,7 +31,22 @@ namespace Control_Bibliotecario
                 usuario.Genero = genero_Cbx.SelectedItem.ToString().ToUpper();
                 usuario.DireccionParticular = direccion_Tbx.Text.ToUpper();
                 usuario.FechaDeNacimiento = fechaDeNacimiento_Calendar.SelectionStart;
-                usuario.IdDeNivel = "003"; //Todo usuario Común tiene este nivel de acceso.
+
+                switch (tipoUsuario_Cbx.SelectedIndex)
+                {
+                    case 0:
+                        usuario.IdDeNivel = "010";
+                        break;
+
+                    case 1:
+                        usuario.IdDeNivel = "020";
+                        break;
+
+                    default:
+                        MessageBox.Show("Seleccione el tipo de usuario");
+                        break;
+                }
+
                 usuario.Permisos = "Usuario".ToUpper();
                 usuario.Edad = fechaDeNacimiento_Calendar.TodayDate.Year - usuario.FechaDeNacimiento.Year;
                 usuario.CrearRFC();
@@ -48,7 +65,7 @@ namespace Control_Bibliotecario
 
                 if (!(dt.Rows.Count > 0))
                 {
-                    string lineComando = "insert into Usuarios (RFC, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno, FechaDeNacimiento, Edad, Genero, DireccionParticular, Prestamo) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    string lineComando = "INSERT INTO Usuarios (RFC, IdDeNivel, Nombre, ApellidoPaterno, ApellidoMaterno, FechaDeNacimiento, Edad, Genero, DireccionParticular, Contrasenia, Prestamo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                     System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(lineComando, conexion);
 
                     cmd.Parameters.AddWithValue("RFC", usuario.RFC);
@@ -60,8 +77,8 @@ namespace Control_Bibliotecario
                     cmd.Parameters.AddWithValue("Edad", usuario.Edad);
                     cmd.Parameters.AddWithValue("Genero", usuario.Genero);
                     cmd.Parameters.AddWithValue("DireccionParticular", usuario.DireccionParticular);
+                    cmd.Parameters.AddWithValue("Contrasenia", contrasenia_tbx.Text);
                     cmd.Parameters.AddWithValue("Prestamo", 0);
-
                     cmd.ExecuteNonQuery();
 
                     string consultaUsuario = "SELECT IdUsuario FROM Usuarios WHERE RFC = " + "'" + usuario.RFC + "'";
@@ -70,12 +87,11 @@ namespace Control_Bibliotecario
 
                     ada.Fill(usuarioTabla);
 
-
-
-
                     MessageBox.Show("Usuario registrado exitosamente\n" + "ID de Usuario: " + usuarioTabla.Rows[0].ItemArray[0].ToString(), "Registro de usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                     this.DialogResult = DialogResult.OK;
+
+
+
                     this.Close();
 
 
@@ -94,9 +110,6 @@ namespace Control_Bibliotecario
             {
                 MessageBox.Show("LLene todos los campos correspondientes", "Información faltante", MessageBoxButtons.OK);
             }
-
         }
-
-
     }
 }
